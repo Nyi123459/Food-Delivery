@@ -1,4 +1,3 @@
-
 import { logo } from "../../assets";
 import { footerLinks } from "../../content";
 import styles from "../../style";
@@ -10,16 +9,11 @@ const Footer = () => {
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
         <div className="flex-1 flex flex-col justify-start">
           <div className="flex justify-start items-center gap-4">
-            {
-              logoLink.map((data) => (
-
-                <img
-                  src={data.icon}
-                  alt="logo"
-                  className="w-[266px] h-[80px] object-contain"
-                />
-              ))
-            }
+            <img
+              src={logo}
+              alt="logo"
+              className="w-[266px] h-[80px] object-contain"
+            />
           </div>
           <p className={`${styles.paragraph} mt-4 max-w-[310px]`}>
             A new way to make the payments easy, reliable and secure .
@@ -38,12 +32,9 @@ const Footer = () => {
                 {footerLink.links.map((link, index) => (
                   <li
                     key={index}
-
                     className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite cursor-pointer ${
                       index !== footerLink.links.length - 1 ? "mb-4" : "mb-0"
                     }`}>
-
-
                     {link.name}
                   </li>
                 ))}
