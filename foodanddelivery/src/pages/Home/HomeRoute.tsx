@@ -13,9 +13,6 @@ const HomeRoute = () => {
       {/* <Herosection />
       <ParterShip />
       <Interface /> */}
-      <FAQ />
-      <Trending />
-      <Footer />
     </div>
   );
 };
