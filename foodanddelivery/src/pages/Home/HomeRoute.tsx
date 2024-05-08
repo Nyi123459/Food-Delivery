@@ -11,11 +11,11 @@ const HomeRoute = () => {
     <div>
       <Navbar />
       <Herosection />
-      <ParterShip />
+      {/* <ParterShip />
       <Interface />
       <FAQ />
       <Trending />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };
