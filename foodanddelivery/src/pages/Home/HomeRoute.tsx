@@ -10,9 +10,9 @@ const HomeRoute = () => {
   return (
     <div>
       <Navbar />
-      <Herosection />
+      {/* <Herosection />
       <ParterShip />
-      <Interface />
+      <Interface /> */}
       <FAQ />
       <Trending />
       <Footer />
