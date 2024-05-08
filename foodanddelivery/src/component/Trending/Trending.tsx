@@ -39,7 +39,6 @@
 
 // export default Trending;
 
-
 const Trending = () => {
   return (
     <main className="px-6">
@@ -48,14 +47,14 @@ const Trending = () => {
       </h2>
 
       <section>
-        <div className="flex justify-around gap-10 mb-2">
+        <div className="flex justify-around gap-10 mb-2 ml-[10%] mr-[10%]">
           <button className="text-xl font-semibold">Top Foods</button>
           <button className="text-xl font-semibold">Top Shops</button>
           <button className="text-xl font-semibold">Top Cities</button>
         </div>
         <hr />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-8 py-8 gap-4 text-black font-semibold">
+        <div className="grid grid-cols-1 ml-[10%] mr-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-8 py-8 gap-4 text-black font-semibold text-center">
           <div className="p-1">New York</div>
           <div className="p-1">Yangon</div>
           <div className="p-1">Taunggyi</div>
@@ -78,4 +77,3 @@ const Trending = () => {
 };
 
 export default Trending;
-
