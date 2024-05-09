@@ -1,4 +1,5 @@
 import { RxAngle, RxFigmaLogo, RxGithubLogo } from "react-icons/rx";
+import Images from "../assets";
 
 export const footerLinks = [
   {
@@ -75,22 +76,22 @@ export const footerLinks = [
 
 export const partnerShips = [
   {
-    icon: "https://cdn.doordash.com/media/consumer/home/landing/new/ScootScoot.svg",
-    title: "Become a Dasher",
+    icon: Images.Taxi,
+    title: "Become a Savor Driver",
     text: "As a delivery driver, you'll make reliable money-working anytime, anywhere.",
-    link: "Start earning",
+    link: "Start earning ⮕",
   },
   {
-    icon: "https://cdn.doordash.com/media/consumer/home/landing/new/Storefront.svg",
-    title: "Become a Dasher",
-    text: "As a delivery driver, you'll make reliable money-working anytime, anywhere.",
-    link: "Start earning",
+    icon: Images.Rider,
+    title: "Become a Savor Rider",
+    text: "As a delivery Rider, you'll make reliable money—working anytime, anywhere.",
+    link: "Start earning ⮕",
   },
   {
-    icon: "https://cdn.doordash.com/media/consumer/home/landing/new/iphone.svg",
-    title: "Become a Dasher",
-    text: "As a delivery driver, you'll make reliable money-working anytime, anywhere.",
-    link: "Start earning",
+    icon: Images.Store,
+    title: "Become a Savor Partner",
+    text: "Grow your business and reach new customers by partnering with us.",
+    link: "Start earning ⮕",
   },
 ];
 

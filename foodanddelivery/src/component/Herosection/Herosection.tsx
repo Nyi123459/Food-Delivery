@@ -57,7 +57,7 @@
 
 import React from "react";
 import { RxTriangleRight } from "react-icons/rx";
-import { Display } from "../../assets";
+import Images from "../../assets";
 import { iconsLinks } from "../../constants";
 
 const Herosection = () => {
@@ -84,14 +84,14 @@ const Herosection = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <img src={Display} alt="Display-Photo" className="w-full" />
+            <img src={Images.Display} alt="Display-Photo" className="w-full" />
           </div>
         </div>
-        <div className="flex absolute bottom-0 translate-y-1/2 gap-x-20 max-lg:gap-x-5 left-0 right-0 lg:ml-12 lg:mr-12 xl:ml-16 xl:mr-16 max-mdl:grid-cols-2 ">
+        <div className="flex absolute bottom-0 translate-y-1/2 gap-x-20 max-lg:gap-x-5 left-0 right-0 sm:ml-4 sm:mr-4 md:ml-8 md:mr-8 lg:ml-12 lg:mr-12 xl:ml-16 xl:mr-16 max-lg:flex-wrap max-lg:justify-between max-lg:h-[110px] ">
           {iconsLinks.map((data, index) => (
             <div
               key={index}
-              className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start max-lg:ml-12 max-lg:mr-12 max-lg:mt-0 xs:justify-stretch ">
+              className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start  max-lg:ml-12 max-lg:mr-12 max-lg:mt-0 max-mdl:absolute max-mdl:">
               <img
                 src={data.icon}
                 alt={data.title}
@@ -110,19 +110,14 @@ const Herosection = () => {
 
 export default Herosection;
 
-// <div className="flex absolute bottom-0 translate-y-1/2 gap-x-20 max-lg:gap-x-5 left-0 right-0 lg:ml-12 lg:mr-12 xl:ml-16 xl:mr-16 max-lg:flex-wrap max-lg:justify-between max-lg:h-[110px] ">
-//           {iconsLinks.map((data, index) => (
-//             <div
-//               key={index}
-//               className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start max-lg:ml-12 max-lg:mr-12 max-lg:mt-0 xs:justify-stretch ">
-//               <img
-//                 src={data.icon}
-//                 alt={data.title}
-//                 className="w-[50px] h-[50px]"
-//               />
-//               <p className="text-xl sm:text-sm xs:text-xs max-md:text-base lg:text-lg lg:truncate md:truncate pl-4 ">
-//                 {data.title}
-//               </p>
-//             </div>
-//           ))}
-//         </div>
+{
+  /* <div className="flex">
+  <div className="max-xl:hidden mt-[10%] shadow shadow-black bg-[#F17228] font-semibold text-base max-lg:text-sm max-md:text-xs text-white text-center flex justify-center items-center rounded-lg w-[20%] h-[10%] ">
+    <p> Get Started</p>
+    <RxTriangleRight className="" />{" "}
+    <p className="text-white text-sm ml-[10px] text-justify ">
+      Watch how it works{" "}
+    </p>
+  </div>
+</div>; */
+}

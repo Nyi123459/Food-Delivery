@@ -1,20 +1,20 @@
-import { AllIcon, FoodIcon, MallIcon, TransportationIcon } from "../assets";
+import Images from "../assets";
 
 export const iconsLinks = [
   {
-    icon: TransportationIcon,
+    icon: Images.TransportationIcon,
     title: "Taxi",
   },
   {
-    icon: FoodIcon,
+    icon: Images.FoodIcon,
     title: "Food",
   },
   {
-    icon: MallIcon,
+    icon: Images.MallIcon,
     title: "Mall",
   },
   {
-    icon: AllIcon,
+    icon: Images.AllIcon,
     title: "All",
   },
 ];

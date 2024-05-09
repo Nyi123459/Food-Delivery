@@ -1,25 +1,46 @@
 import logo from "./logo.png";
-import AllIcon from "./allicon.png";
-import Car from "./car.png";
-import Display from "./Display.png";
-import FoodIcon from "./foodicon.png";
-import InterfaceIcon from "./interfaceicon.png";
-import LogoIcon from "./logoicon.png";
-import MallIcon from "./mallicon.png";
+import TransportationIcon from "./Page/Taxi.png";
+import FoodIcon from "./Page/Food.png";
+import MallIcon from "./Page/Mall.png";
+import AllIcon from "./Page/All.png";
+import Car from "./Page/Taxi.png";
+import Display from "./Banner/Display.png";
+import InterfaceIcon from "./Banner/Interface.png";
+import Taxi from "./BecomePartner/Taxi.png";
+import Rider from "./BecomePartner/Rider.png";
+import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
-import TransportationIcon from "./transportationicon.png";
 import MoneyBag from "./money-bag.png";
 
-export {
+interface Images {
+  logo: string;
+  TransportationIcon: string;
+  FoodIcon: string;
+  MallIcon: string;
+  AllIcon: string;
+  Car: string;
+  Display: string;
+  InterfaceIcon: string;
+  Taxi: string;
+  Rider: string;
+  Store: string;
+  Question: string;
+  MoneyBag: string;
+}
+const Images: Images = {
   logo,
+  TransportationIcon,
+  FoodIcon,
+  MallIcon,
   AllIcon,
   Car,
   Display,
-  FoodIcon,
   InterfaceIcon,
-  LogoIcon,
-  MallIcon,
+  Taxi,
+  Rider,
+  Store,
   Question,
-  TransportationIcon,
   MoneyBag,
 };
+
+export default Images;
