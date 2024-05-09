@@ -9,13 +9,13 @@ import Trending from "../../component/Trending/Trending";
 const HomeRoute = () => {
   return (
     <div>
-      {/* <Navbar />
-      <Herosection /> */}
+       <Navbar />
+      <Herosection /> 
       <ParterShip />
-      {/* <Interface /> */}
-      <FAQ />
-      {/* <Trending />
-      <Footer /> */}
+      <Interface /> 
+      <FAQ/>
+      <Trending/>
+      <Footer/>
     </div>
   );
 };
