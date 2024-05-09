@@ -19,10 +19,9 @@ const Navbar = ({ onClose }: BarProps) => {
     <>
       <div className="flex-col">
         <div
-          className={`bg-primary flex items-center px-[10%] py-2.5 items-center ${
+          className={`bg-primary flex items-center px-[10%] py-2.5 ${
             !isOpen && "hidden"
-          }`}
-        >
+          }`}>
           <div className="flex sm:ml-0 sm:mr-[20px] lg:ml-[20%] md:ml-[20%]">
             <img src={MoneyBag} alt="Money-bag" className="h-[25px] w-[25px]" />
             <p>
@@ -38,14 +37,14 @@ const Navbar = ({ onClose }: BarProps) => {
           </button>
         </div>
         <div className="flex ml-[10%] mr-[10%] py-4">
-          <div className="md:hidden ml-0">
+          <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-0">
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] mdl:ml-0">
             <img src={LogoIcon} alt="Logo" className="w-50 h-6" />
           </div>
 
-          <div className="flex gap-4 hidden md:flex">
+          <div className="flex gap-4 hidden mdl:flex">
             <div className="flex items-center">
               <IoMdSearch
                 style={{
@@ -55,9 +54,9 @@ const Navbar = ({ onClose }: BarProps) => {
                 }}
               />
               <input
-                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px]"
+                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px] max-mdl:hidden"
                 type="text"
-                placeholder="Search Food"
+                placeholder="Search"
               />
             </div>
 

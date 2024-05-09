@@ -3,7 +3,7 @@ import { AllIcon, FoodIcon, MallIcon, TransportationIcon } from "../assets";
 export const iconsLinks = [
   {
     icon: TransportationIcon,
-    title: "Transportation",
+    title: "Taxi",
   },
   {
     icon: FoodIcon,
