@@ -91,7 +91,7 @@
 
 import { Accordion } from "flowbite-react";
 
-import { Question } from "../../assets";
+import Images from "../../assets";
 
 const FAQ = () => {
   return (
