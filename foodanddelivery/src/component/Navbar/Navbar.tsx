@@ -36,7 +36,7 @@ const Navbar = ({ onClose }: BarProps) => {
               <span className="text-red-500">Ride & Savor!</span>
             </p>
           </div>
-          <div className="sm:text-xs lg:text-base rounded border-[1.2px] border-white px-1.5 py-1 lg:ml-[150px] lg:mr-auto sm:mr-[30px] md:mr-[80px] text-white">
+          <div className="sm:text-xs lg:text-base rounded px-1.5 py-1 lg:ml-[150px] lg:mr-auto sm:mr-[30px] md:mr-[80px] text-white">
             <BeOurPartner />
           </div>
           <button type="button" onClick={handleClick}>
@@ -47,7 +47,7 @@ const Navbar = ({ onClose }: BarProps) => {
           <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-0">
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0">
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 

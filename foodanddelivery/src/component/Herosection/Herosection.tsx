@@ -63,9 +63,9 @@ import { iconsLinks } from "../../constants";
 const Herosection = () => {
   return (
     <>
-      <div className="flex flex-col bg-primary relative">
-        <div className="max-md:flex-col flex mt-[5%] ml-[10%] mr-[10%] mb-[5%]">
-          <div className="flex flex-col w-full md:w-1/2 ">
+      <section className="flex flex-col bg-primary relative max-mdl:h-[320px] max-md:h-[600px]">
+        <div className="max-md:flex-col flex mt-[5%] ml-[10%] mr-[10%] mb-[5%] max-md:h-1/2">
+          <div className="flex flex-col w-full md:w-1/2">
             <div className="max-w-[650px] lg:text-5xl md:text-3xl sm:text-2xl xs:text-xl text-white">
               Ride & Savor <br />
               Delivery Service Management
@@ -83,15 +83,15 @@ const Herosection = () => {
               </p>
             </div>
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 max-md:mt-[10%]">
             <img src={Images.Display} alt="Display-Photo" className="w-full" />
           </div>
         </div>
-        <div className="flex absolute bottom-0 translate-y-1/2 gap-x-20 max-lg:gap-x-5 left-0 right-0 sm:ml-4 sm:mr-4 md:ml-8 md:mr-8 lg:ml-12 lg:mr-12 xl:ml-16 xl:mr-16 max-lg:flex-wrap max-lg:justify-between max-lg:h-[110px] ">
+        <div className="flex max-md:flex-col lg:flex justify-between absolute bottom-0 translate-y-1/2 gap-x-20 max-lg:gap-auto left-0 right-0 sm:ml-4 sm:mr-4 md:ml-8 md:mr-8 lg:ml-12 lg:mr-12 xl:ml-16 xl:mr-16 md:grid md:grid-cols-2 md:gap-4 md:h-[100px]">
           {iconsLinks.map((data, index) => (
             <div
               key={index}
-              className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start  max-lg:ml-12 max-lg:mr-12 max-lg:mt-0 max-mdl:absolute max-mdl:">
+              className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 justify-start max-lg:ml-12 max-lg:mr-12 max-lg:mt-0">
               <img
                 src={data.icon}
                 alt={data.title}
@@ -103,7 +103,7 @@ const Herosection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </>
   );
 };
