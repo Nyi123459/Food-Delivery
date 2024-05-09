@@ -8,7 +8,7 @@ import {
 } from "react-accessible-accordion";
 import { MdOutlineArrowDownward } from "react-icons/md";
 
-import { Question } from "../../assets";
+import Images from "../../assets";
 
 import data from "../../utils/accordionData.js";
 
@@ -22,7 +22,7 @@ const Value = () => {
   return (
     <>
       <div className="flex justify-center">
-        <img src={Question} className="h-[5%] w-[5%]" />
+        <img src={Images.Question} className="h-[5%] w-[5%]" />
       </div>
       <div className="text-orange-500 text-2xl font-bold mb-2 flex justify-center">
         <h2>Frequently Asked Questions</h2>

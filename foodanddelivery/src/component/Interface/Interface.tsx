@@ -1,4 +1,4 @@
-import { InterfaceIcon } from "../../assets";
+import Images from "../../assets";
 
 const Interface = () => {
   return (
@@ -19,7 +19,7 @@ const Interface = () => {
         </button>
       </div>
       <div className="flex justify-center">
-        <img src={InterfaceIcon} className="h-[100%] w-[100%]" />
+        <img src={Images.InterfaceIcon} className="h-[100%] w-[100%]" />
       </div>
     </>
   );

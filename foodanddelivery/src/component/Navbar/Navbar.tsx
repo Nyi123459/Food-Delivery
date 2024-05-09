@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoPerson } from "react-icons/io5";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
-import { LogoIcon, MoneyBag } from "../../assets";
+import Images from "../../assets";
+import BeOurPartner from "../PartnerShip/BeOurPartner";
+import Login from "../../pages/Account/Login";
+import SignUp from "../../pages/Account/SignUp";
 
 interface BarProps {
   onClose: () => void;
@@ -24,14 +27,18 @@ const Navbar = ({ onClose }: BarProps) => {
           }`}
         >
           <div className="flex sm:ml-0 sm:mr-[20px] lg:ml-[20%] md:ml-[20%]">
-            <img src={MoneyBag} alt="Money-bag" className="h-[25px] w-[25px]" />
+            <img
+              src={Images.MoneyBag}
+              alt="Money-bag"
+              className="h-[25px] w-[25px]"
+            />
             <p>
               List your business on{" "}
               <span className="text-red-500">Ride & Savor!</span>
             </p>
           </div>
           <div className="sm:text-xs lg:text-base rounded border-[1.2px] border-white px-1.5 py-1 lg:ml-[150px] lg:mr-auto sm:mr-[30px] md:mr-[80px] text-white">
-            Be Our Partner
+            <BeOurPartner />
           </div>
           <button type="button" onClick={handleClick}>
             <IoMdClose className="text-white-500 hover:text-red-500 h-6 w-6" />{" "}
@@ -42,7 +49,7 @@ const Navbar = ({ onClose }: BarProps) => {
             <IoPerson />
           </div>
           <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-0">
-            <img src={LogoIcon} alt="Logo" className="w-50 h-6" />
+            <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 
           <div className="flex gap-4 hidden md:flex">
@@ -57,16 +64,13 @@ const Navbar = ({ onClose }: BarProps) => {
               <input
                 className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px]"
                 type="text"
-                placeholder="Search Food"
+                placeholder="Search"
               />
             </div>
 
-            <div className="rounded-lg border-white shadow shadow-primary px-[20px] py-[5px]">
-              Login
-            </div>
-            <div className="rounded-lg border-white shadow shadow-primary px-[20px] py-[5px]">
-              Sign Up
-            </div>
+            <Login />
+
+            <SignUp />
           </div>
         </div>
       </div>
