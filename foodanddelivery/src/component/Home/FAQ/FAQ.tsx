@@ -1,6 +1,6 @@
 import { Accordion } from "flowbite-react";
 
-import Images from "../../assets";
+import Images from "../../../assets";
 
 const FAQ = () => {
   return (
