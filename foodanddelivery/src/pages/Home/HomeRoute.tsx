@@ -4,6 +4,7 @@ import Interface from "../../component/Interface/Interface";
 import Navbar from "../../component/Navbar/Navbar";
 import ParterShip from "../../component/PartnerShip/ParterShip";
 import Trending from "../../component/Trending/Trending";
+import styles from "../../style";
 
 const HomeRoute = () => {
   return (
@@ -13,7 +14,11 @@ const HomeRoute = () => {
           throw new Error("Function not implemented.");
         }}
       />
-      <Herosection />
+      <div className={`bg-primary ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Herosection />
+        </div>
+      </div>
       <ParterShip />
       <Interface />
       <FAQ />

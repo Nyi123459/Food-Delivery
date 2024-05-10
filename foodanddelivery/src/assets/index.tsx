@@ -3,7 +3,7 @@ import TransportationIcon from "./Page/Taxi.png";
 import FoodIcon from "./Page/Food.png";
 import MallIcon from "./Page/Mall.png";
 import AllIcon from "./Page/All.png";
-import Car from "./Car.png";
+import Car from "./Page/Taxi.png";
 import Display from "./Banner/Display.png";
 import InterfaceIcon from "./Banner/Interface.png";
 import Taxi from "./BecomePartner/Taxi.png";
