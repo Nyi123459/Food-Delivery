@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignUp: React.FC = () => {
+const SignUp = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md w-full px-6 py-8 bg-white shadow-md overflow-hidden sm:rounded-lg">
@@ -43,8 +43,7 @@ const SignUp: React.FC = () => {
               />
               <label
                 htmlFor="remember"
-                className="ml-2 block text-sm text-gray-800"
-              >
+                className="ml-2 block text-sm text-gray-800">
                 Remember me
               </label>
             </div>
@@ -52,8 +51,7 @@ const SignUp: React.FC = () => {
             <div className="text-sm">
               <a
                 href="#"
-                className="font-medium text-blue-600 hover:text-blue-500"
-              >
+                className="font-medium text-blue-600 hover:text-blue-500">
                 Forgot your password?
               </a>
             </div>
@@ -62,8 +60,7 @@ const SignUp: React.FC = () => {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            >
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
               Log in
             </button>
           </div>
@@ -73,20 +70,17 @@ const SignUp: React.FC = () => {
             <div className="mt-2 grid grid-cols-3 gap-3">
               <button
                 type="button"
-                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-              >
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                 Facebook
               </button>
               <button
                 type="button"
-                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-              >
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                 Gmail
               </button>
               <button
                 type="button"
-                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-              >
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                 Phone
               </button>
             </div>
@@ -97,8 +91,7 @@ const SignUp: React.FC = () => {
               Don't have an account?{" "}
               <a
                 href="#"
-                className="font-medium text-blue-600 hover:text-blue-500"
-              >
+                className="font-medium text-blue-600 hover:text-blue-500">
                 Sign up
               </a>
             </p>
