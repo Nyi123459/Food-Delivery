@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import FAQ from "../../component/Home/FAQ/FAQ";
 import Herosection from "../../component/Home/Herosection/Herosection";
 import Interface from "../../component/Home/Interface/Interface";
@@ -25,4 +23,3 @@ const HomeRoute = () => {
 };
 
 export default HomeRoute;
->>>>>>> 8a9e296d0f9e0bc15b135c87e7db458dc7e41841
