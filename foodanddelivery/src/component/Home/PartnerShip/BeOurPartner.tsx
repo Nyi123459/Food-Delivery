@@ -3,7 +3,7 @@ import { FaFacebook, FaGoogle } from "react-icons/fa";
 
 import { useRef, useState } from "react";
 
-function Login() {
+function BeOurPartner() {
   const [openModal, setOpenModal] = useState(true);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
@@ -13,7 +13,7 @@ function Login() {
         className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-primary px-[20px] py-[5px]"
         onClick={() => setOpenModal(true)}
       >
-        Log In
+        Be Our Partner
       </div>
 
       {openModal && (
@@ -74,4 +74,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default BeOurPartner;
