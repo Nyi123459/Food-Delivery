@@ -25,7 +25,7 @@ import { partnerShips } from "../../content";
 
 const ParterShip = () => {
   return (
-    <section className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 py-8 pt-6">
+    <section className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 py-20 pt-6">
       <div className="flex flex-wrap justify-center gap-8">
         {partnerShips.map((data, index) => (
           <div className="flex flex-col items-center max-w-xs" key={index}>
@@ -54,4 +54,3 @@ const ParterShip = () => {
 };
 
 export default ParterShip;
-

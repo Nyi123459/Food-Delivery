@@ -8,6 +8,7 @@ import {
 import HomeRoute from "./pages/Home/HomeRoute";
 import Footer from "./component/Footer/Footer";
 import "./index.css";
+import MainFoodPage from "./pages/FoodPage/MainFoodPage";
 
 const Layout: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomeRoute />} />
+            <Route path="/product/:_id" element={<MainFoodPage />} />
             {/* <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} /> */}
           </Route>

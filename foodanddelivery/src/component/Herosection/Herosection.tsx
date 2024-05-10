@@ -59,6 +59,7 @@ import React from "react";
 import { RxTriangleRight } from "react-icons/rx";
 import Images from "../../assets";
 import { iconsLinks } from "../../constants";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 const Herosection = () => {
   return (
@@ -93,11 +94,13 @@ const Herosection = () => {
               key={index}
               className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 justify-start max-lg:ml-12 max-lg:mr-12 max-lg:mt-0"
             >
-              <img
-                src={data.icon}
-                alt={data.title}
-                className="w-[50px] h-[50px]"
-              />
+              <Link to={`/${data.title.toLowerCase()}`}>
+                <img
+                  src={data.icon}
+                  alt={data.title}
+                  className="w-[50px] h-[50px]"
+                />
+              </Link>
               <p className="text-xl sm:text-sm xs:text-xs max-md:text-base lg:text-lg lg:truncate md:truncate pl-4 ">
                 {data.title}
               </p>
