@@ -10,9 +10,8 @@ function BeOurPartner() {
   return (
     <>
       <div
-        className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-primary px-[20px] py-[5px]"
-        onClick={() => setOpenModal(true)}
-      >
+        className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 border-[1.2px] border-white transition duration-700 ease-in-out rounded-lg border-white shadow shadow-primary px-[20px] py-[5px] "
+        onClick={() => setOpenModal(true)}>
         Be Our Partner
       </div>
 
@@ -25,8 +24,7 @@ function BeOurPartner() {
         popup
         onClose={() => setOpenModal(false)}
         initialFocus={emailInputRef}
-        className="absolute top-full left-0"
-      >
+        className="absolute top-full left-0">
         <Modal.Header />
         <Modal.Body>
           <div className="space-y-6">

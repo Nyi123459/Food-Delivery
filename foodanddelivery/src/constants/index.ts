@@ -3,7 +3,7 @@ import Images from "../assets";
 export const iconsLinks = [
   {
     icon: Images.TransportationIcon,
-    title: "Transportation",
+    title: "Taxi",
   },
   {
     icon: Images.FoodIcon,
