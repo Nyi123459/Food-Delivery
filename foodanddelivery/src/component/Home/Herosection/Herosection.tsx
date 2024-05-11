@@ -31,18 +31,20 @@ const Herosection = () => {
             <img src={Images.Display} alt="Display-Photo" className="w-full" />
           </div>
         </div>
-        <div className="flex absolute bottom-0 translate-y-1/2 gap-x-20 max-lg:gap-x-5 left-0 right-0 sm:ml-4 sm:mr-4 md:ml-8 md:mr-8 lg:ml-12 lg:mr-12 xl:ml-16 xl:mr-16 max-lg:flex-wrap max-lg:justify-between max-lg:h-[110px] ">
-          {iconsLinks.map((data, index) => (
-            <Link
-              to={data.route}
-              key={index}
-              className="border-2 bg-secondary flex items-center sm:w-[250px] md:w-[250px] lg:w-[250px] xl:w-[250px] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start  max-lg:ml-12 max-lg:mr-12 max-lg:mt-0 max-mdl:absolute max-mdl:">
-              <img src={data.icon} alt={data.title} className="size-[50px]" />
-              <p className="text-xl sm:text-sm xs:text-xs max-md:text-base lg:text-lg lg:truncate md:truncate pl-4 ">
-                {data.title}
-              </p>
-            </Link>
-          ))}
+        <div className="relative M">
+          <div className="flex absolute bottom-0 translate-y-1/2 max-lg:left-[10%] max-lg:right-[10%] gap-x-20 max-lg:gap-2 left-0 right-0 lg:ml-[10%] lg:mr-[10%] xl:ml-[10%] xl:mr-[10%] max-lg:grid max-lg:grid-cols-2">
+            {iconsLinks.map((data, index) => (
+              <Link
+                to={data.route}
+                key={index}
+                className="border-2 bg-secondary flex items-center block sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start">
+                <img src={data.icon} alt={data.title} className="size-[50px]" />
+                <p className="text-xl sm:text-sm xs:text-xs max-md:text-base lg:text-lg lg:truncate md:truncate pl-4 ">
+                  {data.title}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </>
@@ -50,5 +52,3 @@ const Herosection = () => {
 };
 
 export default Herosection;
-
-
