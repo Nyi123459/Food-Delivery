@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoPerson } from "react-icons/io5";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import Images from "../../assets";
-import BeOurPartner from "../PartnerShip/BeOurPartner";
+import BeOurPartner from "../Home/PartnerShip/BeOurPartner";
 import Login from "../../pages/Account/Login";
 import SignUp from "../../pages/Account/SignUp";
 
@@ -36,7 +36,7 @@ const Navbar = ({ onClose }: BarProps) => {
               <span className="text-red-500">Ride & Savor!</span>
             </p>
           </div>
-          <div className="sm:text-xs lg:text-base rounded px-1.5 py-1 lg:ml-[150px] lg:mr-auto sm:mr-[30px] md:mr-[80px] text-white">
+          <div className="sm:text-xs lg:text-base px-1.5 py-1 lg:ml-[150px] lg:mr-auto sm:mr-[30px] md:mr-[80px] text-white">
             <BeOurPartner />
           </div>
           <button type="button" onClick={handleClick}>
