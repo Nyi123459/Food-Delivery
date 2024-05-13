@@ -1,4 +1,4 @@
-import Images from "../assets";
+import { Images } from "../assets";
 
 export const iconsLinks = [
   {

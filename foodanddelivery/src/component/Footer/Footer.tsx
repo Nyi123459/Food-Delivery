@@ -1,4 +1,4 @@
-import Images from "../../assets";
+import { Images } from "../../assets";
 import { footerLinks } from "../../content";
 import styles from "../../style";
 
