@@ -1,4 +1,3 @@
-import React from "react";
 import { RxTriangleRight } from "react-icons/rx";
 import {Images} from "../../../assets";
 import { Link } from "react-router-dom";
@@ -7,7 +6,7 @@ import { iconsLinks } from "../../../constants";
 const Herosection = () => {
   return (
     <>
-      <div className="flex flex-col bg-primary relative">
+      <div className="flex flex-col bg-primary relative mb-20">
         <div className="max-md:flex-col flex mt-[5%] ml-[10%] mr-[10%] mb-[5%]">
           <div className="flex flex-col w-full md:w-1/2 ">
             <div className="max-w-[650px] lg:text-5xl md:text-3xl sm:text-2xl xs:text-xl text-white">
@@ -37,7 +36,8 @@ const Herosection = () => {
               <Link
                 to={data.route}
                 key={index}
-                className="border-2 bg-secondary flex items-center block sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start">
+                className="border-2 bg-secondary flex items-center block sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start"
+              >
                 <img src={data.icon} alt={data.title} className="size-[50px]" />
                 <p className="text-xl sm:text-sm xs:text-xs max-md:text-base lg:text-lg lg:truncate md:truncate pl-4 ">
                   {data.title}
