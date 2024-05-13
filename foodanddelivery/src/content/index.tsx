@@ -1,5 +1,5 @@
 import { RxAngle, RxFigmaLogo, RxGithubLogo } from "react-icons/rx";
-import Images from "../assets";
+import {Images} from "../assets";
 
 export const footerLinks = [
   {

@@ -27,7 +27,7 @@ interface Images {
   Question: string;
   MoneyBag: string;
 }
-const Images: Images = {
+export const Images: Images = {
   logo,
   TransportationIcon,
   FoodIcon,
@@ -43,4 +43,31 @@ const Images: Images = {
   MoneyBag,
 };
 
-export default Images;
+import ChickenBreast from "./Food/ChickenBreast.jpg";
+import Pancake from "./Food/Pancake.jpg";
+import Ramen from "./Food/Ramen.jpg";
+import RiceWithCurry from "./Food/RiceWithCurry.jpg";
+import ShrimpFriedRice from "./Food/ShrimpFriedRice.jpg";
+
+export const Food = [
+  {
+    image: ChickenBreast,
+    title: "Chicken Breast",
+  },
+  {
+    image: Pancake,
+    title: "Pancake",
+  },
+  {
+    image: Ramen,
+    title: "Ramen",
+  },
+  {
+    image: RiceWithCurry,
+    title: "Rice with Curry",
+  },
+  {
+    image: ShrimpFriedRice,
+    title: "Shrimp Fried Rice",
+  },
+];
