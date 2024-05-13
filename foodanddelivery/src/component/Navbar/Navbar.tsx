@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoPerson } from "react-icons/io5";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
-import Images from "../../assets";
+import {Images} from "../../assets";
 import BeOurPartner from "../Home/PartnerShip/BeOurPartner";
 import Login from "../../pages/Account/Login";
 import SignUp from "../../pages/Account/SignUp";

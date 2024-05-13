@@ -1,6 +1,6 @@
 import { IoPerson } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-import Images from "../../../assets";
+import {Images} from "../../../assets";
 import Login from "../../../pages/Account/Login";
 import SignUp from "../../../pages/Account/SignUp";
 
