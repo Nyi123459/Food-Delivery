@@ -1,10 +1,15 @@
 import { Modal } from "flowbite-react";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { useRef, useState } from "react";
 
 function BeOurPartner() {
+  const [openModal, setOpenModal] = useState(false);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
   return (
     <>
       <div
-        className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-primary px-[20px] py-[5px]"
+        className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-2 border-white shadow shadow-primary px-[20px] py-[5px]"
         onClick={() => setOpenModal(true)}
       >
         Be Our Partner

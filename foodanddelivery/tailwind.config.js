@@ -16,7 +16,7 @@ export const theme = {
       xl: "1280px",
     },
     fontFamily: {
-      bodyFont: ["DM Sans", "sans-serif"],
+      // bodyFont: ["DM Sans", "sans-serif"],
       titleFont: ["Poppins", "sans-serif"],
     },
     colors: {
@@ -30,3 +30,5 @@ export const theme = {
     },
   },
 };
+
+export const plugins = [require("daisyui")];

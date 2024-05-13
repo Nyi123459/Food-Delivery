@@ -5,14 +5,15 @@ import { IoPerson } from "react-icons/io5";
 import { useRef, useState } from "react";
 
 function SignUp() {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
   return (
     <>
       <div
         className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-shadownav px-[20px] py-[8px] flex items-center text-xs font-extrabold text-navcolor"
-        onClick={() => setOpenModal(true)}>
+        onClick={() => setOpenModal(true)}
+      >
         <IoPerson className="mr-1" />
         Sign Up
       </div>
@@ -26,7 +27,8 @@ function SignUp() {
         popup
         onClose={() => setOpenModal(false)}
         initialFocus={emailInputRef}
-        className="absolute top-full left-0">
+        className="absolute top-full left-0"
+      >
         <Modal.Header />
         <Modal.Body>
           <div className="space-y-6">

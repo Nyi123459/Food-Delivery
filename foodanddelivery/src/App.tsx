@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
 
 function App() {
   return (
-    <div className="font-bodyFont">
+    <div className="font-bodyFont style={{ margin: 0 }}">
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>

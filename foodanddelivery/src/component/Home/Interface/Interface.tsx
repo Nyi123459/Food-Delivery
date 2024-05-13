@@ -2,7 +2,7 @@ import Images from "../../../assets";
 
 const Interface = () => {
   return (
-    <>
+    <section className="container md:mx-auto px-4 md:px-8 lg:px-16 xl:px-20 pt-6 pb-20 overflow-hidden">
       <div className="font-bold flex justify-center text-2xl">
         Delivery Business Interfaces
       </div>
@@ -19,9 +19,9 @@ const Interface = () => {
         </button>
       </div>
       <div className="flex justify-center">
-        <img src={Images.InterfaceIcon} className="h-[100%] w-[100%]" />
+        <img src={Images.InterfaceIcon} className="max-w-[75%] max-h-[75 %]" />
       </div>
-    </>
+    </section>
   );
 };
 
