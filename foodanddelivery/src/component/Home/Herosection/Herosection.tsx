@@ -1,4 +1,3 @@
-import React from "react";
 import { RxTriangleRight } from "react-icons/rx";
 import Images from "../../../assets";
 import { Link } from "react-router-dom";
