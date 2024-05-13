@@ -5,7 +5,7 @@ import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { useRef, useState } from "react";
 
 function Login() {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
   return (

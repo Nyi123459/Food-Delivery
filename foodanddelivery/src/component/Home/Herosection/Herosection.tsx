@@ -31,8 +31,8 @@ const Herosection = () => {
             <img src={Images.Display} alt="Display-Photo" className="w-full" />
           </div>
         </div>
-        <div className="relative M">
-          <div className="flex absolute bottom-0 translate-y-1/2 max-lg:left-[10%] max-lg:right-[10%] gap-x-20 max-lg:gap-2 left-0 right-0 lg:ml-[10%] lg:mr-[10%] xl:ml-[10%] xl:mr-[10%] max-lg:grid max-lg:grid-cols-2">
+        <div className="relative">
+          <div className="flex absolute bottom-0 translate-y-1/2 max-lg:left-[10%] max-lg:right-[10%] gap-x-20 max-lg:gap-2 left-0 right-0 lg:ml-[10%] lg:mr-[10%] xl:ml-[10%] xl:mr-[10%] max-lg:grid max-lg:grid-cols-2 max-mdx:top-[-60px]">
             {iconsLinks.map((data, index) => (
               <Link
                 to={data.route}

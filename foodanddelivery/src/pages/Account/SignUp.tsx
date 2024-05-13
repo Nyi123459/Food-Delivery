@@ -5,7 +5,7 @@ import { IoPerson } from "react-icons/io5";
 import { useRef, useState } from "react";
 
 function SignUp() {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
   return (
