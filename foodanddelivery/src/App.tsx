@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import HomeRoute from "./pages/Home/HomeRoute";
-import Footer from "./component/Home/Footer/Footer";
+import Footer from "./component/Footer/Footer";
 import "./index.css";
 import FoodRoute from "./pages/Food/FoodRoute";
 

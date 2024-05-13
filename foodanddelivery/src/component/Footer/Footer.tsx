@@ -1,6 +1,6 @@
-import Images from "../../../assets";
-import { footerLinks } from "../../../content";
-import styles from "../../../style";
+import Images from "../../assets";
+import { footerLinks } from "../../content";
+import styles from "../../style";
 
 const Footer = () => {
   return (
