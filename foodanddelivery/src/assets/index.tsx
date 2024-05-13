@@ -11,6 +11,10 @@ import Rider from "./BecomePartner/Rider.png";
 import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
 import MoneyBag from "./money-bag.png";
+import Payment from '../assets/Instruction/payment.jpg';
+import Order from '../assets/Instruction/order.jpg';
+import Location from '../assets/Instruction/location.jpg';
+import Meal from '../assets/Instruction/meal.jpg';
 
 interface Images {
   logo: string;
@@ -26,6 +30,10 @@ interface Images {
   Store: string;
   Question: string;
   MoneyBag: string;
+  Payment: string;
+  Location: string;
+  Order: string;
+  Meal: string;
 }
 const Images: Images = {
   logo,
@@ -41,6 +49,10 @@ const Images: Images = {
   Store,
   Question,
   MoneyBag,
+  Payment,
+  Order,
+  Location,
+  Meal
 };
 
 export default Images;
