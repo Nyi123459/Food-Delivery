@@ -1,4 +1,5 @@
 import { Food } from "../../../assets";
+import DasiyUI from "daisyui";
 
 const Herosection = () => {
   return (
@@ -13,8 +14,8 @@ const Herosection = () => {
           </div>
           <div>Delivery</div>
         </div>
-        <div className="w-2/5 ">
-          <div className="carousel carousel-center bg-none rounded-box mt-[20%] mb-[20%] ml-[10%]">
+        <div className="w-2/5">
+          <div className="carousel carousel-start bg-none rounded-box mt-[20%] mb-[20%] ml-[10%]">
             <div className="carousel-item size-[250px] object-contain space-x-4 p-4 max-w-md">
               {Food.map((data, index) => (
                 <img src={data.image} alt={data.title} />
