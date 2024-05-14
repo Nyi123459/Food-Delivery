@@ -11,6 +11,11 @@ import Rider from "./BecomePartner/Rider.png";
 import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
 import MoneyBag from "./money-bag.png";
+import Payment from '../assets/Instruction/payment.jpg';
+import Order from '../assets/Instruction/order.jpg';
+import Location from '../assets/Instruction/location.jpg';
+import Meal from '../assets/Instruction/meal.jpg';
+import Newletters from './newletters.jpg';
 
 interface Images {
   logo: string;
@@ -26,6 +31,11 @@ interface Images {
   Store: string;
   Question: string;
   MoneyBag: string;
+  Payment: string;
+  Location: string;
+  Order: string;
+  Meal: string;
+  Newletters: string;
 }
 export const Images: Images = {
   logo,
@@ -41,15 +51,26 @@ export const Images: Images = {
   Store,
   Question,
   MoneyBag,
+  Payment,
+  Order,
+  Location,
+  Meal,
+  Newletters
 };
 
 import ChickenBreast from "./Food/ChickenBreast.jpg";
 import Pancake from "./Food/Pancake.jpg";
-import Ramen from "./Food/Ramen.jpg";
+import Pizza from "./Food/Pizza.jpg";
+import Burger from "./Food/Burger.jpg";
+import Breakfast from "./Food/Breakfast.jpg";
 import RiceWithCurry from "./Food/RiceWithCurry.jpg";
-import ShrimpFriedRice from "./Food/ShrimpFriedRice.jpg";
+import KyayOh from "./Food/Kyay Oh.jpg";
 
 export const Food = [
+  {
+    image: Pizza,
+    title: "Pizza",
+  },
   {
     image: ChickenBreast,
     title: "Chicken Breast",
@@ -59,15 +80,7 @@ export const Food = [
     title: "Pancake",
   },
   {
-    image: Ramen,
-    title: "Ramen",
-  },
-  {
-    image: RiceWithCurry,
-    title: "Rice with Curry",
-  },
-  {
-    image: ShrimpFriedRice,
-    title: "Shrimp Fried Rice",
+    image: Burger,
+    title: "Burger",
   },
 ];

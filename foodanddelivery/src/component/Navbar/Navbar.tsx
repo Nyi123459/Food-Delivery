@@ -48,7 +48,7 @@ const Navbar = ({ onClose }: BarProps) => {
           <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0">
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 items-center">
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 

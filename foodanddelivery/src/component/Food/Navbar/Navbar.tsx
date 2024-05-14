@@ -6,13 +6,15 @@ import SignUp from "../../../pages/Account/SignUp";
 
 const Navbar = () => {
   return (
-    <div className="flex-col">
-      <div className="flex ml-[10%] mr-[10%] py-4 items-center">
-        {/* User Icon (hidden on medium screens and larger) */}
-        <div className="hidden md:flex">
-          <IoPerson />
-        </div>
-
+    <>
+      <div className="flex-col">
+        <div className="flex ml-[10%] mr-[10%] py-4">
+          <div className="mdl:hidden ml-0">
+            <IoPerson />
+          </div>
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 ">
+            <img src={Images.logo} alt="Logo" className="w-50 h-6" />
+          </div>
         {/* Logo */}
         <div className="mr-auto flex items-center">
           <img
