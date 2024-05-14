@@ -17,7 +17,6 @@ import Location from '../assets/Instruction/location.jpg';
 import Meal from '../assets/Instruction/meal.jpg';
 import Newletters from './newletters.jpg';
 
-
 interface Images {
   logo: string;
   TransportationIcon: string;
