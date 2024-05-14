@@ -17,7 +17,6 @@ import Location from '../assets/Instruction/location.jpg';
 import Meal from '../assets/Instruction/meal.jpg';
 import Newletters from './newletters.jpg';
 
-
 interface Images {
   logo: string;
   TransportationIcon: string;
@@ -61,11 +60,17 @@ export const Images: Images = {
 
 import ChickenBreast from "./Food/ChickenBreast.jpg";
 import Pancake from "./Food/Pancake.jpg";
-import Ramen from "./Food/Ramen.jpg";
+import Pizza from "./Food/Pizza.jpg";
+import Burger from "./Food/Burger.jpg";
+import Breakfast from "./Food/Breakfast.jpg";
 import RiceWithCurry from "./Food/RiceWithCurry.jpg";
-import ShrimpFriedRice from "./Food/ShrimpFriedRice.jpg";
+import KyayOh from "./Food/Kyay Oh.jpg";
 
 export const Food = [
+  {
+    image: Pizza,
+    title: "Pizza",
+  },
   {
     image: ChickenBreast,
     title: "Chicken Breast",
@@ -75,15 +80,7 @@ export const Food = [
     title: "Pancake",
   },
   {
-    image: Ramen,
-    title: "Ramen",
-  },
-  {
-    image: RiceWithCurry,
-    title: "Rice with Curry",
-  },
-  {
-    image: ShrimpFriedRice,
-    title: "Shrimp Fried Rice",
+    image: Burger,
+    title: "Burger",
   },
 ];

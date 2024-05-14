@@ -1,6 +1,6 @@
 import { IoPerson } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
-import {Images} from "../../../assets";
+import { Images } from "../../../assets";
 import Login from "../../../pages/Account/Login";
 import SignUp from "../../../pages/Account/SignUp";
 
@@ -12,7 +12,7 @@ const Navbar = () => {
           <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0">
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 ">
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 
