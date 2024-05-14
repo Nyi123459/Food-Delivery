@@ -11,7 +11,7 @@ function SignUp() {
   return (
     <>
       <div
-        className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-shadownav px-[20px] py-[8px] flex items-center text-xs font-extrabold text-navcolor"
+        className="hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-shadownav px-[20px] py-[8px] flex items-center text-s font-bold text-navcolor"
         onClick={() => setOpenModal(true)}
       >
         <IoPerson className="mr-1" />

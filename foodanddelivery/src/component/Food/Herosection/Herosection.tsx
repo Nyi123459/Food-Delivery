@@ -14,10 +14,15 @@ const Herosection = () => {
           <div>Delivery</div>
         </div>
         <div className="w-2/5 ">
-          <div className="carousel carousel-center bg-none rounded-box mt-[20%] mb-[20%] ml-[10%]">
-            <div className="carousel-item size-[250px] object-contain space-x-4 p-4 max-w-md">
+          <div className="carousel carousel-center bg-none rounded-box mt-[20%] mb-[20%] ml-[10%] overflow-x-auto">
+            <div className="carousel-item flex space-x-4 p-4 max-w-md">
               {Food.map((data, index) => (
-                <img src={data.image} alt={data.title} />
+                <img
+                  key={index}
+                  src={data.image}
+                  alt={data.title}
+                  className="w-auto h-48 object-contain"
+                />
               ))}
             </div>
           </div>
