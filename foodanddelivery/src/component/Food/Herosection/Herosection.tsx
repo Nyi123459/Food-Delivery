@@ -25,14 +25,18 @@ const Herosection = () => {
           </div>
           <div>Delivery</div>
         </div>
-        <div className="w-2/5 mt-[10%] mb-[10%]">
-          <Slider {...settings}>
-            {Food.map((data, index) => (
-              <div key={index} className="size-[250px] ">
-                <img src={data.image} alt={data.title} />
+        <div className="w-2/5">
+          <div className="carousel carousel-center max-w-md p-2 rounded-box mt-[20%] mb-[20%] ml-[10%] mr-[10%]">
+            {Food.map((data) => (
+              <div className="carousel-item h-[100%] w-[60%] left-0 ">
+                <img
+                  src={data.image}
+                  alt={data.title}
+                  className="max-h-[250px] w-auto rounded-box"
+                />
               </div>
             ))}
-          </Slider>
+          </div>
         </div>
       </div>
     </section>
@@ -40,3 +44,34 @@ const Herosection = () => {
 };
 
 export default Herosection;
+
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+//   const settings = {
+//     infinite: true,
+//     speed: 600,
+//     slidesToShow: 2,
+//     slidesToScroll: 1,
+//   };
+
+{
+  /* <div className="w-2/5 ">
+  <div className="carousel carousel-center max-w-md p-6 rounded-box mt-[20%] mb-[20%] ml-[10%] mr-[10%]">
+    <div className="flex flex-col bottom-0 size-[300px]">
+      <Slider {...settings}>
+        {Food.map((data) => (
+          <div>
+            <img
+              src={data.image}
+              alt={data.title}
+              className="max-h-[250px] w-auto rounded-box"
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  </div>
+</div>; */
+}
