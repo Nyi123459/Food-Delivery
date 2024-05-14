@@ -11,10 +11,12 @@ import Rider from "./BecomePartner/Rider.png";
 import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
 import MoneyBag from "./money-bag.png";
-import Payment from "../assets/Instruction/payment.jpg";
-import Order from "../assets/Instruction/order.jpg";
-import Location from "../assets/Instruction/location.jpg";
-import Meal from "../assets/Instruction/meal.jpg";
+import Payment from '../assets/Instruction/payment.jpg';
+import Order from '../assets/Instruction/order.jpg';
+import Location from '../assets/Instruction/location.jpg';
+import Meal from '../assets/Instruction/meal.jpg';
+import Newletters from './newletters.jpg';
+
 
 interface Images {
   logo: string;
@@ -34,6 +36,7 @@ interface Images {
   Location: string;
   Order: string;
   Meal: string;
+  Newletters: string;
 }
 export const Images: Images = {
   logo,
@@ -53,6 +56,7 @@ export const Images: Images = {
   Order,
   Location,
   Meal,
+  Newletters
 };
 
 import ChickenBreast from "./Food/ChickenBreast.jpg";
