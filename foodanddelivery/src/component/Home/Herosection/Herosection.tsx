@@ -1,5 +1,5 @@
 import { RxTriangleRight } from "react-icons/rx";
-import {Images} from "../../../assets";
+import { Images } from "../../../assets";
 import { Link } from "react-router-dom";
 import { iconsLinks } from "../../../constants";
 
@@ -13,15 +13,15 @@ const Herosection = () => {
               Ride & Savor <br />
               Delivery Service Management
             </div>
-            <p className="lg:text-base md:text-sm sm:text-xs xs:text-xs">
+            <p className="lg:text-base md:text-sm sm:text-xs xs:text-xs mt-2">
               Track and optimize routes in real-time
             </p>
             <div className="flex mt-[10%] mb-[10%] items-center max-lg:mb-0">
-              <p className=" shadow shadow-black bg-[#F17228] font-semibold text-base max-lg:text-sm max-md:text-xs text-white text-center flex justify-center items-center rounded-lg px-2 py-1 ">
+              <p className=" shadow shadow-black bg-[#F17228] font-medium text-base max-lg:text-sm max-md:text-xs text-white text-center flex justify-center items-center rounded-lg px-2 py-1 ">
                 Get Started
               </p>
               <RxTriangleRight className="ml-[20px] h-[25px] w-[25px] rounded-full bg-[#F17228] border-[1.2px] border-none shadow shadow-black" />{" "}
-              <p className="text-white text-sm ml-[10px] justify-center ">
+              <p className="text-white font-medium text-base ml-[10px] justify-center ">
                 Watch how it works{" "}
               </p>
             </div>

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
+
 export const theme = {
   extend: {
     maxWidth: {
@@ -17,8 +18,7 @@ export const theme = {
       xl: "1280px",
     },
     fontFamily: {
-      // bodyFont: ["DM Sans", "sans-serif"],
-      titleFont: ["Poppins", "sans-serif"],
+      bodyFont: ["Poppins", "sans-serif"],
     },
     colors: {
       primary: "#FFC740",
@@ -30,5 +30,5 @@ export const theme = {
       testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
     },
   },
+  plugins: [require("daisyui"), require("flowbite-react/tailwind")],
 };
-export const plugins = [require("daisyui")];
