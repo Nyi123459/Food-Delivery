@@ -1,76 +1,105 @@
-import { Modal } from "flowbite-react";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { useRef, useState } from "react";
+// import { Dropdown, DropdownMenu } from "flowbite-react"; // Import DropdownMenu
 
-function BeOurPartner() {
-  const [openModal, setOpenModal] = useState(false);
-  const emailInputRef = useRef<HTMLInputElement>(null);
+// function BeOurPartner() {
+//   return (
+//     <Dropdown
+//       placement="top" // Set placement to "top" for above all layers
+//       className="hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out rounded-lg border-2 border-white shadow shadow-primary px-[20px] py-[5px]"
+//       label="Be Our Partner"
+//     >
+//       <Dropdown.Menu // Wrap Dropdown items in DropdownMenu
+//         className="z-50" // Set z-index to 50 to ensure it appears above all layers
+//       >
+//         <Dropdown.Item hover="bg-gray-200">Food / Mart Merchant</Dropdown.Item>
+//         <Dropdown.Item hover="bg-gray-200">Savor Driver</Dropdown.Item>
+//         <Dropdown.Item hover="bg-gray-200">Savor Rider</Dropdown.Item>
+//       </Dropdown.Menu>
+//     </Dropdown>
+//   );
+// }
 
-  return (
-    <>
-      <div
-        className="hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-2 border-white shadow shadow-primary px-[20px] py-[5px]"
-        onClick={() => setOpenModal(true)}
-      >
-        Be Our Partner
-      </div>
+// export default BeOurPartner;
 
-      {openModal && (
-        <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50"></div>
-      )}
-      <Modal
-        show={openModal}
-        size="md"
-        popup
-        onClose={() => setOpenModal(false)}
-        initialFocus={emailInputRef}
-        className="absolute top-full left-0"
-      >
-        <Modal.Header />
-        <Modal.Body>
-          <div className="space-y-6">
-            <div className="mb-6">
-              <h1 className="text-2xl font-semibold text-gray-800">Welcome!</h1>
-              <h3 className="text-base font-light  text-gray-600">
-                Sign up or log in to continue.
-              </h3>
-            </div>
-            <form className="space-y-4">
-              <div className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  <FaFacebook className="text-xl mr-2 -ml-1" />
-                  <span className="text-center">Continue with Facebook</span>
-                </button>
-              </div>
+import { Fragment, useState } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-              <div className="w-full flex justify-center py-2 px-4 border border-current rounded-md shadow-sm text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  <FaGoogle className="text-xl mr-2 -ml-1" />
-                  <span className="text-center">Continue with Google</span>
-                </button>
-              </div>
+const menuItems = [
+  { label: "Food Merchant", href: "#" },
+  { label: "Mart Merchant", href: "#" },
+  { label: "Savor Driver", href: "#" },
+  { label: "Savor Rider", type: "submit", href: "#" },
+];
 
-              <div className="w-full flex justify-center py-2 px-4s  text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2">
-                or
-              </div>
-
-              <div className="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-base font-medium bg-yellow-500 hover:bg-yellow-400 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  Log in
-                </button>
-              </div>
-
-              <div className="w-full flex justify-center py-2 px-4 border border-yellow-500 rounded-md shadow-sm text-base font-medium hover:bg-yellow-100 hover:border-transparent text-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  Sign Up
-                </button>
-              </div>
-            </form>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
 }
 
-export default BeOurPartner;
+export default function Example() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button
+          className="inline-flex w-full justify-center gap-x-1.5 text-s font-semibold ring-1 ring-inset ring-gray-300 hover:-translate-y-1 hover:scale-110 hover:bg-yellow-500 transition duration-700 ease-in-out rounded-lg border-2 border-white shadow shadow-primary px-[20px] py-[5px]"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          Be Our Partner
+          <ChevronDownIcon
+            className="-mr-1 h-5 w-5 text-white"
+            aria-hidden="true"
+          />
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        {isOpen && (
+          <Menu.Items className="absolute right-0 z-10 mt-2 w-56 text-s origin-top-right rounded-md bg-white shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
+            <div className="py-1">
+              {menuItems.map((item, index) => (
+                <Menu.Item key={index}>
+                  {({ active }) =>
+                    item.type === "submit" ? (
+                      <button
+                        type="submit"
+                        className={classNames(
+                          active
+                            ? "bg-gray-100 text-gray-900"
+                            : "text-gray-700",
+                          "block w-full px-4 py-2 text-left text-s"
+                        )}
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className={classNames(
+                          active
+                            ? "bg-gray-100 text-gray-900"
+                            : "text-gray-700",
+                          "block px-4 py-2 text-s"
+                        )}
+                      >
+                        {item.label}
+                      </a>
+                    )
+                  }
+                </Menu.Item>
+              ))}
+            </div>
+          </Menu.Items>
+        )}
+      </Transition>
+    </Menu>
+  );
+}

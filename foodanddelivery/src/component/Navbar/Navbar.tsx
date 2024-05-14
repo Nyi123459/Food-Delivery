@@ -24,7 +24,8 @@ const Navbar = ({ onClose }: BarProps) => {
         <div
           className={`bg-primary flex items-center px-[10%] py-2.5 ${
             !isOpen && "hidden"
-          }`}>
+          }`}
+        >
           <div className="flex sm:ml-0 sm:mr-[20px] lg:ml-[20%] md:ml-[20%]">
             <img
               src={Images.MoneyBag}
@@ -61,7 +62,7 @@ const Navbar = ({ onClose }: BarProps) => {
                 }}
               />
               <input
-                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px] max-mdl:hidden"
+                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-s max-mdl:hidden"
                 type="text"
                 placeholder="Search"
               />
