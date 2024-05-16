@@ -3,25 +3,26 @@ import { Food } from "../../../assets";
 import { RiMotorbikeFill } from "react-icons/ri";
 import { FaShoppingBag } from "react-icons/fa";
 import { IoMdSearch } from "react-icons/io";
+import { Carousel, IconButton } from "@material-tailwind/react";
 
 const Herosection = () => {
   return (
-    <section className="bg-primary h-[550px]">
-      <div className="flex ml-[10%] mr-[10%]">
-        <div className="flex flex-col w-3/5 mt-[10%]">
-          <div className="text-5xl text-white font-bold ">
+    <section className="bg-primary h-[550px] max-mdx:h-[870px]">
+      <div className="flex max-mdx:flex-col ml-[10%] mr-[10%] max-sml:h-[550px]">
+        <div className="flex flex-col w-3/5 mt-[10%] max-mdx:w-full">
+          <div className="text-5xl text-white font-bold max-mdl:text-4xl max-md:text-3xl ">
             Would you like to be with me?
-            <p className="text-base mt-[10%] text-black font-normal">
+            <p className="text-base mt-[10%] text-black font-normal max-mdl:text-sm max-md:text-xs">
               Accessible meals and taxis, just a few clicks away.
             </p>
           </div>
-          <div className="flex flex-col mb-[10%] mt-[10%] border-2 bg-white rounded-xl h-[60%]">
+          <div className="flex flex-col mb-[10%] mt-[10%] border-2 bg-white rounded-xl h-[60%] max-mdl:h-[30%]">
             <div className="flex ml-[5%] h-[50px] gap-3 items-center">
-              <div className="flex rounded border-none h-[80%] w-[20%] justify-center items-center cursor-pointer hover:shadow-md hover:shadow-secondary hover:scale-110 transition duration-600 ease-in-out">
+              <div className="flex rounded border-none h-[80%] w-[20%] justify-center items-center cursor-pointer hover:shadow-md hover:shadow-secondary hover:scale-110 transition duration-600 ease-in-out max-mdl:text-sm max-md:text-xs">
                 <RiMotorbikeFill />
                 Delivery
               </div>
-              <div className="flex rounded border-none h-[80%] w-[20%] justify-center items-center cursor-pointer hover:shadow-md hover:shadow-secondary hover:scale-110 transition duration-600 ease-in-out">
+              <div className="flex rounded border-none h-[80%] w-[20%] justify-center items-center cursor-pointer hover:shadow-md hover:shadow-secondary hover:scale-110 transition duration-600 ease-in-out max-mdl:text-sm max-md:text-xs">
                 <FaShoppingBag />
                 Pickup
               </div>
@@ -33,6 +34,7 @@ const Herosection = () => {
                     color: "#EF4358",
                     fontSize: "1.2rem",
                   }}
+                  className="ml-[5%]"
                 />{" "}
                 <input
                   className="w-full h-full outline-none "
@@ -40,16 +42,16 @@ const Herosection = () => {
                   placeholder="Search Food"
                 />
               </div>
-              <div className="mr-[5%] border-none h-[60%] w-[20%] rounded-md bg-navcolor flex items-center justify-center cursor-pointer shadow-md shadow-shadownav">
+              <div className="max-mdl:text-sm max-md:text-xs mr-[5%] border-none h-[60%] w-[20%] rounded-md bg-navcolor flex items-center justify-center cursor-pointer shadow-md shadow-shadownav ">
                 Find Food
               </div>
             </div>
           </div>
         </div>
-        <div className="w-2/5 h-full mt-[10%]">
+        <div className="w-2/5 h-full mt-[10%] max-mdx:hidden">
           <div className="carousel carousel-center max-w-md p-2 rounded-box mt-[10%] mb-[20%] ml-[10%] mr-[10%]">
             {Food.map((data) => (
-              <div className="carousel-item h-[100%] w-[70%] max-lgl:h-[90%] max-lgl:w-[50%]">
+              <div className="carousel-item h-[100%] w-[70%] max-lgx:h-[50%] max-lgx:w-[90%]">
                 <img
                   src={data.image}
                   alt={data.title}
@@ -58,6 +60,64 @@ const Herosection = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="size-full lg:hidden">
+          {Food.map((data, index) => (
+            <Carousel
+              transition={{ duration: 1 }}
+              className="rounded-xl"
+              prevArrow={({ handlePrev }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handlePrev}
+                  className="!absolute top-2/4 left-4 -translate-y-2/4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="h-6 w-6">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                    />
+                  </svg>
+                </IconButton>
+              )}
+              nextArrow={({ handleNext }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handleNext}
+                  className="!absolute top-2/4 !right-4 -translate-y-2/4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="h-6 w-6">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </IconButton>
+              )}>
+              <img
+                key={index}
+                src={data.image}
+                alt={data.title}
+                className="h-[30px] w-full object-cover rounded-box"
+              />
+            </Carousel>
+          ))}
         </div>
       </div>
     </section>

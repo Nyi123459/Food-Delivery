@@ -62,9 +62,6 @@ import ChickenBreast from "./Food/ChickenBreast.jpg";
 import Pancake from "./Food/Pancake.jpg";
 import Pizza from "./Food/Pizza.jpg";
 import Burger from "./Food/Burger.jpg";
-import Breakfast from "./Food/Breakfast.jpg";
-import RiceWithCurry from "./Food/RiceWithCurry.jpg";
-import KyayOh from "./Food/Kyay Oh.jpg";
 
 export const Food = [
   {
