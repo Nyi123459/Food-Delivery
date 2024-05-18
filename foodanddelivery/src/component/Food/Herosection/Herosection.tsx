@@ -62,17 +62,15 @@ const Herosection = () => {
           </div>
         </div>
         <div className="mdx:hidden">
-          <Carousel>
-            <div className="flex gap-3">
-              {Food.map((data, index) => (
-                <img
-                  key={index}
-                  src={data.image}
-                  alt={data.title}
-                  className="h-[250px] w-auto rounded-box"
-                />
-              ))}
-            </div>
+          <Carousel autoSlide={false}>
+            {Food.map((data, index) => (
+              <img
+                key={index}
+                src={data.image}
+                alt={data.title}
+                className="h-[250px] w-auto rounded-box"
+              />
+            ))}
           </Carousel>
         </div>
       </div>
