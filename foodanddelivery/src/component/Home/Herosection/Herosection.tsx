@@ -36,10 +36,9 @@ const Herosection = () => {
               <Link
                 to={data.route}
                 key={index}
-                className="border-2 bg-secondary flex items-center block sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start"
-              >
+                className="border-2 bg-secondary flex items-center sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start">
                 <img src={data.icon} alt={data.title} className="size-[50px]" />
-                <p className="text-xl sm:text-sm xs:text-xs max-md:text-base lg:text-lg lg:truncate md:truncate pl-4 ">
+                <p className="text-xl font-bold sm:text-sm xs:text-xs max-md:text-base lg:truncate md:truncate pl-2 ">
                   {data.title}
                 </p>
               </Link>
