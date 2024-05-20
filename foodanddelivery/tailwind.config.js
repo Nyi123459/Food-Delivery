@@ -1,5 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
+const withMT = require("@material-tailwind/react/utils/withMT");
 
 export const theme = {
   extend: {
@@ -33,7 +32,5 @@ export const theme = {
       testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
     },
   },
-  plugins: [require("flowbite-react/tailwind")],
+  plugins: [require("flowbite-react/tailwind"), require("daisyui")],
 };
-
-export const plugins = [require("daisyui")];

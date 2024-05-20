@@ -1,3 +1,4 @@
+/* Icons */
 import logo from "./logo.png";
 import TransportationIcon from "./Page/Taxi.png";
 import FoodIcon from "./Page/Food.png";
@@ -21,6 +22,11 @@ import AppleWhite from "./DownloadApp/AppleWhite.png";
 import PlayStoreIcon from "./DownloadApp/PlayStore.png";
 import QrCode from "./DownloadApp/QrCode.png";
 import MobileApp from "./DownloadApp/MobileApp.png";
+
+import BeefBarger from "../assets/Food/DailyDeal/beefbarger.jpg";
+import Coffee from "../assets/Food/DailyDeal/coffee4.jpg";
+import Desert from "../assets/Food/DailyDeal/desert1.jpg";
+import Strawberry from "../assets/Food/DailyDeal/strawberryjuice.jpg";
 
 interface Images {
   logo: string;
@@ -46,6 +52,10 @@ interface Images {
   PlayStoreIcon: string;
   QrCode: string;
   MobileApp: string;
+  BeefBarger: string;
+  Coffee: string;
+  Desert: string;
+  Strawberry: string;
 }
 export const Images: Images = {
   logo,
@@ -71,15 +81,21 @@ export const Images: Images = {
   PlayStoreIcon,
   QrCode,
   MobileApp,
+
+  BeefBarger,
+  Coffee,
+  Desert,
+  Strawberry,
 };
 
-import ChickenBreast from "./Food/ChickenBreast.jpg";
-import Pancake from "./Food/Pancake.jpg";
-import Pizza from "./Food/Pizza.jpg";
-import Burger from "./Food/Burger.jpg";
-import Breakfast from "./Food/Breakfast.jpg";
-import RiceWithCurry from "./Food/RiceWithCurry.jpg";
-import KyayOh from "./Food/Kyay Oh.jpg";
+/* Images for Herosection of Food Page  */
+import ChickenBreast from "./Food/Herosection/ChickenBreast.jpg";
+import Pancake from "./Food/Herosection/Pancake.jpg";
+import Pizza from "./Food/Herosection/Pizza.jpg";
+import Burger from "./Food/Herosection/Burger.jpg";
+import Breakfast from "./Food/Herosection/Breakfast.jpg";
+import RiceWithCurry from "./Food/Herosection/RiceWithCurry.jpg";
+import KyayOh from "./Food/Herosection/Kyay Oh.jpg";
 
 export const Food = [
   {
@@ -95,7 +111,39 @@ export const Food = [
     title: "Pancake",
   },
   {
+    image: Breakfast,
+    title: "Breakfast",
+  },
+  {
     image: Burger,
     title: "Burger",
+  },
+  {
+    image: RiceWithCurry,
+    title: "Rice With Curry",
+  },
+  {
+    image: KyayOh,
+    title: "Kyay Oh",
+  },
+];
+
+/* Images for BestDeals of Food page  */
+import Sandwiches from "./Food/Image/Sandwiches.png";
+import FriedChicken from "./Food/Image/FriedChicken.png";
+import PizzaDeal from "./Food/Image/Pizza-deal.png";
+
+export const Image = [
+  {
+    image: Sandwiches,
+    title: "Sandwiches",
+  },
+  {
+    image: FriedChicken,
+    title: "Fried Chicken",
+  },
+  {
+    image: PizzaDeal,
+    title: "Pizza",
   },
 ];
