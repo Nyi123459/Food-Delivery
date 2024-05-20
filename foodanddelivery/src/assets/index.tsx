@@ -16,6 +16,10 @@ import Order from '../assets/Instruction/order.jpg';
 import Location from '../assets/Instruction/location.jpg';
 import Meal from '../assets/Instruction/meal.jpg';
 import Newletters from './newletters.jpg';
+import BeefBarger from '../assets/Food/DailyDeal/beefbarger.jpg'
+import Coffee from '../assets/Food/DailyDeal/coffee4.jpg'
+import Desert from '../assets/Food/DailyDeal/desert1.jpg'
+import Strawberry from '../assets/Food/DailyDeal/strawberryjuice.jpg'
 
 interface Images {
   logo: string;
@@ -36,6 +40,12 @@ interface Images {
   Order: string;
   Meal: string;
   Newletters: string;
+  BeefBarger:string;
+  Coffee:string;
+  Desert:string;
+  Strawberry:string;
+
+
 }
 export const Images: Images = {
   logo,
@@ -55,7 +65,12 @@ export const Images: Images = {
   Order,
   Location,
   Meal,
-  Newletters
+  Newletters,
+  BeefBarger,
+  Coffee,
+  Desert,
+  Strawberry
+
 };
 
 import ChickenBreast from "./Food/ChickenBreast.jpg";
@@ -84,3 +99,7 @@ export const Food = [
     title: "Burger",
   },
 ];
+
+
+
+

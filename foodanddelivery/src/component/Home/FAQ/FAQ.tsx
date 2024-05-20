@@ -8,7 +8,7 @@ const FAQ = () => {
       <div className="flex justify-center my-4">
         <img src={Images.Question} className="h-8 w-8" alt="Question Icon" />
       </div>
-      <div className="text-2xl font-bold flex justify-center mb-1">
+      <div className="font-bold text-center text-2xl">
         <h2>Frequently Asked Questions</h2>
       </div>
       <div className="px-4 md:px-8 lg:px-16 xl:px-20 py-8 md:py-12 lg:py-16 xl:py-20">
