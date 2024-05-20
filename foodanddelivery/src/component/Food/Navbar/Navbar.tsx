@@ -11,41 +11,33 @@ const Navbar = () => {
           <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 ">
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 items-center">
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
-        {/* Logo */}
-        <div className="mr-auto flex items-center">
-          <img
-            src={Images.logo}
-            alt="Logo"
-            className="h-auto object-cover max-w-[100px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[250px]"
-          />
-        </div>
 
-        {/* Search Bar (visible on medium screens and larger) */}
-        <div className="gap-4 items-center md:flex hidden flex-1">
-          <FaLocationDot
-            style={{
-              color: "#EF4358",
-              fontSize: "1.2rem",
-              marginRight: "10px",
-            }}
-          />
-          <input
-            className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px] border-none"
-            type="text"
-            placeholder="Enter Your Address"
-          />
-        </div>
+          <div className="flex gap-4 hidden mdl:flex">
+            <div className="flex items-center">
+              <FaLocationDot
+                style={{
+                  color: "#EF4358",
+                  fontSize: "1.2rem",
+                  marginRight: "10px",
+                }}
+              />
+              <input
+                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px] max-mdl:hidden"
+                type="text"
+                placeholder="Enter Your Adress"
+              />
+            </div>
 
-        {/* Login and Signup buttons */}
-        <div className="flex gap-2">
-          <Login />
-          <SignUp />
+            <Login />
+
+            <SignUp />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
