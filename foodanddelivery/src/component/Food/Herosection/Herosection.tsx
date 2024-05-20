@@ -1,4 +1,3 @@
-import React from "react";
 import { Food } from "../../../assets";
 import { RiMotorbikeFill } from "react-icons/ri";
 import { FaShoppingBag } from "react-icons/fa";

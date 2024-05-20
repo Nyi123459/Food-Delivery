@@ -26,9 +26,14 @@ export const theme = {
       navcolor: "#EF4358",
       shadownav: "#FF8A00",
     },
+    dropShadow: {
+      "custom-white": "0 10px 15px rgba(255, 255, 255, 0.5)", // Adjust the color and opacity as needed
+    },
     boxShadow: {
       testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
     },
   },
-  plugins: [require("daisyui"), require("flowbite-react/tailwind")],
+  plugins: [require("flowbite-react/tailwind")],
 };
+
+export const plugins = [require("daisyui")];

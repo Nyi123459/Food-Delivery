@@ -11,11 +11,16 @@ import Rider from "./BecomePartner/Rider.png";
 import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
 import MoneyBag from "./money-bag.png";
-import Payment from '../assets/Instruction/payment.jpg';
-import Order from '../assets/Instruction/order.jpg';
-import Location from '../assets/Instruction/location.jpg';
-import Meal from '../assets/Instruction/meal.jpg';
-import Newletters from './newletters.jpg';
+import Payment from "../assets/Instruction/payment.jpg";
+import Order from "../assets/Instruction/order.jpg";
+import Location from "../assets/Instruction/location.jpg";
+import Meal from "../assets/Instruction/meal.jpg";
+import Newletters from "./newletters.jpg";
+import AppleBlack from "./DownloadApp/AppleBlack.png";
+import AppleWhite from "./DownloadApp/AppleWhite.png";
+import PlayStoreIcon from "./DownloadApp/PlayStore.png";
+import QrCode from "./DownloadApp/QrCode.png";
+import MobileApp from "./DownloadApp/MobileApp.png";
 
 interface Images {
   logo: string;
@@ -36,6 +41,11 @@ interface Images {
   Order: string;
   Meal: string;
   Newletters: string;
+  AppleBlack: string;
+  AppleWhite: string;
+  PlayStoreIcon: string;
+  QrCode: string;
+  MobileApp: string;
 }
 export const Images: Images = {
   logo,
@@ -55,7 +65,12 @@ export const Images: Images = {
   Order,
   Location,
   Meal,
-  Newletters
+  Newletters,
+  AppleBlack,
+  AppleWhite,
+  PlayStoreIcon,
+  QrCode,
+  MobileApp,
 };
 
 import ChickenBreast from "./Food/ChickenBreast.jpg";

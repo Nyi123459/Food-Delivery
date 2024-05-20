@@ -6,26 +6,25 @@ import SignUp from "../../../pages/Account/SignUp";
 
 const Navbar = () => {
   return (
-    <>
-      <div className="flex-col">
-        <div className="flex ml-[10%] mr-[10%] py-4">
-          <div className="mdl:hidden ml-0">
-            <IoPerson />
-          </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 ">
-            <img src={Images.logo} alt="Logo" className="w-50 h-6" />
-          </div>
+    <div className="flex-col">
+      <div className="flex ml-[10%] mr-[10%] py-4">
+        <div className="mdl:hidden ml-0">
+          <IoPerson />
+        </div>
+        <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 ">
+          <img src={Images.logo} alt="Logo" className="w-50 h-6" />
+        </div>
         {/* Logo */}
-        <div className="mr-auto flex items-center">
+        {/* <div className="mr-auto flex items-center">
           <img
             src={Images.logo}
             alt="Logo"
             className="h-auto object-cover max-w-[100px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-[250px]"
           />
-        </div>
+        </div> */}
 
         {/* Search Bar (visible on medium screens and larger) */}
-        <div className="gap-4 items-center md:flex hidden flex-1">
+        <div className="flex gap-4 items-center md:flex hidden flex-1">
           <FaLocationDot
             style={{
               color: "#EF4358",

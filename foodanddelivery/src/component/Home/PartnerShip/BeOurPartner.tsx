@@ -1,25 +1,3 @@
-// import { Dropdown, DropdownMenu } from "flowbite-react"; // Import DropdownMenu
-
-// function BeOurPartner() {
-//   return (
-//     <Dropdown
-//       placement="top" // Set placement to "top" for above all layers
-//       className="hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out rounded-lg border-2 border-white shadow shadow-primary px-[20px] py-[5px]"
-//       label="Be Our Partner"
-//     >
-//       <Dropdown.Menu // Wrap Dropdown items in DropdownMenu
-//         className="z-50" // Set z-index to 50 to ensure it appears above all layers
-//       >
-//         <Dropdown.Item hover="bg-gray-200">Food / Mart Merchant</Dropdown.Item>
-//         <Dropdown.Item hover="bg-gray-200">Savor Driver</Dropdown.Item>
-//         <Dropdown.Item hover="bg-gray-200">Savor Rider</Dropdown.Item>
-//       </Dropdown.Menu>
-//     </Dropdown>
-//   );
-// }
-
-// export default BeOurPartner;
-
 import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
