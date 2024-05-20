@@ -31,7 +31,7 @@ const ResponsiveComponent: React.FC = () => {
             transform: translate(-50%, -20%);
           }
 
-          button {
+          button .last{
             top: 60%;
             left: 50%;
             transform: translate(-50%, -20%);
@@ -51,7 +51,7 @@ const ResponsiveComponent: React.FC = () => {
             transform: translate(-50%, -18%);
           }
 
-          button {
+          button .last{
             top: 55%;
             left: 50%;
             transform: translate(-50%, -18%);
