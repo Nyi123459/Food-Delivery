@@ -6,7 +6,6 @@ import SignUp from "../../../pages/Account/SignUp";
 
 const Navbar = () => {
   return (
-    <>
       <div className="flex-col">
         <div className="flex ml-[10%] mr-[10%] py-4">
           <div className="mdl:hidden ml-0">

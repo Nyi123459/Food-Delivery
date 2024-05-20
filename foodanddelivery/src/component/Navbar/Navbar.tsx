@@ -48,7 +48,7 @@ const Navbar = ({ onClose }: BarProps) => {
           <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
-          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 items-center">
+          <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0">
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 
@@ -62,7 +62,7 @@ const Navbar = ({ onClose }: BarProps) => {
                 }}
               />
               <input
-                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-s max-mdl:hidden"
+                className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px] max-mdl:hidden"
                 type="text"
                 placeholder="Search"
               />
