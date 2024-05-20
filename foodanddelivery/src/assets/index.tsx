@@ -42,12 +42,10 @@ interface Images {
   Order: string;
   Meal: string;
   Newletters: string;
-  BeefBarger:string;
-  Coffee:string;
-  Desert:string;
-  Strawberry:string;
-
-
+  BeefBarger: string;
+  Coffee: string;
+  Desert: string;
+  Strawberry: string;
 }
 export const Images: Images = {
   logo,
@@ -134,7 +132,3 @@ export const Image = [
     title: "Pizza",
   },
 ];
-
-
-
-
