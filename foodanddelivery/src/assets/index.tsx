@@ -12,15 +12,16 @@ import Rider from "./BecomePartner/Rider.png";
 import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
 import MoneyBag from "./money-bag.png";
-import Payment from "../assets/Instruction/payment.jpg";
-import Order from "../assets/Instruction/order.jpg";
-import Location from "../assets/Instruction/location.jpg";
-import Meal from "../assets/Instruction/meal.jpg";
-import Newletters from "./newletters.jpg";
-import BeefBarger from "../assets/Food/DailyDeal/beefbarger.jpg";
-import Coffee from "../assets/Food/DailyDeal/coffee4.jpg";
-import Desert from "../assets/Food/DailyDeal/desert1.jpg";
-import Strawberry from "../assets/Food/DailyDeal/strawberryjuice.jpg";
+import Payment from '../assets/Instruction/payment.jpg';
+import Order from '../assets/Instruction/order.jpg';
+import Location from '../assets/Instruction/location.jpg';
+import Meal from '../assets/Instruction/meal.jpg';
+import Newletters from './newletters.jpg';
+import BeefBarger from '../assets/Food/DailyDeal/beefbarger.jpg'
+import Coffee from '../assets/Food/DailyDeal/coffee4.jpg'
+import Desert from '../assets/Food/DailyDeal/desert1.jpg'
+import Strawberry from '../assets/Food/DailyDeal/strawberryjuice.jpg'
+
 
 interface Images {
   logo: string;
@@ -65,10 +66,11 @@ export const Images: Images = {
   Location,
   Meal,
   Newletters,
+
   BeefBarger,
   Coffee,
   Desert,
-  Strawberry,
+  Strawberry
 };
 
 /* Images for Herosection of Food Page  */
