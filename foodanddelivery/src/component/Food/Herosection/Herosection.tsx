@@ -7,7 +7,7 @@ import Carousel from "./Carousel";
 
 const Herosection = () => {
   return (
-    <section className="bg-primary xs:h-[550px] max-md:h-[670px] max-mdx:h-[870px]">
+    <section className="bg-primary h-[760px] md:h-[870px] mdx:h-[550px]">
       <div className="flex max-mdx:flex-col ml-[10%] mr-[10%]">
         <div className="flex flex-col w-3/5 mt-[10%] max-mdx:w-full">
           <div className="text-5xl text-white font-bold max-mdl:text-4xl max-md:text-3xl">
@@ -19,11 +19,11 @@ const Herosection = () => {
           <div className="flex flex-col mb-[10%] mt-[10%] border-2 bg-white rounded-xl h-[60%] max-mdl:h-[30%]">
             <div className="flex ml-[5%] h-[50px] gap-3 items-center">
               <div className="flex rounded border-none h-[80%] w-[20%] justify-center items-center cursor-pointer hover:shadow-md hover:shadow-secondary hover:scale-110 transition duration-600 ease-in-out max-mdl:text-sm max-md:text-xs">
-                <RiMotorbikeFill />
+                <RiMotorbikeFill className="max-sml:hidden" />
                 Delivery
               </div>
               <div className="flex rounded border-none h-[80%] w-[20%] justify-center items-center cursor-pointer hover:shadow-md hover:shadow-secondary hover:scale-110 transition duration-600 ease-in-out max-mdl:text-sm max-md:text-xs">
-                <FaShoppingBag />
+                <FaShoppingBag className="max-sml:hidden" />
                 Pickup
               </div>
             </div>
@@ -39,7 +39,7 @@ const Herosection = () => {
                   placeholder="Search Food"
                 />
               </div>
-              <div className="max-mdl:text-sm max-md:text-xs mr-[5%] border-none h-[60%] w-[20%] rounded-md bg-navcolor flex items-center justify-center cursor-pointer shadow-md shadow-shadownav">
+              <div className="max-mdl:text-sm max-md:text-xs mr-[5%] border-none h-[60%] w-[20%] rounded-md bg-navcolor flex items-center justify-center text-center cursor-pointer shadow-md shadow-shadownav">
                 Find Food
               </div>
             </div>
