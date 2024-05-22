@@ -3,6 +3,8 @@ import Herosection from "../../component/Food/Herosection/Herosection";
 import Instruction from "../../component/Food/Instruction/Instruction";
 import DailyDeal from "../../component/Food/DailyDeal/DailyDeal";
 import BestDeals from "../../component/Food/Best Deals/BestDeals";
+import FavoriteCuisines from "../../component/Food/FavoriteCuisines/FavoriteCuisines";
+
 
 const FoodRoute = () => {
   return (
@@ -12,7 +14,9 @@ const FoodRoute = () => {
       <Instruction /> */}
       <DailyDeal/>
       <Instruction />
+      <FavoriteCuisines/>
       <BestDeals />
+      
     </div>
   );
 };
