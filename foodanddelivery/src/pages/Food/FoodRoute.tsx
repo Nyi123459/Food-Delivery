@@ -11,8 +11,8 @@ const FoodRoute = () => {
       <Navbar />
       <Herosection />
       <Instruction />
-      <FavoriteCuisines />
-      <DailyDeal />
+      <FavoriteCuisines/>
+      <DailyDeal/>
       <BestDeals />
     </div>
   );
