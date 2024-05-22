@@ -1,8 +1,9 @@
+
 /* import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { DailyDealLinks } from "../../../constants/food/index";
+import { FavoriteCuisinesLinks } from "../../../constants/food/index";
 
 type SliderArrowProps = {
   className?: string;
@@ -25,15 +26,16 @@ const SliderArrow: React.FC<SliderArrowProps> = ({
   return <div className={className} style={arrowStyle} onClick={onClick} />;
 };
 
-const DailyDeal: React.FC = () => {
+const FavoriteCuisines: React.FC = () => {
   const settings = {
+    dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 8,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: "max-lgx",
+        breakpoint: "lg",
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -42,18 +44,20 @@ const DailyDeal: React.FC = () => {
         },
       },
       {
-        breakpoint: "max-mdx",
+        breakpoint: "md",
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
           initialSlide: 2,
+          dots: false,
         },
       },
       {
-        breakpoint: "max-md",
+        breakpoint: "sm",
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
@@ -66,26 +70,21 @@ const DailyDeal: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col ml-[10%] mr-[10%]">
+    <div className="flex flex-col py-12 ml-[10%] mr-[10%]">
       <div className="flex flex-start mb-6">
-        <h2 className="text-2xl font-bold">Your Daily Deal</h2>
+        <h2 className="text-2xl font-bold">Your favorite cuisines</h2>
       </div>
       <Slider {...settings}>
-        {DailyDealLinks.map((card, i) => (
-          <div key={i} className="flex flex-col items-center p-3 relative">
-            <div className="relative">
-              <img
-                src={card.img}
-                className="w-full h-48 object-cover mb-4 rounded"
-                alt={card.title}
-              />
-              <div className="absolute bottom-0 left-0 bg-primary text-white text-base px-6 py-2 rounded">
-                10% Off
-              </div>
+        {FavoriteCuisinesLinks.map((item, index) => (
+          <div key={index} className="flex flex-col items-center p-3">
+            <img
+              src={item.img}
+              className="w-full h-24 object-cover rounded-md mb-4"
+              alt={item.title}
+            />
+            <div className="text-center">
+              <span className="text-white text-lg">{item.title}</span>
             </div>
-            <span className="text-white text-lg font-semibold">
-              {card.title}
-            </span>
           </div>
         ))}
       </Slider>
@@ -93,14 +92,14 @@ const DailyDeal: React.FC = () => {
   );
 };
 
-export default DailyDeal;
+export default FavoriteCuisines;
  */
 
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { DailyDealLinks } from "../../../constants/food/index";
+import { FavoriteCuisinesLinks } from "../../../constants/food/index";
 
 type SliderArrowProps = {
   className?: string;
@@ -123,17 +122,18 @@ const SliderArrow: React.FC<SliderArrowProps> = ({
   return <div className={className} style={arrowStyle} onClick={onClick} />;
 };
 
-const DailyDeal: React.FC = () => {
+const FavoriteCuisines: React.FC = () => {
   const settings = {
+    dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 8,
     slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1143,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 6,
           slidesToScroll: 1,
           infinite: true,
           dots: false,
@@ -142,16 +142,28 @@ const DailyDeal: React.FC = () => {
       {
         breakpoint: 930,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
-          initialSlide: 2,
+          infinite: true,
+          dots: false,
         },
       },
       {
         breakpoint: 667,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
+          dots: false,
         },
       },
     ],
@@ -164,26 +176,21 @@ const DailyDeal: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col ml-[10%] mr-[10%]">
+    <div className="flex flex-col py-12 ml-[10%] mr-[10%]">
       <div className="flex flex-start mb-6">
-        <h2 className="text-2xl font-bold">Your Daily Deal</h2>
+        <h2 className="text-2xl font-bold">Your Favorite Cuisines</h2>
       </div>
       <Slider {...settings}>
-        {DailyDealLinks.map((card, i) => (
-          <div key={i} className="flex flex-col items-center p-3 relative">
-            <div className="relative">
-              <img
-                src={card.img}
-                className="w-full h-48 object-cover mb-4 rounded"
-                alt={card.title}
-              />
-              <div className="absolute bottom-0 left-0 bg-primary text-white text-base px-6 py-2 rounded">
-                10% Off
-              </div>
+        {FavoriteCuisinesLinks.map((item, index) => (
+          <div key={index} className="flex flex-col items-center p-3">
+            <img
+              src={item.img}
+              className="w-full h-24 object-cover rounded-md mb-4"
+              alt={item.title}
+            />
+            <div className="text-center">
+              <span className="text-white text-lg">{item.title}</span>
             </div>
-            <span className="text-white text-lg font-semibold">
-              {card.title}
-            </span>
           </div>
         ))}
       </Slider>
@@ -191,4 +198,4 @@ const DailyDeal: React.FC = () => {
   );
 };
 
-export default DailyDeal;
+export default FavoriteCuisines;

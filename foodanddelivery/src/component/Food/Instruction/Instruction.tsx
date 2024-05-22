@@ -7,7 +7,7 @@ const Instruction = () => {
         How does it work
       </div>
 
-      <div className="flex flex-col sml:flex-row justify-center ">
+      <div className="flex flex-col sml:flex-row justify-center ml-[10%] mr-[10%]">
         <div className="mx-4 my-2 text-center flex flex-col items-center">
           <div className="mb-2">
             <img
