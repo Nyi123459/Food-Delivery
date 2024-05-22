@@ -5,7 +5,6 @@ import DailyDeal from "../../component/Food/DailyDeal/DailyDeal";
 import BestDeals from "../../component/Food/Best Deals/BestDeals";
 import FavoriteCuisines from "../../component/Food/FavoriteCuisines/FavoriteCuisines";
 
-
 const FoodRoute = () => {
   return (
     <div>
@@ -15,7 +14,6 @@ const FoodRoute = () => {
       <FavoriteCuisines/>
       <DailyDeal/>
       <BestDeals />
-      
     </div>
   );
 };
