@@ -9,12 +9,11 @@ import FavoriteCuisines from "../../component/Food/FavoriteCuisines/FavoriteCuis
 const FoodRoute = () => {
   return (
     <div>
-    {/*   <Navbar />
+      <Navbar />
       <Herosection />
-      <Instruction /> */}
-      <DailyDeal/>
       <Instruction />
       <FavoriteCuisines/>
+      <DailyDeal/>
       <BestDeals />
       
     </div>
