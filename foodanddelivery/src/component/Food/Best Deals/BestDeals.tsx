@@ -11,7 +11,7 @@ const BestDeals = () => {
       <div className="flex flex-col ml-[10%] mr-[10%] gap-y-20">
         <div className="flex max-mdl:flex-col border rounded-lg shadow-lg shadow-gray-400">
           <div className="w-2/5 max-mdl:w-auto ml-[2%] mt-[5%] max-lgl:mt-[4%] mr-[2%] flex flex-col gap-y-3 max-mdl:ml-[5%] max-mdl:mr-[5%]">
-            <h1 className="text-3xl font-extrabold max-w-15 max-md:text-2xl max-lgx:text-2xl">
+            <h1 className="font-extrabold max-w-15 text-2xl md:text-xl mdx:text-2xl lgx:text-3xl">
               {" "}
               Best deals{" "}
               <span className="text-shadownav">Crispy Sandwiches</span>
@@ -37,7 +37,7 @@ const BestDeals = () => {
             <img
               src={Sandwiches}
               alt="Sandwiches"
-              className="w-full object-cover rounded-b-lg  max-mdl:h-[200px]"
+              className="w-full object-cover rounded-e-lg max-mdl:rounded-b-lg  max-mdl:h-[200px]"
             />
           </div>
         </div>
@@ -46,11 +46,11 @@ const BestDeals = () => {
             <img
               src={FriedChicken}
               alt="FriedChicken"
-              className="w-full object-cover rounded-t-lg max-mdl:h-[200px]"
+              className="w-full object-cover rounded-l-lg max-mdl:rounded-t-lg max-mdl:h-[200px]"
             />
           </div>
           <div className="w-2/5 max-mdl:w-auto ml-[2%] mt-[5%] max-lgl:mt-[4%] mr-[2%] flex flex-col gap-y-3 max-mdl:ml-[5%] max-mdl:mr-[5%]">
-            <h1 className="text-3xl font-extrabold max-w-15 max-md:text-2xl max-lgx:text-2xl">
+            <h1 className="font-extrabold max-w-15 text-2xl md:text-xl mdx:text-2xl lgx:text-3xl">
               Celebrate parties with{" "}
               <span className="text-shadownav">Fried Chicken</span>
             </h1>
@@ -74,7 +74,7 @@ const BestDeals = () => {
         </div>
         <div className="flex max-mdl:flex-col border rounded-lg shadow-lg shadow-gray-400">
           <div className="w-2/5 max-mdl:w-auto ml-[2%] mt-[5%] max-lgl:mt-[4%] mr-[2%] flex flex-col gap-y-3 max-mdl:ml-[5%] max-mdl:mr-[5%]">
-            <h1 className="text-3xl font-extrabold max-w-15 max-md:text-2xl max-lgx:text-2xl">
+            <h1 className="font-extrabold max-w-15 text-2xl md:text-xl mdx:text-2xl lgx:text-3xl">
               Wanna eat hot & spicy{" "}
               <span className="text-shadownav">Pizza?</span>
             </h1>
@@ -99,7 +99,7 @@ const BestDeals = () => {
             <img
               src={PizzaDeal}
               alt="PizzaDeal"
-              className="w-full object-cover rounded-b-lg max-mdl:h-[200px]"
+              className="w-full object-cover rounded-e-lg max-mdl:rounded-b-lg max-mdl:h-[200px]"
             />
           </div>
         </div>
