@@ -61,7 +61,7 @@ const Herosection = () => {
           </div>
         </div>
         <div className="w-full mt-[10%] mdx:hidden">
-          <Carousel autoSlide={false} hideButtons={true}>
+          <Carousel autoSlide={true} hideButtons={true}>
             {Food.map((data, index) => (
               <div key={index} className="h-[250px] w-full">
                 <img

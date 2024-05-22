@@ -1,4 +1,12 @@
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react";
+import {
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactNode,
+  ReactPortal,
+  useEffect,
+  useState,
+} from "react";
 import { ChevronLeft, ChevronRight } from "react-feather";
 
 const Carousel = ({
@@ -6,7 +14,7 @@ const Carousel = ({
   autoSlide = false,
   autoSlideInterval = 3000,
   hideButtons = false, // Prop to control button visibility
-}:any) => {
+}: any) => {
   const [curr, setCurr] = useState(0);
 
   const prev = () =>
@@ -28,11 +36,24 @@ const Carousel = ({
           transform: `translateX(-${curr * 50}%)`,
           gap: "10px", // Adjust the gap between images as needed
         }}>
-        {slides.map((slide: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined, index: Key | null | undefined) => (
-          <div key={index} className="flex-none w-1/2">
-            {slide}
-          </div>
-        ))}
+        {slides.map(
+          (
+            slide:
+              | string
+              | number
+              | boolean
+              | ReactElement<any, string | JSXElementConstructor<any>>
+              | Iterable<ReactNode>
+              | ReactPortal
+              | null
+              | undefined,
+            index: Key | null | undefined
+          ) => (
+            <div key={index} className="flex-none w-1/2">
+              {slide}
+            </div>
+          )
+        )}
       </div>
       {!hideButtons && (
         <div className="absolute inset-0 flex items-center justify-between p-4">
@@ -48,7 +69,7 @@ const Carousel = ({
           </button>
         </div>
       )}
-      <div className="absolute bottom-4 right-0 left-0">
+      <div className="absolute bottom-4 right-0 left-0 max-mdl:hidden">
         <div className="flex items-center justify-center gap-2">
           {slides.map((_: any, i: Key | null | undefined) => (
             <div
