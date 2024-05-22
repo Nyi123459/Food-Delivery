@@ -161,3 +161,6 @@ export const Image = [
     title: "Pizza",
   },
 ];
+
+
+/* Images for BestDeals of Food page  */
