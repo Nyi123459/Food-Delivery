@@ -36,7 +36,8 @@ const Herosection = () => {
               <Link
                 to={data.route}
                 key={index}
-                className="border-2 bg-secondary flex items-center sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start">
+                className="border-2 border-transparent hover:border-[#FFA500] bg-secondary flex items-center sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start transition ease-in-out delay-150 hover:bg-amber-50 hover:-translate-y-1 duration-300"
+              >
                 <img src={data.icon} alt={data.title} className="size-[50px]" />
                 <p className="text-xl font-bold sm:text-sm xs:text-xs max-md:text-base lg:truncate md:truncate pl-2 ">
                   {data.title}

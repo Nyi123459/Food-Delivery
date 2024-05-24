@@ -1,7 +1,7 @@
 import { IoPerson } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { Images } from "../../../assets";
-import Login from "../../../pages/Account/Login";
+import Login from "../../../pages/Account/Login/Login";
 import SignUp from "../../../pages/Account/SignUp";
 
 const Navbar = () => {
@@ -27,7 +27,7 @@ const Navbar = () => {
             <input
               className="flex-1 h-full outline-none placeholder:text-[#617585] placeholder:text-[14px] max-mdl:hidden"
               type="text"
-              placeholder="Enter Your Adress"
+              placeholder="Enter Your Address"
             />
           </div>
 

@@ -1,5 +1,5 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
-
+/** @type {import('tailwindcss').Config} */
+export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
 export const theme = {
   extend: {
     maxWidth: {
@@ -24,12 +24,14 @@ export const theme = {
       secondary: "#FFE5AF",
       navcolor: "#EF4358",
       shadownav: "#FF8A00",
+      btcolor1: "#FFB800 ",
+      btcolor2: " #FF8A00",
     },
     dropShadow: {
       "custom-white": "0 10px 15px rgba(255, 255, 255, 0.5)", // Adjust the color and opacity as needed
     },
     boxShadow: {
-      testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
+      textShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
     },
   },
   plugins: [require("flowbite-react/tailwind"), require("daisyui")],

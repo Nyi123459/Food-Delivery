@@ -22,12 +22,11 @@ import AppleWhite from "./DownloadApp/AppleWhite.png";
 import PlayStoreIcon from "./DownloadApp/PlayStore.png";
 import QrCode from "./DownloadApp/QrCode.png";
 import MobileApp from "./DownloadApp/MobileApp.png";
-
-import BeefBarger from "../assets/Food/DailyDeal/beefbarger.jpg";
+import BeefBurger from "../assets/Food/DailyDeal/beefburger.jpg";
 import Coffee from "../assets/Food/DailyDeal/coffee4.jpg";
 import Desert from "../assets/Food/DailyDeal/desert1.jpg";
 import Strawberry from "../assets/Food/DailyDeal/strawberryjuice.jpg";
-
+import Google from "./Google.png";
 interface Images {
   logo: string;
   TransportationIcon: string;
@@ -52,10 +51,11 @@ interface Images {
   PlayStoreIcon: string;
   QrCode: string;
   MobileApp: string;
-  BeefBarger: string;
+  BeefBurger: string;
   Coffee: string;
   Desert: string;
   Strawberry: string;
+  Google: string;
 }
 export const Images: Images = {
   logo,
@@ -81,11 +81,11 @@ export const Images: Images = {
   PlayStoreIcon,
   QrCode,
   MobileApp,
-
-  BeefBarger,
+  BeefBurger,
   Coffee,
   Desert,
   Strawberry,
+  Google,
 };
 
 /* Images for Herosection of Food Page  */
@@ -146,4 +146,17 @@ export const Image = [
     image: PizzaDeal,
     title: "Pizza",
   },
+];
+
+/* Images for Coupon of Food page  */
+import Coupon1 from "./Food/CouponCard/Coupon1.png";
+import Coupon2 from "./Food/CouponCard/Coupon2.png";
+import Coupon3 from "./Food/CouponCard/Coupon3.png";
+import Coupon4 from "./Food/CouponCard/Coupon4.png";
+
+export const Coupons = [
+  { id: "1", image: Coupon1 },
+  { id: "2", image: Coupon2 },
+  { id: "3", image: Coupon3 },
+  { id: "4", image: Coupon4 },
 ];

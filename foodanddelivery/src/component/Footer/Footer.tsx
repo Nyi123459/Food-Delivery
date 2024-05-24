@@ -68,7 +68,7 @@ import { footerLinks } from "../../content";
 
 const Footer = () => {
   return (
-    <section className="py-6 flex-col mt-[5%] ml-[10%] mr-[10%] mb-[5%]">
+    <section className="py-6 flex-col ml-[10%] mr-[10%] pb-20">
       <div className="flex flex-col md:flex-row mb-8 w-full">
         <div className="flex-1 flex flex-col justify-start">
           <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0 ">

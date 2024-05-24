@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Heading from "../../ItemCard/Items/Heading";
 
 const Trending = () => {
   const [selectedCategory, setSelectedCategory] = useState("foods");
@@ -69,32 +70,30 @@ const Trending = () => {
   };
 
   return (
-    <main className="px-6">
-      <h2 className="text-center text-3xl font-bold mb-10 mt-6">
-        Get more from your neighborhood
-      </h2>
+    <main className="px-6 pb-20">
+      <Heading heading="Get more from your neighborhood" />
 
       <section>
         <div className="flex justify-around gap-10 mb-2 ml-[10%] mr-[10%]">
           <button
-            className={`text-lg font-semibold ${
-              selectedCategory === "foods" ? "text-amber-500" : ""
+            className={`text-lg font-semibold hover:text-yellow-300 ${
+              selectedCategory === "foods" ? "text-amber-600" : ""
             }`}
             onClick={() => setSelectedCategory("foods")}
           >
             Top Foods
           </button>
           <button
-            className={`text-lg font-semibold ${
-              selectedCategory === "shops" ? "text-amber-500" : ""
+            className={`text-lg font-semibold hover:text-yellow-300 ${
+              selectedCategory === "foods" ? "text-amber-600" : ""
             }`}
             onClick={() => setSelectedCategory("shops")}
           >
             Top Shops
           </button>
           <button
-            className={`text-lg font-semibold ${
-              selectedCategory === "cities" ? "text-amber-500" : ""
+            className={`text-lg font-semibold hover:text-yellow-300 ${
+              selectedCategory === "foods" ? "text-amber-600" : ""
             }`}
             onClick={() => setSelectedCategory("cities")}
           >
