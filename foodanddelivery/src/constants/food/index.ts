@@ -22,3 +22,49 @@ export const DailyDealLinks = [
     img: Images.Strawberry,
   },
 ];
+
+
+export const FavoriteCuisinesLinks = [
+  {
+    id: 1,
+    title: "Salad",
+    img: Images.Salad,
+  },
+  {
+    id: 2,
+    title: "Juice",
+    img: Images.Juice,
+  },
+  {
+    id: 3,
+    title: "Breakfast",
+    img: Images.MorningBreakfast,
+  },
+  {
+    id: 4,
+    title: "Dumpling",
+    img: Images.Dumpling,
+  },
+  {
+    id: 5,
+    title: "Soup",
+    img: Images.Soup,
+  },
+  {
+    id: 6,
+    title: "Fruits",
+    img: Images.Fruits,
+  },
+  {
+    id: 7,
+    title: "Ice-cream",
+    img: Images.IceCream,
+  },
+  {
+    id: 8,
+    title: "Cake",
+    img: Images.Cake,
+  },
+];
+
+

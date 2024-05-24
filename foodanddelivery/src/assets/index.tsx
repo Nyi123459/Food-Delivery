@@ -27,6 +27,18 @@ import Coffee from "../assets/Food/DailyDeal/coffee4.jpg";
 import Desert from "../assets/Food/DailyDeal/desert1.jpg";
 import Strawberry from "../assets/Food/DailyDeal/strawberryjuice.jpg";
 import Google from "./Google.png";
+import Salad from '../assets/Food/FavoriteCuisines/salad.jpg';
+import Juice from '../assets/Food/FavoriteCuisines/juice.jpg';
+import MorningBreakfast from '../assets/Food/FavoriteCuisines/breakfast.jpg';
+import Dumpling from '../assets/Food/FavoriteCuisines/dumpling.jpg';
+import Soup from '../assets/Food/FavoriteCuisines/soup.jpg';
+import Fruits from '../assets/Food/FavoriteCuisines/fruits.jpg';
+import IceCream from '../assets/Food/FavoriteCuisines/icecream.jpg';
+import Cake from '../assets/Food/FavoriteCuisines/cake.jpg';
+
+
+
+
 interface Images {
   logo: string;
   TransportationIcon: string;
@@ -56,6 +68,15 @@ interface Images {
   Desert: string;
   Strawberry: string;
   Google: string;
+  Salad:string;
+  Juice: string;
+  MorningBreakfast: string;
+  Dumpling:string;
+  Soup:string;
+  Fruits:string;
+  IceCream:string;
+  Cake: string;
+
 }
 export const Images: Images = {
   logo,
@@ -86,6 +107,15 @@ export const Images: Images = {
   Desert,
   Strawberry,
   Google,
+
+  Salad,
+  Juice,
+  MorningBreakfast,
+  Dumpling,
+  Soup,
+  Fruits,
+  IceCream,
+  Cake
 };
 
 /* Images for Herosection of Food Page  */
@@ -160,3 +190,6 @@ export const Coupons = [
   { id: "3", image: Coupon3 },
   { id: "4", image: Coupon4 },
 ];
+=======
+
+/* Images for BestDeals of Food page  */
