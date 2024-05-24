@@ -36,7 +36,11 @@ const Herosection = () => {
               <Link
                 to={data.route}
                 key={index}
-                className="border-2 bg-secondary flex items-center sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start">
+                style={{
+                  boxShadow:
+                    "0 4px 6px 0 rgba(255, 184, 0, 0.5), 0 6px 12px 0 rgba(255, 138, 0, 0.5)",
+                }}
+                className="border-2 bg-secondary flex items-center sm:w-[100%] md:w-[100%] lg:w-[25%] xl:w-[25%] rounded-xl p-2.5 max-md:p-0 max-sml:p-0 justify-start hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out">
                 <img src={data.icon} alt={data.title} className="size-[50px]" />
                 <p className="text-xl font-bold sm:text-sm xs:text-xs max-md:text-base lg:truncate md:truncate pl-2 ">
                   {data.title}
