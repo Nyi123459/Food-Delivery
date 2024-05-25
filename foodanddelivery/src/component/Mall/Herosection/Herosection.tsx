@@ -1,11 +1,12 @@
 import React from "react";
 import SearchBar from "../../Common/SearchBar";
+import Vegetables from "../../../assets/Mall/Vegetables.png";
 import MallPhoto from "../../../assets/Mall/MallPhoto.png";
 import AnimatedPhoto from "./AnimatedPhoto";
 
 const Herosection = () => {
   return (
-    <section className="bg-primary h-[760px] md:h-[870px] mdx:h-[550px]">
+    <section className="bg-primary h-[670px] mdl:h-[760px] mdx:h-[550px] sm:h-[670px] md:h-[670px]">
       <div className="flex max-mdx:flex-col ml-[10%] mr-[10%]">
         <div className="flex flex-col w-4/5 mt-[10%] max-mdx:w-full">
           <SearchBar
@@ -17,7 +18,7 @@ const Herosection = () => {
             }
           />
         </div>
-        <AnimatedPhoto src={MallPhoto} />
+        <AnimatedPhoto MallPhoto={MallPhoto} Vegetables={Vegetables} />
       </div>
     </section>
   );
