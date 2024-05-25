@@ -41,6 +41,8 @@ module.exports = withMT({
         shadownav: "#FF8A00",
         btcolor1: "#FFB800 ",
         btcolor2: " #FF8A00",
+        mallcolor1: "#FFC740",
+        mallcolor2: "#FFC845",
       },
       boxShadow: {
         testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
