@@ -12,16 +12,21 @@ import Rider from "./BecomePartner/Rider.png";
 import Store from "./BecomePartner/Store.png";
 import Question from "./question.png";
 import MoneyBag from "./money-bag.png";
-import Payment from '../assets/Instruction/payment.jpg';
-import Order from '../assets/Instruction/order.jpg';
-import Location from '../assets/Instruction/location.jpg';
-import Meal from '../assets/Instruction/meal.jpg';
-import Newletters from './newletters.jpg';
-import BeefBarger from '../assets/Food/DailyDeal/beefbarger.jpg';
-import Coffee from '../assets/Food/DailyDeal/coffee4.jpg';
-import Desert from '../assets/Food/DailyDeal/desert1.jpg';
-import Strawberry from '../assets/Food/DailyDeal/strawberryjuice.jpg';
-
+import Payment from "../assets/Instruction/payment.jpg";
+import Order from "../assets/Instruction/order.jpg";
+import Location from "../assets/Instruction/location.jpg";
+import Meal from "../assets/Instruction/meal.jpg";
+import Newletters from "./newletters.jpg";
+import AppleBlack from "./DownloadApp/AppleBlack.png";
+import AppleWhite from "./DownloadApp/AppleWhite.png";
+import PlayStoreIcon from "./DownloadApp/PlayStore.png";
+import QrCode from "./DownloadApp/QrCode.png";
+import MobileApp from "./DownloadApp/MobileApp.png";
+import BeefBurger from "../assets/Food/DailyDeal/beefburger.jpg";
+import Coffee from "../assets/Food/DailyDeal/coffee4.jpg";
+import Desert from "../assets/Food/DailyDeal/desert1.jpg";
+import Strawberry from "../assets/Food/DailyDeal/strawberryjuice.jpg";
+import Google from "./Google.png";
 import Salad from '../assets/Food/FavoriteCuisines/salad.jpg';
 import Juice from '../assets/Food/FavoriteCuisines/juice.jpg';
 import MorningBreakfast from '../assets/Food/FavoriteCuisines/breakfast.jpg';
@@ -53,10 +58,16 @@ interface Images {
   Order: string;
   Meal: string;
   Newletters: string;
-  BeefBarger: string;
+  AppleBlack: string;
+  AppleWhite: string;
+  PlayStoreIcon: string;
+  QrCode: string;
+  MobileApp: string;
+  BeefBurger: string;
   Coffee: string;
   Desert: string;
   Strawberry: string;
+  Google: string;
   Salad:string;
   Juice: string;
   MorningBreakfast: string;
@@ -86,11 +97,16 @@ export const Images: Images = {
   Location,
   Meal,
   Newletters,
-
-  BeefBarger,
+  AppleBlack,
+  AppleWhite,
+  PlayStoreIcon,
+  QrCode,
+  MobileApp,
+  BeefBurger,
   Coffee,
   Desert,
   Strawberry,
+  Google,
 
   Salad,
   Juice,
@@ -162,6 +178,19 @@ export const Image = [
   },
 ];
 
+/* Images for Coupon of Food page  */
+import Coupon1 from "./Food/CouponCard/Coupon1.png";
+import Coupon2 from "./Food/CouponCard/Coupon2.png";
+import Coupon3 from "./Food/CouponCard/Coupon3.png";
+import Coupon4 from "./Food/CouponCard/Coupon4.png";
+
+export const Coupons = [
+  { id: "1", image: Coupon1 },
+  { id: "2", image: Coupon2 },
+  { id: "3", image: Coupon3 },
+  { id: "4", image: Coupon4 },
+];
+=======
 
 /* Images for Featured Restaurant of Food page  */
 

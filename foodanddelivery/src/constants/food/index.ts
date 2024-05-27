@@ -3,8 +3,8 @@ import { Images } from "../../assets";
 export const DailyDealLinks = [
   {
     id: 1,
-    title: "Beef Barger",
-    img: Images.BeefBarger,
+    title: "Beef Burger",
+    img: Images.BeefBurger,
   },
   {
     id: 2,

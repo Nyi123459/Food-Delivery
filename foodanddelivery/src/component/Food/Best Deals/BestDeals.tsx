@@ -25,6 +25,7 @@ const BestDeals = () => {
               style={{
                 boxShadow:
                   "0 4px 6px 0 rgba(255, 184, 0, 0.5), 0 6px 12px 0 rgba(255, 138, 0, 0.5)",
+
               }}>
               <p className="lg:text-base mdx:text-sm xs:text-xs">
                 {" "}
@@ -63,6 +64,7 @@ const BestDeals = () => {
               style={{
                 boxShadow:
                   "0 4px 6px 0 rgba(255, 184, 0, 0.5), 0 6px 12px 0 rgba(255, 138, 0, 0.5)",
+
               }}>
               <p className="lg:text-base mdx:text-sm xs:text-xs">
                 {" "}
@@ -87,6 +89,7 @@ const BestDeals = () => {
               style={{
                 boxShadow:
                   "0 4px 6px 0 rgba(255, 184, 0, 0.5), 0 6px 12px 0 rgba(255, 138, 0, 0.5)",
+
               }}>
               <p className="lg:text-base mdx:text-sm xs:text-xs">
                 {" "}
