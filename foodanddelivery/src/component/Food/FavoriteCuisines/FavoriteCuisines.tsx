@@ -142,7 +142,7 @@ const FavoriteCuisines: React.FC = () => {
       {
         breakpoint: 930,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
           dots: false,
@@ -168,8 +168,8 @@ const FavoriteCuisines: React.FC = () => {
       },
     ],
     autoplay: false,
-    speed: 1000,
-    autoplaySpeed: 3000,
+    speed: 1500,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     nextArrow: <SliderArrow position="next" />,
     prevArrow: <SliderArrow position="prev" />,
@@ -185,8 +185,9 @@ const FavoriteCuisines: React.FC = () => {
           <div key={index} className="flex flex-col items-center p-3">
             <img
               src={item.img}
-              className="w-full h-24 object-cover rounded-md mb-4"
-              alt={item.title}
+              
+              alt={item.title}className="w-full h-24 object-cover rounded-md mb-4"
+              
             />
             <div className="text-center">
               <span className="text-white text-lg">{item.title}</span>

@@ -163,4 +163,48 @@ export const Image = [
 ];
 
 
-/* Images for BestDeals of Food page  */
+/* Images for Featured Restaurant of Food page  */
+
+import Steak from './Food/FeaturedResturants/steak.jpg';
+import Salmond from './Food/FeaturedResturants/salmond.jpg';
+import Spaghetti from './Food/FeaturedResturants/spaghetti.jpg';
+import Dimsum from './Food/FeaturedResturants/dimsum.jpg';
+import Pasta from './Food/FeaturedResturants/pasta.jpg';
+import Ramen from './Food/FeaturedResturants/ramen.jpg';
+import Donut from './Food/FeaturedResturants/donut.jpg';
+import PizzaHut from './Food/FeaturedResturants/pizza.jpg'
+
+export const FeaturedResturants = [
+  { image: Steak,
+    title: "Steak on the street"
+  },
+  {
+    image: Salmond,
+    title: "Seafood City"
+  },
+  {
+    image: Spaghetti,
+    title: "The Pizza Company"
+  },
+  {
+    image: Dimsum,
+    title: "Oriental House"
+  },
+  {
+    image: Pasta,
+    title: "Pizza Family"
+  },
+  {
+    image: Ramen,
+    title: "Ramen Monster"
+  },
+  {
+    image: Donut,
+    title: "JDonut"
+  },
+  {
+    image: PizzaHut,
+    title: "Pizza Hut"
+  }
+]
+

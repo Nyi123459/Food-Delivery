@@ -107,6 +107,7 @@ type SliderArrowProps = {
   style?: React.CSSProperties;
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   position: "next" | "prev";
+  
 };
 
 const SliderArrow: React.FC<SliderArrowProps> = ({
@@ -114,6 +115,7 @@ const SliderArrow: React.FC<SliderArrowProps> = ({
   style,
   onClick,
   position,
+  
 }) => {
   const arrowStyle =
     position === "next"
@@ -156,11 +158,11 @@ const DailyDeal: React.FC = () => {
       },
     ],
     autoplay: false,
-    speed: 1000,
-    autoplaySpeed: 3000,
+    speed: 1500,
+    autoplaySpeed: 2000,
     cssEase: "linear",
     nextArrow: <SliderArrow position="next" />,
-    prevArrow: <SliderArrow position="prev" />,
+    prevArrow: <SliderArrow position="prev"  />,
   };
 
   return (
