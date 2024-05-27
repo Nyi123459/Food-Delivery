@@ -12,10 +12,11 @@ const FoodRoute = () => {
   return (
     <div>
       <Navbar />
-  
+      <Herosection />
       <Instruction />
-      <FavoriteCuisines/>
-      <DailyDeal/>
+      <FavoriteCuisines />
+      <DailyDeal />
+      <OrderItAgain />
       <BestDeals />
     </div>
   );
