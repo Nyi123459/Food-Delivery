@@ -130,8 +130,7 @@ const Footer = () => {
                       linkIndex !== footerLink.links.length - 1
                         ? "mb-4"
                         : "mb-0"
-                    }`}
-                  >
+                    }`}>
                     {link.name}
                   </li>
                 ))}

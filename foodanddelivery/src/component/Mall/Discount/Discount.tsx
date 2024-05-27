@@ -8,7 +8,7 @@ import Fruits from "../../../assets/Mall/Fruits.png";
 
 const Discount = () => {
   return (
-    <section className="flex ml-[10%] mr-[10%] mt-[5%] mb-[10%] bg-gradient-to-r from-mallcolor1 to-mallcolor2 h-[225px] rounded-xl shadow-md shadow-gray-700">
+    <section className="flex ml-[10%] mr-[10%] mb-[10%] bg-gradient-to-r from-mallcolor1 to-mallcolor2 h-[225px] rounded-xl shadow-md shadow-gray-700">
       <div className="flex w-full h-full border border-none max-sml:hidden">
         <div className="relative flex items-center lg:w-1/2 w-3/5 max-sml:hidden">
           <p className="ml-[10%] text-4xl font-bold">
