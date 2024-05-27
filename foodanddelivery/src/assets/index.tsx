@@ -190,6 +190,5 @@ export const Coupons = [
   { id: "3", image: Coupon3 },
   { id: "4", image: Coupon4 },
 ];
-=======
 
 /* Images for BestDeals of Food page  */
