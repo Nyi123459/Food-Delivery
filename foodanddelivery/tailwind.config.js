@@ -49,6 +49,5 @@ module.exports = withMT({
       },
     },
   },
-
   plugins: [require("flowbite-react/tailwind"), require("daisyui")],
 });

@@ -10,6 +10,8 @@ import Footer from "./component/Common/Footer/Footer";
 import "./index.css";
 import FoodRoute from "./pages/Food/FoodRoute";
 import MallRoute from "./pages/Mall/MallRoute";
+import SignUp from "./pages/Account/SignUp";
+import SignInRoute from "./pages/Account/SignInRoute";
 
 const Layout: React.FC = () => {
   return (
@@ -27,12 +29,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomeRoute />} />
-
-            {/* <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/food" element={<FoodRoute />} />
           </Route>
           <Route path="/food" element={<FoodRoute />} />
           <Route path="/mall" element={<MallRoute />} />
+          <Route path="/signin" element={<SignInRoute />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Router>
     </div>
