@@ -201,12 +201,12 @@ export const CanOrderImages = [
   {
     id: "1",
     img: FruitsAndVegetables,
-    title: "Fruits-And-Vegetabes",
+    title: "Fruits & Vegetabes",
   },
   {
     id: "2",
     img: HomeAndLiving,
-    title: "Home-&-Living",
+    title: "Home & Living",
   },
   {
     id: "3",
@@ -221,12 +221,12 @@ export const CanOrderImages = [
   {
     id: "5",
     img: FlowerShop,
-    title: "Flower-Shop",
+    title: "Flower Shop",
   },
   {
     id: "6",
     img: BreadAndSnacks,
-    title: "Bread-&-Snacks",
+    title: "Bread & Snacks",
   },
   {
     id: "7",
