@@ -197,7 +197,13 @@ import BreadAndSnacks from "./Can Order/Breads & Snacks.png";
 import Pharmacy from "./Can Order/Pharmacy.png";
 import Cosmetic from "./Can Order/Cosmetic.png";
 
-export const CanOrderImages = [
+type Image = {
+  id: string;
+  img: string;
+  title: string;
+};
+
+export const CanOrderImages: Image[] = [
   {
     id: "1",
     img: FruitsAndVegetables,
@@ -249,7 +255,7 @@ import Parisian from "./Mall Brand/Parisian.png";
 import Seasons from "./Mall Brand/Seasons.png";
 import SeinGayHar from "./Mall Brand/SeinGayHar.png";
 
-export const MallBrandImage = [
+export const MallBrandImage: Image[] = [
   {
     id: "1",
     img: CityExpress,
@@ -284,5 +290,34 @@ export const MallBrandImage = [
     id: "7",
     img: SeinGayHar,
     title: "SeinGayHar",
+  },
+];
+
+/* Mall Cupon Images */
+import MallCuponOne from "./Mall/Mall Coupon1.png";
+import MallCuponTwo from "./Mall/Mall Coupon2.png";
+import MallCuponThree from "./Mall/Mall Coupon3.png";
+import MallCuponFour from "./Mall/Mall Coupon4.png";
+
+export const MallCupon: Image[] = [
+  {
+    id: "1",
+    img: MallCuponOne,
+    title: "Mall_Cupon_1",
+  },
+  {
+    id: "2",
+    img: MallCuponTwo,
+    title: "Mall_Cupon_2",
+  },
+  {
+    id: "3",
+    img: MallCuponThree,
+    title: "Mall_Cupon_3",
+  },
+  {
+    id: "4",
+    img: MallCuponFour,
+    title: "Mall_Cupon_4",
   },
 ];

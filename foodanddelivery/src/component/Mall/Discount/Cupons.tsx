@@ -1,14 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
-import DiscountItemOne from "./DiscountItemOne";
-import DiscountItemTwo from "./DiscountItemTwo";
-import DiscountItemThree from "./DiscountItemThree";
+import { MallCupon } from "../../../assets";
 
 const Cupons: React.FC = () => {
+  const handleClick = () => {};
+
   const customSetting = {
     dots: false,
     infinite: true,
-    autoSlide: true,
+    autoSlide: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -19,9 +19,15 @@ const Cupons: React.FC = () => {
   };
   return (
     <Slider {...customSetting}>
-      <DiscountItemOne />
-      <DiscountItemTwo />
-      <DiscountItemThree />
+      {MallCupon.map((cupon) => (
+        <img
+          id={cupon.id}
+          src={cupon.img}
+          alt={cupon.title}
+          className="object-cover h-full pl-[10%] pr-[10%] cursor-pointer"
+          onClick={handleClick}
+        />
+      ))}
     </Slider>
   );
 };

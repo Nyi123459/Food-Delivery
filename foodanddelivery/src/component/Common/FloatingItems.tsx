@@ -65,11 +65,14 @@ const FloatingItems: React.FC<FloatingItemsProps> = ({
   return (
     <Slider {...combinedSettings}>
       {data.map((item, index) => (
-        <div key={index} className="flex flex-col items-center border-none p-3">
+        <div
+          key={index}
+          className="flex flex-col items-center p-3 border-none outline-none focus:outline-none">
           <img
             src={item.img}
-            className="w-full h-24 rounded-md mb-4 max-sml:object-contain"
+            className="w-full h-24 rounded-md mb-4 max-sml:object-contain border-none outline-none focus:outline-none"
             alt={item.title}
+            style={{ border: "none", outline: "none" }}
           />
           {showOptionalContent && (
             <div className="text-center">
