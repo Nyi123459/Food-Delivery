@@ -187,4 +187,137 @@ export const Coupons = [
   { id: "4", image: Coupon4 },
 ];
 
-/* Images for BestDeals of Food page  */
+/* Images for Can Order Now Page  */
+import FruitsAndVegetables from "./Can Order/Fruits & Vegetables.png";
+import HomeAndLiving from "./Can Order/Home & Living.png";
+import Stationary from "./Can Order/Stationary.png";
+import Electronic from "./Can Order/Electronic.png";
+import FlowerShop from "./Can Order/Flower Shop.png";
+import BreadAndSnacks from "./Can Order/Breads & Snacks.png";
+import Pharmacy from "./Can Order/Pharmacy.png";
+import Cosmetic from "./Can Order/Cosmetic.png";
+
+type Image = {
+  id: string;
+  img: string;
+  title: string;
+};
+
+export const CanOrderImages: Image[] = [
+  {
+    id: "1",
+    img: FruitsAndVegetables,
+    title: "Fruits & Vegetabes",
+  },
+  {
+    id: "2",
+    img: HomeAndLiving,
+    title: "Home & Living",
+  },
+  {
+    id: "3",
+    img: Stationary,
+    title: "Stationary",
+  },
+  {
+    id: "4",
+    img: Electronic,
+    title: "Electronic",
+  },
+  {
+    id: "5",
+    img: FlowerShop,
+    title: "Flower Shop",
+  },
+  {
+    id: "6",
+    img: BreadAndSnacks,
+    title: "Bread & Snacks",
+  },
+  {
+    id: "7",
+    img: Pharmacy,
+    title: "Pharmacy",
+  },
+  {
+    id: "8",
+    img: Cosmetic,
+    title: "Cosmetic",
+  },
+];
+
+/* Images for Our Mall Brand Page  */
+import CityExpress from "./Mall Brand/CityExpress.png";
+import CityMall from "./Mall Brand/CityMall.png";
+import CityMart from "./Mall Brand/CityMart.png";
+import Nescafe from "./Mall Brand/Nescafe.png";
+import Parisian from "./Mall Brand/Parisian.png";
+import Seasons from "./Mall Brand/Seasons.png";
+import SeinGayHar from "./Mall Brand/SeinGayHar.png";
+
+export const MallBrandImage: Image[] = [
+  {
+    id: "1",
+    img: CityExpress,
+    title: "CityExpress",
+  },
+  {
+    id: "2",
+    img: CityMall,
+    title: "CityMall",
+  },
+  {
+    id: "3",
+    img: CityMart,
+    title: "CityMart",
+  },
+  {
+    id: "4",
+    img: Nescafe,
+    title: "Nescafe",
+  },
+  {
+    id: "5",
+    img: Parisian,
+    title: "Parisian",
+  },
+  {
+    id: "6",
+    img: Seasons,
+    title: "Seasons",
+  },
+  {
+    id: "7",
+    img: SeinGayHar,
+    title: "SeinGayHar",
+  },
+];
+
+/* Mall Cupon Images */
+import MallCuponOne from "./Mall/Mall Coupon1.png";
+import MallCuponTwo from "./Mall/Mall Coupon2.png";
+import MallCuponThree from "./Mall/Mall Coupon3.png";
+import MallCuponFour from "./Mall/Mall Coupon4.png";
+
+export const MallCupon: Image[] = [
+  {
+    id: "1",
+    img: MallCuponOne,
+    title: "Mall_Cupon_1",
+  },
+  {
+    id: "2",
+    img: MallCuponTwo,
+    title: "Mall_Cupon_2",
+  },
+  {
+    id: "3",
+    img: MallCuponThree,
+    title: "Mall_Cupon_3",
+  },
+  {
+    id: "4",
+    img: MallCuponFour,
+    title: "Mall_Cupon_4",
+  },
+];

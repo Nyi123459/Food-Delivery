@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/component/Food/Best Deals/CardComponent.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
