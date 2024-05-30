@@ -73,6 +73,25 @@ interface Images {
   Fruits: string;
   IceCream: string;
   Cake: string;
+  Steak: string;
+  Salmond: string;
+  Spaghetti: string;
+  Dimsum: string;
+  Ramen: string;
+  Image1: string;
+  Image2: string;
+  Image3: string;
+  Image4: string;
+  Image5: string;
+  Image6: string;
+  Image7: string;
+  Image8: string;
+  bakery: string;
+  capcakestraw: string;
+  icecream: string;
+  krispykreme: string;
+  chocolatecake: string;
+  season: string;
 }
 export const Images: Images = {
   logo,
@@ -112,6 +131,28 @@ export const Images: Images = {
   Fruits,
   IceCream,
   Cake,
+
+  Steak,
+  Salmond,
+  Spaghetti,
+  Dimsum,
+  Ramen,
+
+  Image1,
+  Image2,
+  Image3,
+  Image4,
+  Image5,
+  Image6,
+  Image7,
+  Image8,
+
+  bakery,
+  capcakestraw,
+  icecream,
+  krispykreme,
+  chocolatecake,
+  season,
 };
 
 /* Images for Herosection of Food Page  */
@@ -175,16 +216,139 @@ export const Image = [
 ];
 
 /* Images for Coupon of Food page  */
-import Coupon1 from "./Food/CouponCard/Coupon1.png";
-import Coupon2 from "./Food/CouponCard/Coupon2.png";
-import Coupon3 from "./Food/CouponCard/Coupon3.png";
-import Coupon4 from "./Food/CouponCard/Coupon4.png";
+import Coupon1 from "./Food/CouponCard/Food Coupon1.png";
+import Coupon2 from "./Food/CouponCard/Food Coupon2.png";
+import Coupon3 from "./Food/CouponCard/Food Coupon3.png";
+import Coupon4 from "./Food/CouponCard/Food Coupon4.png";
 
 export const Coupons = [
   { id: "1", image: Coupon1 },
   { id: "2", image: Coupon2 },
   { id: "3", image: Coupon3 },
   { id: "4", image: Coupon4 },
+];
+
+/* Images for Popular Items of Food page  */
+
+import Steak from "./Food/PopularItems/steak.jpg";
+import Salmond from "./Food/PopularItems/salmond.jpg";
+import Spaghetti from "./Food/PopularItems/spaghetti.jpg";
+import Dimsum from "./Food/PopularItems/dimsum.jpg";
+import Pasta from "./Food/PopularItems/pasta.jpg";
+import Ramen from "./Food/PopularItems/ramen.jpg";
+import Donut from "./Food/PopularItems/donut.jpg";
+import PizzaHut from "./Food/PopularItems/pizza.jpg";
+
+export const PopularItems = [
+  { image: Steak, title: "Steak on the street" },
+  {
+    image: Salmond,
+    title: "Seafood City",
+  },
+  {
+    image: Spaghetti,
+    title: "The Pizza Company",
+  },
+  {
+    image: Dimsum,
+    title: "Oriental House",
+  },
+  {
+    image: Pasta,
+    title: "Pizza Family",
+  },
+  {
+    image: Ramen,
+    title: "Ramen Monster",
+  },
+  {
+    image: Donut,
+    title: "JDonut",
+  },
+  {
+    image: PizzaHut,
+    title: "Pizza Hut",
+  },
+];
+
+/* Images for Featured Restaurants of Food page  */
+
+import Image1 from "./Food/FeaturedRestaurants/Image1.png";
+import Image2 from "./Food/FeaturedRestaurants/Image2.png";
+import Image3 from "./Food/FeaturedRestaurants/Image3.png";
+import Image4 from "./Food/FeaturedRestaurants/Image4.png";
+import Image5 from "./Food/FeaturedRestaurants/Image5.png";
+import Image6 from "./Food/FeaturedRestaurants/Image6.png";
+import Image7 from "./Food/FeaturedRestaurants/Image7.png";
+import Image8 from "./Food/FeaturedRestaurants/Image8.png";
+
+export const FeaturedRestaurants = [
+  {
+    image: Image1,
+    title: "Food World",
+  },
+  {
+    image: Image2,
+    title: "Pizza hut",
+  },
+  {
+    image: Image3,
+    title: "Donuts",
+  },
+  {
+    image: Image4,
+    title: "Icecream",
+  },
+  {
+    image: Image5,
+    title: "Beef Steak",
+  },
+  {
+    image: Image6,
+    title: "CP Chicken",
+  },
+  {
+    image: Image7,
+    title: "Red square soup",
+  },
+  {
+    image: Image8,
+    title: "Taco Roll",
+  },
+];
+
+import bakery from "./Food/FoodHighlights/bakery.jpg";
+import capcakestraw from "./Food/FoodHighlights/capcakestraw.jpg";
+import icecream from "./Food/FoodHighlights/icecream (2).jpg";
+import chocolatecake from "./Food/FoodHighlights/chocolatecake.jpg";
+import krispykreme from "./Food/FoodHighlights/krispykreme.jpg";
+import season from "./Food/FoodHighlights/season.jpg";
+
+export const FoodHighlights = [
+  {
+    image: bakery,
+    title: "Kudos' Bakery",
+  },
+  {
+    image: icecream,
+    title: "Ice Manias",
+  },
+  {
+    image: chocolatecake,
+    title: "Khit Bakery",
+  },
+  {
+    image: krispykreme,
+    title: "Krispy Kreme",
+  },
+  {
+    image: capcakestraw,
+    title: "SP Bakery",
+  },
+  {
+    image: season,
+    title: "Season ",
+  },
 ];
 
 /* Images for Can Order Now Page  */

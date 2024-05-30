@@ -5,6 +5,8 @@ import DailyDeal from "../../component/Food/DailyDeal/DailyDeal";
 import BestDeals from "../../component/Food/Best Deals/BestDeals";
 import FavoriteCuisines from "../../component/Food/FavoriteCuisines/FavoriteCuisines";
 import OrderItAgain from "../../component/Food/Order It Again/OrderItAgain";
+import PopularItems from "../../component/Food/PopularItems/PopularItems";
+import FeaturedRestaurants from "../../component/Food/FeaturedRestaurants/FeaturedRestaurants";
 
 const FoodRoute = () => {
   return (
@@ -12,9 +14,11 @@ const FoodRoute = () => {
       <Navbar />
       <Herosection />
       <Instruction />
-      <FavoriteCuisines />
       <DailyDeal />
       <OrderItAgain />
+      <FavoriteCuisines />
+      <PopularItems/>
+      <FeaturedRestaurants/>
       <BestDeals />
     </div>
   );
