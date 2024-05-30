@@ -27,17 +27,14 @@ import Coffee from "../assets/Food/DailyDeal/coffee4.jpg";
 import Desert from "../assets/Food/DailyDeal/desert1.jpg";
 import Strawberry from "../assets/Food/DailyDeal/strawberryjuice.jpg";
 import Google from "./Google.png";
-import Salad from '../assets/Food/FavoriteCuisines/salad.jpg';
-import Juice from '../assets/Food/FavoriteCuisines/juice.jpg';
-import MorningBreakfast from '../assets/Food/FavoriteCuisines/breakfast.jpg';
-import Dumpling from '../assets/Food/FavoriteCuisines/dumpling.jpg';
-import Soup from '../assets/Food/FavoriteCuisines/soup.jpg';
-import Fruits from '../assets/Food/FavoriteCuisines/fruits.jpg';
-import IceCream from '../assets/Food/FavoriteCuisines/icecream.jpg';
-import Cake from '../assets/Food/FavoriteCuisines/cake.jpg';
-
-
-
+import Salad from "../assets/Food/FavoriteCuisines/salad.jpg";
+import Juice from "../assets/Food/FavoriteCuisines/juice.jpg";
+import MorningBreakfast from "../assets/Food/FavoriteCuisines/breakfast.jpg";
+import Dumpling from "../assets/Food/FavoriteCuisines/dumpling.jpg";
+import Soup from "../assets/Food/FavoriteCuisines/soup.jpg";
+import Fruits from "../assets/Food/FavoriteCuisines/fruits.jpg";
+import IceCream from "../assets/Food/FavoriteCuisines/icecream.jpg";
+import Cake from "../assets/Food/FavoriteCuisines/cake.jpg";
 
 interface Images {
   logo: string;
@@ -68,13 +65,13 @@ interface Images {
   Desert: string;
   Strawberry: string;
   Google: string;
-  Salad:string;
+  Salad: string;
   Juice: string;
   MorningBreakfast: string;
-  Dumpling:string;
-  Soup:string;
-  Fruits:string;
-  IceCream:string;
+  Dumpling: string;
+  Soup: string;
+  Fruits: string;
+  IceCream: string;
   Cake: string;
   Steak: string;
   Salmond: string;
@@ -89,14 +86,12 @@ interface Images {
   Image6: string;
   Image7: string;
   Image8: string;
-  bakery:string;
-  capcakestraw:string;
-  icecream:string;
-  krispykreme:string;
-  chocolatecake:string;
-  season:string;
-
-
+  bakery: string;
+  capcakestraw: string;
+  icecream: string;
+  krispykreme: string;
+  chocolatecake: string;
+  season: string;
 }
 export const Images: Images = {
   logo,
@@ -158,7 +153,6 @@ export const Images: Images = {
   krispykreme,
   chocolatecake,
   season,
-
 };
 
 /* Images for Herosection of Food Page  */
@@ -236,59 +230,57 @@ export const Coupons = [
 
 /* Images for Popular Items of Food page  */
 
-import Steak from './Food/PopularItems/steak.jpg';
-import Salmond from './Food/PopularItems/salmond.jpg';
-import Spaghetti from './Food/PopularItems/spaghetti.jpg';
-import Dimsum from './Food/PopularItems/dimsum.jpg';
-import Pasta from './Food/PopularItems/pasta.jpg';
-import Ramen from './Food/PopularItems/ramen.jpg';
-import Donut from './Food/PopularItems/donut.jpg';
-import PizzaHut from './Food/PopularItems/pizza.jpg'
+import Steak from "./Food/PopularItems/steak.jpg";
+import Salmond from "./Food/PopularItems/salmond.jpg";
+import Spaghetti from "./Food/PopularItems/spaghetti.jpg";
+import Dimsum from "./Food/PopularItems/dimsum.jpg";
+import Pasta from "./Food/PopularItems/pasta.jpg";
+import Ramen from "./Food/PopularItems/ramen.jpg";
+import Donut from "./Food/PopularItems/donut.jpg";
+import PizzaHut from "./Food/PopularItems/pizza.jpg";
 
 export const PopularItems = [
-  { image: Steak,
-    title: "Steak on the street"
-  },
+  { image: Steak, title: "Steak on the street" },
   {
     image: Salmond,
-    title: "Seafood City"
+    title: "Seafood City",
   },
   {
     image: Spaghetti,
-    title: "The Pizza Company"
+    title: "The Pizza Company",
   },
   {
     image: Dimsum,
-    title: "Oriental House"
+    title: "Oriental House",
   },
   {
     image: Pasta,
-    title: "Pizza Family"
+    title: "Pizza Family",
   },
   {
     image: Ramen,
-    title: "Ramen Monster"
+    title: "Ramen Monster",
   },
   {
     image: Donut,
-    title: "JDonut"
+    title: "JDonut",
   },
   {
     image: PizzaHut,
-    title: "Pizza Hut"
-  }
-]
+    title: "Pizza Hut",
+  },
+];
 
 /* Images for Featured Restaurants of Food page  */
 
-import Image1 from './Food/FeaturedRestaurants/Image1.png';
-import Image2 from './Food/FeaturedRestaurants/Image2.png';
-import Image3 from './Food/FeaturedRestaurants/Image3.png';
-import Image4 from './Food/FeaturedRestaurants/Image4.png';
-import Image5 from './Food/FeaturedRestaurants/Image5.png';
-import Image6 from './Food/FeaturedRestaurants/Image6.png';
-import Image7 from './Food/FeaturedRestaurants/Image7.png';
-import Image8 from './Food/FeaturedRestaurants/Image8.png';
+import Image1 from "./Food/FeaturedRestaurants/Image1.png";
+import Image2 from "./Food/FeaturedRestaurants/Image2.png";
+import Image3 from "./Food/FeaturedRestaurants/Image3.png";
+import Image4 from "./Food/FeaturedRestaurants/Image4.png";
+import Image5 from "./Food/FeaturedRestaurants/Image5.png";
+import Image6 from "./Food/FeaturedRestaurants/Image6.png";
+import Image7 from "./Food/FeaturedRestaurants/Image7.png";
+import Image8 from "./Food/FeaturedRestaurants/Image8.png";
 
 export const FeaturedRestaurants = [
   {
@@ -309,7 +301,7 @@ export const FeaturedRestaurants = [
   },
   {
     image: Image5,
-    title: "Beef Steak"
+    title: "Beef Steak",
   },
   {
     image: Image6,
@@ -323,43 +315,173 @@ export const FeaturedRestaurants = [
     image: Image8,
     title: "Taco Roll",
   },
-  
-]
+];
 
-import bakery from './Food/FoodHighlights/bakery.jpg';
-import capcakestraw from './Food/FoodHighlights/capcakestraw.jpg';
-import icecream from './Food/FoodHighlights/icecream (2).jpg';
-import chocolatecake from './Food/FoodHighlights/chocolatecake.jpg';
-import krispykreme from './Food/FoodHighlights/krispykreme.jpg';
-import season from './Food/FoodHighlights/season.jpg';
+import bakery from "./Food/FoodHighlights/bakery.jpg";
+import capcakestraw from "./Food/FoodHighlights/capcakestraw.jpg";
+import icecream from "./Food/FoodHighlights/icecream (2).jpg";
+import chocolatecake from "./Food/FoodHighlights/chocolatecake.jpg";
+import krispykreme from "./Food/FoodHighlights/krispykreme.jpg";
+import season from "./Food/FoodHighlights/season.jpg";
 
 export const FoodHighlights = [
   {
     image: bakery,
-    title:"Kudos' Bakery"
+    title: "Kudos' Bakery",
   },
   {
     image: icecream,
-    title:"Ice Manias"
+    title: "Ice Manias",
   },
   {
     image: chocolatecake,
-    title: "Khit Bakery"
+    title: "Khit Bakery",
   },
   {
-    image:krispykreme,
-    title:"Krispy Kreme"
+    image: krispykreme,
+    title: "Krispy Kreme",
   },
   {
     image: capcakestraw,
-    title:"SP Bakery"
+    title: "SP Bakery",
   },
   {
     image: season,
-    title:"Season "
-  }
-]
+    title: "Season ",
+  },
+];
 
+/* Images for Can Order Now Page  */
+import FruitsAndVegetables from "./Can Order/Fruits & Vegetables.png";
+import HomeAndLiving from "./Can Order/Home & Living.png";
+import Stationary from "./Can Order/Stationary.png";
+import Electronic from "./Can Order/Electronic.png";
+import FlowerShop from "./Can Order/Flower Shop.png";
+import BreadAndSnacks from "./Can Order/Breads & Snacks.png";
+import Pharmacy from "./Can Order/Pharmacy.png";
+import Cosmetic from "./Can Order/Cosmetic.png";
 
+type Image = {
+  id: string;
+  img: string;
+  title: string;
+};
 
+export const CanOrderImages: Image[] = [
+  {
+    id: "1",
+    img: FruitsAndVegetables,
+    title: "Fruits & Vegetabes",
+  },
+  {
+    id: "2",
+    img: HomeAndLiving,
+    title: "Home & Living",
+  },
+  {
+    id: "3",
+    img: Stationary,
+    title: "Stationary",
+  },
+  {
+    id: "4",
+    img: Electronic,
+    title: "Electronic",
+  },
+  {
+    id: "5",
+    img: FlowerShop,
+    title: "Flower Shop",
+  },
+  {
+    id: "6",
+    img: BreadAndSnacks,
+    title: "Bread & Snacks",
+  },
+  {
+    id: "7",
+    img: Pharmacy,
+    title: "Pharmacy",
+  },
+  {
+    id: "8",
+    img: Cosmetic,
+    title: "Cosmetic",
+  },
+];
 
+/* Images for Our Mall Brand Page  */
+import CityExpress from "./Mall Brand/CityExpress.png";
+import CityMall from "./Mall Brand/CityMall.png";
+import CityMart from "./Mall Brand/CityMart.png";
+import Nescafe from "./Mall Brand/Nescafe.png";
+import Parisian from "./Mall Brand/Parisian.png";
+import Seasons from "./Mall Brand/Seasons.png";
+import SeinGayHar from "./Mall Brand/SeinGayHar.png";
+
+export const MallBrandImage: Image[] = [
+  {
+    id: "1",
+    img: CityExpress,
+    title: "CityExpress",
+  },
+  {
+    id: "2",
+    img: CityMall,
+    title: "CityMall",
+  },
+  {
+    id: "3",
+    img: CityMart,
+    title: "CityMart",
+  },
+  {
+    id: "4",
+    img: Nescafe,
+    title: "Nescafe",
+  },
+  {
+    id: "5",
+    img: Parisian,
+    title: "Parisian",
+  },
+  {
+    id: "6",
+    img: Seasons,
+    title: "Seasons",
+  },
+  {
+    id: "7",
+    img: SeinGayHar,
+    title: "SeinGayHar",
+  },
+];
+
+/* Mall Cupon Images */
+import MallCuponOne from "./Mall/Mall Coupon1.png";
+import MallCuponTwo from "./Mall/Mall Coupon2.png";
+import MallCuponThree from "./Mall/Mall Coupon3.png";
+import MallCuponFour from "./Mall/Mall Coupon4.png";
+
+export const MallCupon: Image[] = [
+  {
+    id: "1",
+    img: MallCuponOne,
+    title: "Mall_Cupon_1",
+  },
+  {
+    id: "2",
+    img: MallCuponTwo,
+    title: "Mall_Cupon_2",
+  },
+  {
+    id: "3",
+    img: MallCuponThree,
+    title: "Mall_Cupon_3",
+  },
+  {
+    id: "4",
+    img: MallCuponFour,
+    title: "Mall_Cupon_4",
+  },
+];

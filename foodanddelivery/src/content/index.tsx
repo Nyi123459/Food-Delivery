@@ -1,5 +1,6 @@
 import { RxAngle, RxFigmaLogo, RxGithubLogo } from "react-icons/rx";
-import {Images} from "../assets";
+import { Images } from "../assets";
+import OwnerRegister from "../pages/Account/Login/OwnerRegister";
 
 export const footerLinks = [
   {
@@ -79,19 +80,22 @@ export const partnerShips = [
     icon: Images.Taxi,
     title: "Become a Savor Driver",
     text: "As a delivery driver, you'll make reliable money-working anytime, anywhere.",
-    link: "Start earning ⮕",
+    linkPath: "/register/driver",
+    linkText: "Start earning ⮕",
   },
   {
     icon: Images.Rider,
     title: "Become a Savor Rider",
     text: "As a delivery Rider, you'll make reliable money—working anytime, anywhere.",
-    link: "Start earning ⮕",
+    linkPath: "/register/rider",
+    linkText: "Start earning ⮕",
   },
   {
     icon: Images.Store,
     title: "Become a Savor Partner",
     text: "Grow your business and reach new customers by partnering with us.",
-    link: "Start earning ⮕",
+    linkPath: "/register/food-merchant-owner",
+    linkText: "Start earning ⮕",
   },
 ];
 

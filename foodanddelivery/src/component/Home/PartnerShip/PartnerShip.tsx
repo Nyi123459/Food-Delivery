@@ -1,5 +1,8 @@
 import { partnerShips } from "../../../content";
+import { useNavigate } from "react-router-dom";
+
 const PartnerShip = () => {
+  const navigate = useNavigate();
   return (
     <section className="container mx-auto px-0 md:px-8 pt-6 pb-20 overflow-hidden">
       <div className="flex flex-wrap justify-center gap-8 w-full">
@@ -20,12 +23,13 @@ const PartnerShip = () => {
               <p className="text-sm md:text-base mb-2 pt-2 md:pt-4">
                 {data.text}
               </p>
-              <a
-                href={data.link}
+
+              <button
+                onClick={() => navigate(data.linkPath)}
                 className="text-red-600 text-base font-bold md:text-base pt-2 md:pt-4"
               >
-                {data.link}
-              </a>
+                {data.linkText}
+              </button>
             </div>
           </div>
         ))}

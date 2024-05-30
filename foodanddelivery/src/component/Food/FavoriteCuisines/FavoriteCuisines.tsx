@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -161,12 +162,19 @@ const FavoriteCuisines: React.FC = () => {
     autoplaySpeed: 2000,
     cssEase: "linear",
   };
+=======
+import React from "react";
+import FloatingItems from "../../Common/FloatingItems";
+import { FavoriteCuisinesLinks } from "../../../constants/food";
+>>>>>>> master
 
+const FavoriteCuisines = () => {
   return (
     <div className="flex flex-col py-12 ml-[10%] mr-[10%]">
       <div className="flex flex-start mb-6">
-        <h2 className="text-2xl font-bold">Your Favorite Cuisines</h2>
+        <h2 className="text-2xl font-bold">Your favourite cuisines</h2>
       </div>
+<<<<<<< HEAD
       <Slider {...settings}>
         {FavoriteCuisinesLinks.map((item, index) => (
           <div key={index} className="flex flex-col items-center p-3">
@@ -181,6 +189,9 @@ const FavoriteCuisines: React.FC = () => {
           </div>
         ))}
       </Slider>
+=======
+      <FloatingItems data={FavoriteCuisinesLinks} showOptionalContent={true} />;
+>>>>>>> master
     </div>
   );
 };

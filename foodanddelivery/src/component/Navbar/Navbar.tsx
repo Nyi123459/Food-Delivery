@@ -3,8 +3,8 @@ import { IoPerson } from "react-icons/io5";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import { Images } from "../../assets";
 import BeOurPartner from "../Home/PartnerShip/BeOurPartner";
-import Login from "../../pages/Account/Login/Login";
 import SignUp from "../../pages/Account/SignUp";
+import Login from "../../pages/Account/Login";
 
 interface BarProps {
   onClose: () => void;
@@ -52,7 +52,7 @@ const Navbar = ({ onClose }: BarProps) => {
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 
-          <div className="flex gap-4 hidden mdl:flex">
+          <div className="flex gap-4 mdl:flex">
             <div className="flex items-center">
               <IoMdSearch
                 style={{
@@ -67,9 +67,11 @@ const Navbar = ({ onClose }: BarProps) => {
                 placeholder="Search"
               />
             </div>
-
-            <Login />
-
+            <Login
+              onClose={function (): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
             <SignUp />
           </div>
         </div>
