@@ -1,34 +1,25 @@
-import { Modal } from "flowbite-react";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
-
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Images } from "../../assets";
 
 function SignUp() {
-  const [openModal, setOpenModal] = useState(false);
-  const emailInputRef = useRef<HTMLInputElement>(null);
+  const [showLoginForm, setShowLoginForm] = useState(false);
+  const toggleLoginForm = () => {
+    setShowLoginForm(!showLoginForm);
+  };
 
   return (
     <>
-      <div
+      <button
         className="hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-shadownav px-[20px] py-[8px] flex items-center text-xs font-extrabold text-navcolor"
-        onClick={() => setOpenModal(true)}>
+        onClick={toggleLoginForm}
+      >
         <IoPerson className="mr-1" />
         Sign Up
-      </div>
-
-      {openModal && (
-        <div className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50"></div>
-      )}
-      <Modal
-        show={openModal}
-        size="md"
-        popup
-        onClose={() => setOpenModal(false)}
-        initialFocus={emailInputRef}
-        className="absolute top-full left-0">
-        <Modal.Header />
-        <Modal.Body>
+      </button>
+      {showLoginForm && (
+        <form>
           <div className="space-y-6">
             <div className="mb-6">
               <h1 className="text-2xl font-semibold text-gray-800">Welcome!</h1>
@@ -46,7 +37,11 @@ function SignUp() {
 
               <div className="w-full flex justify-center py-2 px-4 border border-current rounded-md shadow-sm text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 <button type="submit" className="flex items-center">
-                  <FaGoogle className="text-xl mr-2 -ml-1" />
+                  <img
+                    className="w-6 h-6 mr-2 -ml-1"
+                    src={Images.Google}
+                    alt="Google"
+                  />
                   <span className="text-center">Continue with Google</span>
                 </button>
               </div>
@@ -68,8 +63,8 @@ function SignUp() {
               </div>
             </form>
           </div>
-        </Modal.Body>
-      </Modal>
+        </form>
+      )}
     </>
   );
 }

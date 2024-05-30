@@ -2,8 +2,8 @@ import { Images } from "../../../assets";
 
 const Instruction = () => {
   return (
-    <>
-      <div className="font-bold flex justify-center text-2xl mb-2">
+    <div className="pb-20 pt-20">
+      <div className="font-bold flex justify-center text-2xl mb-2 ">
         How does it work
       </div>
 
@@ -64,7 +64,7 @@ const Instruction = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

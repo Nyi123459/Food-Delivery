@@ -9,9 +9,13 @@ import HomeRoute from "./pages/Home/HomeRoute";
 import Footer from "./component/Common/Footer/Footer";
 import "./index.css";
 import FoodRoute from "./pages/Food/FoodRoute";
+import OwnerRegister from "./pages/Account/Login/OwnerRegister";
+import RiderRegister from "./pages/Account/Login/RiderRegister";
+import DriverRegister from "./pages/Account/Login/DriverRegister";
+import PartnerLogin from "./pages/Account/Login/PartnerLogin";
+import Login from "./pages/Account/Login";
 import MallRoute from "./pages/Mall/MallRoute";
 import SignUp from "./pages/Account/SignUp";
-import SignInRoute from "./pages/Account/SignInRoute";
 
 const Layout: React.FC = () => {
   return (
@@ -31,9 +35,16 @@ function App() {
             <Route index element={<HomeRoute />} />
             <Route path="/food" element={<FoodRoute />} />
           </Route>
+          <Route
+            path="/register/food-merchant-owner"
+            element={<OwnerRegister />}
+          />
+          <Route path="/register/rider" element={<RiderRegister />} />
+          <Route path="/register/driver" element={<DriverRegister />} />
+          <Route path="/login/:role" element={<PartnerLogin />} />
+          <Route path="/login/" element={<Login />} />
           <Route path="/food" element={<FoodRoute />} />
           <Route path="/mall" element={<MallRoute />} />
-          <Route path="/signin" element={<SignInRoute />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Router>
