@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { Images } from "../../assets";
-import EmailLogin from "./Email/EmailLogin";
+import BasicLogin from "./Email/BasicLogin";
+import { UserContext } from "../../context/userContext";
 
-const Login = () => {
+const Login: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [currentForm, setCurrentForm] = useState(1);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setCurrentUser } = useContext(UserContext);
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -20,10 +24,22 @@ const Login = () => {
   };
 
   const handleBack = () => {
-    setCurrentForm(currentForm - 1);
+    if (currentForm > 1) {
+      setCurrentForm(currentForm - 1);
+    } else {
+      setShowModal(false);
+    }
   };
 
-  const handleEmailLogin = () => {
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleNext();
+  };
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const user = { email, password };
+    setCurrentUser(user);
     setShowModal(false);
     navigate("/");
   };
@@ -32,8 +48,7 @@ const Login = () => {
     <div>
       <div
         className="hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-shadownav px-[20px] py-[8px] flex items-center text-xs font-extrabold text-navcolor"
-        onClick={toggleModal}
-      >
+        onClick={toggleModal}>
         <IoPerson className="mr-1" />
         Log In
       </div>
@@ -41,12 +56,10 @@ const Login = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50">
           <div
             className="bg-white p-6 rounded-lg z-10 relative"
-            style={{ width: "400px" }}
-          >
+            style={{ width: "400px" }}>
             <button
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-              onClick={toggleModal}
-            >
+              onClick={toggleModal}>
               <IoMdClose className="h-6 w-6" />
             </button>
             <div className="space-y-6">
@@ -88,8 +101,7 @@ const Login = () => {
                       <button
                         type="button"
                         className="flex items-center"
-                        onClick={handleNext}
-                      >
+                        onClick={handleNext}>
                         Log In
                       </button>
                     </div>
@@ -97,7 +109,15 @@ const Login = () => {
                 </div>
               )}
               {currentForm === 2 && (
-                <EmailLogin onNext={handleEmailLogin} onBack={handleBack} />
+                <BasicLogin
+                  email={email}
+                  setEmail={setEmail}
+                  password={password}
+                  setPassword={setPassword}
+                  handleEmailSubmit={handleEmailSubmit}
+                  handlePasswordSubmit={handlePasswordSubmit}
+                  handleBack={handleBack}
+                />
               )}
             </div>
           </div>
