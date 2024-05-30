@@ -6,7 +6,7 @@ import Carousel from "./Carousel";
 
 const Herosection = () => {
   return (
-    <section className="bg-primary h-[760px] md:h-[870px] mdx:h-[550px]">
+    <section className="bg-primary h-[760px] md:h-[870px] mdx:h-[550px] pb-20">
       <div className="flex max-mdx:flex-col ml-[10%] mr-[10%]">
         <div className="flex flex-col w-3/5 mt-[10%] max-mdx:w-full">
           <div className="text-5xl text-white font-bold max-mdl:text-4xl max-md:text-3xl">

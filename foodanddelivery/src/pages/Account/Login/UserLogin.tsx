@@ -1,11 +1,10 @@
 import { Modal } from "flowbite-react";
 import { IoPerson } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
-
 import { useRef, useState } from "react";
 import { Images } from "../../../assets";
 
-function Login() {
+function UserLogin() {
   const [openModal, setOpenModal] = useState(false);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
@@ -81,4 +80,43 @@ function Login() {
   );
 }
 
-export default Login;
+export default UserLogin;
+
+// import React, { useState } from "react";
+// import axios from 'axios';
+
+// interface UserLoginProps {
+//   onLoginSuccess: () => void;
+// }
+
+// const UserLogin: React.FC<UserLoginProps> = ({ onLoginSuccess }) => {
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const handleLogin = async (e: React.FormEvent) => {
+//     e.preventDefault();
+//     try {
+//       const response = await axios.post('YOUR_LARAVEL_BACKEND_LOGIN_ENDPOINT', { email, password });
+//       if (response.data.success) {
+//         onLoginSuccess();
+//       } else {
+//         alert("Invalid credentials");
+//       }
+//     } catch (error) {
+//       alert("Error logging in");
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>User Login</h2>
+//       <form onSubmit={handleLogin}>
+//         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+//         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+//         <button type="submit">Login</button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default UserLogin;
