@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { UserContext } from "../../../context/userContext";
 
 const BeOurPartner: React.FC = () => {
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { currentUser } = useContext(UserContext);
 
   const handleNavigation = (role: string) => {
     navigate(`/register/${role}`);
@@ -18,7 +20,9 @@ const BeOurPartner: React.FC = () => {
           className="select-none rounded-lg border border-black py-3 px-6 text-center align-middle font-sans text-m uppercase text-black transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none hover:bg-amber-50 hover:border-[#FFA500] flex items-center justify-between"
           type="button"
           onClick={(event) =>
-            !user ? event.preventDefault() : setDropdownOpen(!dropdownOpen)
+            !currentUser 
+              ? event.preventDefault()
+              : setDropdownOpen(!dropdownOpen)
           }>
           Be Our Partner <RiArrowDropDownLine className="ml-2" size={24} />
         </button>

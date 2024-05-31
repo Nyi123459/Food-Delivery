@@ -1,72 +1,85 @@
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import React, { useState } from "react";
 import { IoPerson } from "react-icons/io5";
-import { useState } from "react";
-import { Images } from "../../assets";
+import { IoMdClose } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import BasicRegister from "../../component/Common/Registration";
 
-function SignUp() {
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const toggleLoginForm = () => {
-    setShowLoginForm(!showLoginForm);
+const DefaultFormFields = {
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const SignUp: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [formFields, setFormFields] = useState(DefaultFormFields);
+  const navigate = useNavigate();
+
+  const resetFormFields = () => {
+    setFormFields(DefaultFormFields);
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+  };
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
+  const handlePasswordSubmit = () => {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+    resetFormFields();
+    setShowModal(false);
+    navigate("/");
   };
 
   return (
-    <>
-      <button
+    <div>
+      <div
         className="hover:-translate-y-1 hover:scale-110 transition duration-700 ease-in-out rounded-lg border-white shadow shadow-shadownav px-[20px] py-[8px] flex items-center text-xs font-extrabold text-navcolor"
-        onClick={toggleLoginForm}
-      >
+        onClick={toggleModal}>
         <IoPerson className="mr-1" />
         Sign Up
-      </button>
-      {showLoginForm && (
-        <form>
-          <div className="space-y-6">
-            <div className="mb-6">
-              <h1 className="text-2xl font-semibold text-gray-800">Welcome!</h1>
-              <h3 className="text-base font-light  text-gray-600">
-                Sign up or log in to continue.
-              </h3>
+      </div>
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-50">
+          <div
+            className="bg-white p-6 rounded-lg z-10 relative"
+            style={{ width: "400px" }}>
+            <button
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              onClick={toggleModal}>
+              <IoMdClose className="h-6 w-6" />
+            </button>
+            <div className="space-y-6">
+              <BasicRegister
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+                confirmPassword={confirmPassword}
+                setConfirmPassword={setConfirmPassword}
+                handleEmailSubmit={handleEmailSubmit}
+                handlePasswordSubmit={handlePasswordSubmit}
+                signUpForm={true}
+                text={"Sign Up"}
+              />
             </div>
-            <form className="space-y-4">
-              <div className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  <FaFacebook className="text-xl mr-2 -ml-1" />
-                  <span className="text-center">Continue with Facebook</span>
-                </button>
-              </div>
-
-              <div className="w-full flex justify-center py-2 px-4 border border-current rounded-md shadow-sm text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  <img
-                    className="w-6 h-6 mr-2 -ml-1"
-                    src={Images.Google}
-                    alt="Google"
-                  />
-                  <span className="text-center">Continue with Google</span>
-                </button>
-              </div>
-
-              <div className="w-full flex justify-center py-2 px-4s  text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2">
-                or
-              </div>
-
-              <div className="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-base font-medium bg-yellow-500 hover:bg-yellow-400 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  Log in
-                </button>
-              </div>
-
-              <div className="w-full flex justify-center py-2 px-4 border border-yellow-500 rounded-md shadow-sm text-base font-medium hover:bg-yellow-100 hover:border-transparent text-amber-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                <button type="submit" className="flex items-center">
-                  Sign Up
-                </button>
-              </div>
-            </form>
           </div>
-        </form>
+        </div>
       )}
-    </>
+    </div>
   );
-}
+};
 
 export default SignUp;
