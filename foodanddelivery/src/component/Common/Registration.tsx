@@ -83,11 +83,10 @@ const BasicRegister: React.FC<BasicRegisterProps> = ({
             <div className="w-full flex justify-center py-2 px-4 text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2">
               or
             </div>
-            <div className="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-base font-medium bg-yellow-500 hover:bg-yellow-400 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              <button
-                type="button"
-                className="flex items-center"
-                onClick={handleNext}>
+            <div
+              className="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-base font-medium bg-yellow-500 hover:bg-yellow-400 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"
+              onClick={handleNext}>
+              <button type="button" className="flex items-center">
                 {text}
               </button>
             </div>

@@ -18,6 +18,7 @@ import MallRoute from "./pages/Mall/MallRoute";
 import SignUp from "./pages/Account/SignUp";
 import { UserProvider } from "./context/userContext";
 import ProtectedRoute from "../src/routes/protectedRoute/protectedRoute";
+import Taxi from "./pages/Taxi/Taxi";
 
 const Layout: React.FC = () => {
   return (
@@ -52,6 +53,7 @@ function App() {
             />
             <Route path="/login/:role" element={<PartnerLogin />} />
             <Route path="/login/" element={<Login />} />
+            <Route path="/taxi" element={<Taxi />} />
             <Route path="/food" element={<FoodRoute />} />
             <Route path="/mall" element={<MallRoute />} />
             <Route path="/signup" element={<SignUp />} />
