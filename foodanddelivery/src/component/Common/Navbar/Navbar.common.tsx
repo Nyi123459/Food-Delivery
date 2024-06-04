@@ -93,15 +93,13 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
               </div>
             )}
             {currentUser !== null ? (
-              <div className="flex justify-around items-center ">
-                <IoPersonOutline />
+              <div className="flex justify-around items-center gap-3">
                 <div className="flex justify-center items-center">
-                  {" "}
-                  User Name
+                  <IoPersonOutline /> User Name
                   <MdOutlineArrowDownward />
                 </div>
-                <MdFavoriteBorder />
-                <PiBasket />
+                <MdFavoriteBorder className="size-5" />
+                <PiBasket className="size-5" />
               </div>
             ) : (
               <>
