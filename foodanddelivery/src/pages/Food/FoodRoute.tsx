@@ -1,4 +1,4 @@
-import Navbar from "../../component/Food/Navbar/Navbar";
+import Navbar from "../../component/Common/Navbar/Navbar.common";
 import Herosection from "../../component/Food/Herosection/Herosection";
 import Instruction from "../../component/Food/Instruction/Instruction";
 import DailyDeal from "../../component/Food/DailyDeal/DailyDeal";
@@ -11,14 +11,14 @@ import FeaturedRestaurants from "../../component/Food/FeaturedRestaurants/Featur
 const FoodRoute = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar notHome={true} />
       <Herosection />
       <Instruction />
       <DailyDeal />
       <OrderItAgain />
       <FavoriteCuisines />
-      <PopularItems/>
-      <FeaturedRestaurants/>
+      <PopularItems />
+      <FeaturedRestaurants />
       <BestDeals />
     </div>
   );

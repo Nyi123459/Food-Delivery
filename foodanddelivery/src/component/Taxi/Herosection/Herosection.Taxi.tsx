@@ -1,6 +1,6 @@
 import React from "react";
-import HerosectionCommon from "../Common/Herosection.common";
-import TaxiMascot from "../../assets/Taxi/TaxiMascot.png";
+import HerosectionCommon from "../../Common/Herosection.common";
+import TaxiMascot from "../../../assets/Taxi/TaxiMascot.png";
 
 const Herosection = () => {
   const handleClick = () => {};
