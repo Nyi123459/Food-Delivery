@@ -19,6 +19,7 @@ import SignUp from "./pages/Account/SignUp";
 import { UserProvider } from "./context/userContext";
 import ProtectedRoute from "../src/routes/protectedRoute/protectedRoute";
 import Taxi from "./pages/Taxi/Taxi";
+r
 
 const Layout: React.FC = () => {
   return (
@@ -60,6 +61,7 @@ function App() {
           </Routes>
         </Router>
       </UserProvider>
+          
     </div>
   );
 }

@@ -1,12 +1,10 @@
 import { Images } from "../../../assets";
+import Heading from "../../ItemCard/Items/Heading";
 
 const Instruction = () => {
   return (
     <div className="pb-20 pt-20">
-      <div className="font-bold flex justify-center text-2xl mb-2 ">
-        How does it work
-      </div>
-
+      <Heading heading="How does it work" />
       <div className="flex flex-col sml:flex-row justify-center ml-[10%] mr-[10%]">
         <div className="mx-4 my-2 text-center flex flex-col items-center">
           <div className="mb-2">
