@@ -16,6 +16,7 @@ import PartnerLogin from "./pages/Account/Login/PartnerLogin";
 import Login from "./pages/Account/Login";
 import MallRoute from "./pages/Mall/MallRoute";
 import SignUp from "./pages/Account/SignUp";
+import ProfileDetail from "./pages/Account/LoginProfile/ProfileDetail";
 
 const Layout: React.FC = () => {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/food" element={<FoodRoute />} />
           <Route path="/mall" element={<MallRoute />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/profileDetail" element={<ProfileDetail />} />
         </Routes>
       </Router>
     </div>

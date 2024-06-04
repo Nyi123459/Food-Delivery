@@ -11,8 +11,8 @@ const FoodHighlights: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col pb-20 ml-[10%] mr-[10%]">
-      <Heading heading="Order it again" />
+    <div className="flex flex-col pt-20 pb-20 ml-[10%] mr-[10%]">
+      <Heading heading="Food Highlights" />
       <ReusableSlider settings={customSettings}>
         {FoodHighlightsMenu.map((item) => (
           <div className="px-2" key={item._id}>
