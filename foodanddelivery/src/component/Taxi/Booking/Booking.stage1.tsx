@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { IoIosAddCircle } from "react-icons/io";
 import { FaSuitcase } from "react-icons/fa6";
@@ -34,6 +34,7 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
   if (!apiKey) {
     throw new Error("Google Maps API key is not set in environment variables");
   }
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: apiKey,
     libraries: ["places"],
@@ -45,24 +46,21 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
 
-  const [pickupLocation, setPickupLocation] = useState("");
-  const [destination, setDestination] = useState("");
+  const [pickupLocation, setPickupLocation] = useState(
+    localStorage.getItem("pickupLocation") || ""
+  );
+  const [destination, setDestination] = useState(
+    localStorage.getItem("destination") || ""
+  );
 
   const pickupLocationRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
 
-  if (!isLoaded) {
-    return (
-      <Button
-        className="rounded-full"
-        loading={true}
-        placeholder={undefined}
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}>
-        Loading
-      </Button>
-    );
-  }
+  useEffect(() => {
+    if (isLoaded && pickupLocation && destination) {
+      calculateRoute();
+    }
+  }, [pickupLocation, destination, isLoaded]);
 
   const calculateRoute = async () => {
     if (!pickupLocation || !destination) {
@@ -92,6 +90,8 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     if (destinationRef.current) {
       destinationRef.current.value = "";
     }
+    localStorage.removeItem("pickupLocation");
+    localStorage.removeItem("destination");
   };
 
   const handleNextClick = () => {
@@ -102,15 +102,33 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     }
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    calculateRoute();
+  const handlePickupChange = () => {
+    const place = pickupLocationRef.current?.value || "";
+    setPickupLocation(place);
+    localStorage.setItem("pickupLocation", place);
   };
+
+  const handleDestinationChange = () => {
+    const place = destinationRef.current?.value || "";
+    setDestination(place);
+    localStorage.setItem("destination", place);
+  };
+
+  if (!isLoaded) {
+    return (
+      <Button
+        className="rounded-full"
+        loading={true}
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}>
+        Loading
+      </Button>
+    );
+  }
 
   return (
     <BookingCommon
-      sectionClassName={"bg-[#FFF1D2] w-full h-[860px]"}
-      stagesClassName={"ml-[10%] mr-[10%] pt-[5%] flex justify-evenly"}
       currentStage={currentStage}
       handleNext={handleNext}
       handleBack={handleBack}>
@@ -118,35 +136,31 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
         <div className="w-1/3">
           <div className="w-full rounded-md shadow-md shadow-blue-gray-500 h-[250px] bg-gradient-to-r from-[#FFC740] to-yellow-200 ">
             <p className="p-4 font-bold ml-[7%]">Get a ride</p>
-            <Autocomplete>
-              <form
-                className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2"
-                onSubmit={handleFormSubmit}>
+            <Autocomplete onPlaceChanged={handlePickupChange}>
+              <div className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2">
                 <input
                   type="text"
                   name="pickup location"
                   placeholder="Enter pickup location"
                   className="outline-none"
                   ref={pickupLocationRef}
-                  onChange={(e) => setPickupLocation(e.target.value)}
+                  defaultValue={pickupLocation}
                 />
                 <IoLocationOutline />
-              </form>
+              </div>
             </Autocomplete>
             <div className="relative lex pt-5">
-              <Autocomplete>
-                <form
-                  className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2"
-                  onSubmit={handleFormSubmit}>
+              <Autocomplete onPlaceChanged={handleDestinationChange}>
+                <div className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2">
                   <input
                     type="text"
                     name="destination"
                     placeholder="Enter destination"
                     className="outline-none"
                     ref={destinationRef}
-                    onChange={(e) => setDestination(e.target.value)}
+                    defaultValue={destination}
                   />
-                </form>
+                </div>
               </Autocomplete>
               <CiCirclePlus className="absolute right-3 top-8 size-5" />
               <button
@@ -158,22 +172,22 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
           </div>
           <p className="text-center pt-8 font-bold">Ride to Saved Places</p>
           <div className="flex justify-around mt-[5%]">
-            <form className="relative flex flex-col cursor-pointer">
-              <div className=" rounded-full bg-[#FFDB89] size-9 flex justify-center items-center shadow-sm shadow-gray-400">
+            <div className="relative flex flex-col cursor-pointer">
+              <div className="rounded-full bg-[#FFDB89] size-9 flex justify-center items-center shadow-sm shadow-gray-400">
                 <FaHome className="text-[#F48C06] size-5" />
               </div>
               <IoIosAddCircle className="absolute right-1 top-7 transform translate-x-1/2 -translate-y-1/2 z-10 text-[#F48C06]" />
               <p>Home</p>
-            </form>
-            <form className="relative flex flex-col cursor-pointer">
-              <div className=" rounded-full bg-[#FFDB89] size-9 flex justify-center items-center shadow-sm shadow-gray-400 ">
+            </div>
+            <div className="relative flex flex-col cursor-pointer">
+              <div className="rounded-full bg-[#FFDB89] size-9 flex justify-center items-center shadow-sm shadow-gray-400 ">
                 <FaSuitcase className="text-[#F48C06] size-5" />
               </div>
               <IoIosAddCircle className="absolute right-1 top-7 transform translate-x-1/2 -translate-y-1/2 z-10 text-[#F48C06]" />
               <p>Office</p>
-            </form>
+            </div>
             <div className="relative flex flex-col ">
-              <div className=" rounded-full bg-[#FFDB89] size-9 flex justify-center items-center shadow-sm shadow-gray-400">
+              <div className="rounded-full bg-[#FFDB89] size-9 flex justify-center items-center shadow-sm shadow-gray-400">
                 <MdOutlineFavorite className="text-[#F48C06] size-5" />
               </div>
               <IoIosAddCircle className="absolute right-1 top-7 transform translate-x-1/2 -translate-y-1/2 z-10 text-[#F48C06]" />

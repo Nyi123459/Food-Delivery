@@ -2,8 +2,6 @@ import classNames from "classnames";
 import { ReactNode } from "react";
 
 interface BookingProps {
-  sectionClassName: string;
-  stagesClassName: string;
   currentStage: number;
   handleNext: () => void;
   handleBack: () => void;
@@ -11,8 +9,6 @@ interface BookingProps {
 }
 
 const BookingCommon: React.FC<BookingProps> = ({
-  sectionClassName,
-  stagesClassName,
   currentStage,
   handleNext,
   handleBack,
@@ -25,11 +21,11 @@ const BookingCommon: React.FC<BookingProps> = ({
   ];
 
   return (
-    <section className={sectionClassName}>
+    <section className="bg-[#FFF1D2] w-full h-[860px]">
       <div className="bg-white text-xl font-extrabold flex justify-center items-center h-[80px]">
         Booking
       </div>
-      <div className={stagesClassName}>
+      <div className="ml-[10%] mr-[10%] pt-[5%] flex justify-evenly">
         {stages.map((stage) => (
           <div
             key={stage.id}
@@ -45,16 +41,18 @@ const BookingCommon: React.FC<BookingProps> = ({
       </div>
       <div>
         {children}
-        {<div className="flex justify-between mt-4">
-          <button onClick={handleBack} disabled={currentStage === 1}>
-            Back
-          </button>
-          <button
-            onClick={handleNext}
-            disabled={currentStage === stages.length}>
-            Next
-          </button>
-        </div>}
+        {
+          <div className="flex justify-between mt-4 hidden">
+            <button onClick={handleBack} disabled={currentStage === 1}>
+              Back
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={currentStage === stages.length}>
+              Next
+            </button>
+          </div>
+        }
       </div>
     </section>
   );
