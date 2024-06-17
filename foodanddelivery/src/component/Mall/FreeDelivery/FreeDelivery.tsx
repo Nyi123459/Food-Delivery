@@ -2,19 +2,19 @@ import React from "react";
 import Heading from "../../ItemCard/Items/Heading";
 import Product from "../../ItemCard/ItemCard";
 import ReusableSlider from "../../ItemCard/Items/ReusableSlider";
-import { FoodHighlightsMenu } from "../../ItemCard/Items";
+import { FreeDeliveryMenu } from "../../ItemCard/Items";
 
-const FoodHighlights: React.FC = () => {
+const FreeDelivery: React.FC = () => {
   const customSettings = {
     slidesToShow: 4,
     slidesToScroll: 1,
   };
 
   return (
-    <div className="flex flex-col pb-20 ml-[10%] mr-[10%] pt-20">
-      <Heading heading="Food Highlights" />
+    <div className="flex flex-col pb-20 ml-[10%] mr-[10%]">
+      <Heading heading="Free Delivery" />
       <ReusableSlider settings={customSettings}>
-        {FoodHighlightsMenu.map((item) => (
+        {FreeDeliveryMenu.map((item) => (
           <div className="px-2" key={item._id}>
             <Product
               _id={item._id}
@@ -42,4 +42,4 @@ const FoodHighlights: React.FC = () => {
   );
 };
 
-export default FoodHighlights;
+export default FreeDelivery;

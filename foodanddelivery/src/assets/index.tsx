@@ -92,6 +92,23 @@ interface Images {
   krispykreme: string;
   chocolatecake: string;
   season: string;
+  AllFruits:string;
+  Cosmetics:string;
+  Earphones:string;
+  PharmacyStore:string;
+  StationaryStore:string;
+  Vegetables:string;
+  KFC:string;
+  BubbleTea:string;
+  Popcorn:string;
+  GG:string;
+  PotatoCorner:string;
+  Crispy:string;
+  Abc:string;
+  Chocosnack:string;
+
+
+  
 }
 export const Images: Images = {
   logo,
@@ -153,6 +170,23 @@ export const Images: Images = {
   krispykreme,
   chocolatecake,
   season,
+
+  AllFruits,
+  Cosmetics,
+  Earphones,
+  PharmacyStore,
+  StationaryStore,
+  Vegetables,
+
+  KFC,
+  BubbleTea,
+  Popcorn,
+  GG,
+  PotatoCorner,
+  Crispy,
+  Abc,
+  Chocosnack
+  
 };
 
 /* Images for Herosection of Food Page  */
@@ -317,12 +351,12 @@ export const FeaturedRestaurants = [
   },
 ];
 
-import bakery from "./Food/FoodHighlights/bakery.jpg";
-import capcakestraw from "./Food/FoodHighlights/capcakestraw.jpg";
-import icecream from "./Food/FoodHighlights/icecream (2).jpg";
-import chocolatecake from "./Food/FoodHighlights/chocolatecake.jpg";
-import krispykreme from "./Food/FoodHighlights/krispykreme.jpg";
-import season from "./Food/FoodHighlights/season.jpg";
+import bakery from "./Mall/FoodHighlights/bakery.jpg";
+import capcakestraw from "./Mall/FoodHighlights/capcakestraw.jpg";
+import icecream from "./Mall/FoodHighlights/icecream (2).jpg";
+import chocolatecake from "./Mall/FoodHighlights/chocolatecake.jpg";
+import krispykreme from "./Mall/FoodHighlights/krispykreme.jpg";
+import season from "./Mall/FoodHighlights/season.jpg";
 
 export const FoodHighlights = [
   {
@@ -350,6 +384,91 @@ export const FoodHighlights = [
     title: "Season ",
   },
 ];
+
+/* Images for Top Picks of Mall page  */
+
+import AllFruits from './Mall/TopPicks/allfruits.jpg';
+import Cosmetics from './Mall/TopPicks/cosmetics.jpg';
+import Earphones from './Mall/TopPicks/earphones.jpg';
+import PharmacyStore from './Mall/TopPicks/pharmacy.jpg';
+import StationaryStore from './Mall/TopPicks/stationery.jpg';
+import Vegetables from './Mall/TopPicks/vegetables.jpg';
+
+export const TopPicks = [
+  {
+    image: AllFruits,
+    title:"Ocean Center"
+  },
+  {
+    image: Cosmetics,
+    title:"Beauty Diary"
+  },
+  {
+    image:Earphones,
+    title:"REMAX"
+  },
+  {
+    image:PharmacyStore,
+    title:"Shwe Ohh"
+  },
+  {
+    image:StationaryStore,
+    title:"KK Stationary"
+  },
+  {
+    image:Vegetables,
+    title:"City Mall"
+  }
+]
+
+/* Images for Free Delivery of Mall page  */
+
+import KFC from './Mall/FreeDelivery/KFC.jpg';
+import BubbleTea from './Mall/FreeDelivery/bubbletea.jpg';
+import Popcorn from './Mall/FreeDelivery/popcorn.jpg';
+import GG from './Mall/FreeDelivery/g&g.jpg';
+import PotatoCorner from './Mall/FreeDelivery/potatocorner.jpg';
+import Crispy from './Mall/FreeDelivery/crispy.jpg';
+import Abc from './Mall/FreeDelivery/abc.jpg';
+import Chocosnack from './Mall/FreeDelivery/chocosnack.jpg';
+
+export const FreeDelivery = [
+  {
+    image: KFC,
+    title:"KFC"
+  },
+  {
+    image: BubbleTea,
+    title:"Penlnd"
+  },
+  {
+    image:Popcorn,
+    title:"Sweet Chocoli"
+  },
+  {
+    image:GG,
+    title:"G & G"
+  },
+  {
+    image:PotatoCorner,
+    title:"Potato Corner" 
+  },
+  {
+    image:Crispy,
+    title:"Bread Talk"
+  },
+  {
+    image:Abc,
+    title:"ABC Mart"
+  },
+  {
+    image:Chocosnack,
+    title:"7 Eleven"
+  }
+
+]
+
+
 
 /* Images for Can Order Now Page  */
 import FruitsAndVegetables from "./Can Order/Fruits & Vegetables.png";
