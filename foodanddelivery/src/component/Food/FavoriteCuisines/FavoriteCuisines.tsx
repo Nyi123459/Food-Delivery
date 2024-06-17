@@ -1,6 +1,6 @@
-import React from "react";
 import FloatingItems from "../../Common/FloatingItems";
 import { FavoriteCuisinesLinks } from "../../../constants/food";
+
 import Heading from "../../ItemCard/Items/Heading";
 
 const FavoriteCuisines = () => {
