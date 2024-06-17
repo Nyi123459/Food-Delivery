@@ -19,6 +19,7 @@ import SignUp from "./pages/Account/SignUp";
 import { UserProvider } from "./context/userContext";
 import ProtectedRoute from "../src/routes/protectedRoute/protectedRoute";
 import Taxi from "./pages/Taxi/Taxi";
+import ProfileDetail from "./pages/Account/LoginProfile/ProfileDetail";
 
 const Layout: React.FC = () => {
   return (
@@ -50,6 +51,10 @@ function App() {
             <Route
               path="/register/driver"
               element={<ProtectedRoute element={<DriverRegister />} />}
+            />
+            <Route
+              path="/userProfile/profile"
+              element={<ProtectedRoute element={<ProfileDetail />} />}
             />
             <Route path="/login/:role" element={<PartnerLogin />} />
             <Route path="/login/" element={<Login />} />

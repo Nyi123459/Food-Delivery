@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { IoPerson } from "react-icons/io5";
 import { IoMdSearch, IoMdClose } from "react-icons/io";
 import { IoPersonOutline } from "react-icons/io5";
@@ -12,6 +12,7 @@ import SignUp from "../../../pages/Account/SignUp";
 import Login from "../../../pages/Account/Login";
 import { FaLocationDot } from "react-icons/fa6";
 import { UserContext } from "../../../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 interface BarProps {
   home?: boolean;
@@ -19,12 +20,36 @@ interface BarProps {
 }
 
 const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser, setCurrentUser } = useContext(UserContext);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
     setIsOpen(false);
   };
+
+  const handleNavigation = (role: string) => {
+    navigate(`/userProfile/${role}`);
+    setDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -51,7 +76,10 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
             <IoMdClose className="text-white-500 hover:text-red-500 h-6 w-6" />{" "}
           </button>
         </div>
-        <div className="flex ml-[10%] mr-[10%] py-4">
+        <div
+          className={`relative flex ml-[10%] mr-[10%] py-4 ${
+            currentUser !== null
+          }`}>
           <div className="mdl:hidden ml-0">
             <IoPerson />
           </div>
@@ -59,7 +87,7 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
             <img src={Images.logo} alt="Logo" className="w-50 h-6" />
           </div>
 
-          <div className="flex gap-4 mdl:flex">
+          <div className=" flex gap-4 mdl:flex">
             {home && (
               <div className="flex items-center">
                 <IoMdSearch
@@ -93,15 +121,45 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
               </div>
             )}
             {currentUser !== null ? (
-              <div className="flex justify-around items-center ">
-                <IoPersonOutline />
-                <div className="flex justify-center items-center">
-                  {" "}
-                  User Name
+              <div className="flex justify-around items-center gap-3">
+                <button
+                  className="flex justify-center items-center hover:bg-[#FFF1D2] h-8 w-[90%] rounded-md gap-1 hover:shadow-md text-md"
+                  onClick={(event) =>
+                    !currentUser
+                      ? event.preventDefault()
+                      : setDropdownOpen(!dropdownOpen)
+                  }>
+                  <IoPersonOutline className="font-bold" /> User Name
                   <MdOutlineArrowDownward />
-                </div>
-                <MdFavoriteBorder />
-                <PiBasket />
+                </button>
+                {dropdownOpen && (
+                  <div
+                    ref={dropdownRef}
+                    className="absolute right-0 mt-[20%] bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                    <button
+                      onClick={() => handleNavigation("profile")}
+                      className="block px-4 py-2 text-left text-gray-800 hover:underline underline-offset-8 decoration-amber-500 w-full">
+                      Profile Detail
+                    </button>
+                    <button
+                      onClick={() => handleNavigation("order_&_reordering")}
+                      className="block px-4 py-2 text-left text-gray-800 hover:underline underline-offset-8 decoration-amber-500 w-full">
+                      Orders & reording
+                    </button>
+                    <button
+                      onClick={() => handleNavigation("Vouchers")}
+                      className="block px-4 py-2 text-left text-gray-800 hover:underline underline-offset-8 decoration-amber-500 w-full">
+                      Vouchers
+                    </button>
+                    <button
+                      onClick={() => handleNavigation("logout")}
+                      className="block px-4 py-2 text-left text-gray-800 hover:underline underline-offset-8 decoration-amber-500 w-full">
+                      Log out
+                    </button>
+                  </div>
+                )}
+                <MdFavoriteBorder className="size-7" />
+                <PiBasket className="size-7" />
               </div>
             ) : (
               <>

@@ -485,3 +485,45 @@ export const MallCupon: Image[] = [
     title: "Mall_Cupon_4",
   },
 ];
+
+/* Payment Methods logo */
+
+import AYA from "../assets/Taxi/Payment/AYA logo.png";
+import Cash from "../assets/Taxi/Payment/Cash.png";
+import KPay from "../assets/Taxi/Payment/K-Pay logo.png";
+import MPU from "../assets/Taxi/Payment/MPU logo.png";
+import UAB from "../assets/Taxi/Payment/UAB logo.png";
+import WaveMoney from "../assets/Taxi/Payment/Wave Money logo.png";
+
+export const PaymentLogos: Image[] = [
+  {
+    id: "1",
+    img: KPay,
+    title: "KBZ Pay",
+  },
+  {
+    id: "2",
+    img: WaveMoney,
+    title: "Wave Pay",
+  },
+  {
+    id: "3",
+    img: AYA,
+    title: "AYA Pay",
+  },
+  {
+    id: "4",
+    img: UAB,
+    title: "UAB Pay",
+  },
+  {
+    id: "5",
+    img: MPU,
+    title: "MPU Pay",
+  },
+  {
+    id: "6",
+    img: Cash,
+    title: "Cash in hand",
+  },
+];

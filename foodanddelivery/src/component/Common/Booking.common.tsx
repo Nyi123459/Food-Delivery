@@ -1,72 +1,58 @@
-import React, { useState } from "react";
+import classNames from "classnames";
+import { ReactNode } from "react";
 
 interface BookingProps {
-  sectionClassName: string;
-  stagesClassName: string;
+  currentStage: number;
+  handleNext: () => void;
+  handleBack: () => void;
+  children: ReactNode;
 }
 
 const BookingCommon: React.FC<BookingProps> = ({
-  sectionClassName,
-  stagesClassName,
+  currentStage,
+  handleNext,
+  handleBack,
+  children,
 }) => {
-  const [currentStage, setCurrentStage] = useState(1);
-
   const stages = [
     { id: 1, label: "Choose Pickup" },
     { id: 2, label: "Book Savor's Taxi" },
     { id: 3, label: "Payment" },
   ];
 
-  
   return (
-    <section className={`${sectionClassName}`}>
+    <section className="bg-[#FFF1D2] w-full h-[860px]">
       <div className="bg-white text-xl font-extrabold flex justify-center items-center h-[80px]">
         Booking
       </div>
-      <div className={`${stagesClassName}`}>
-        <div className="flex flex-col items-center justify-center">
-          <div className="rounded-full w-9 h-9 bg-[#FFC740] flex items-center justify-center">
-            1
+      <div className="ml-[10%] mr-[10%] pt-[5%] flex justify-evenly">
+        {stages.map((stage) => (
+          <div
+            key={stage.id}
+            className={classNames("flex flex-col items-center justify-center", {
+              "opacity-50": stage.id !== currentStage,
+            })}>
+            <div className="rounded-full w-9 h-9 bg-[#FFC740] flex items-center justify-center">
+              {stage.id}
+            </div>
+            <div>{stage.label}</div>
           </div>
-          <div>Choose Pickup</div>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className="rounded-full w-9 h-9 bg-[#FFC740] flex items-center justify-center">
-            2
-          </div>
-          <div>Book Savor's Taxi</div>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <div className="rounded-full w-9 h-9 bg-[#FFC740] flex items-center justify-center">
-            3
-          </div>
-          <div>Payment</div>
-        </div>
+        ))}
       </div>
       <div>
-        <div>
-          <div className="w-1/3">
-            <p>Get a ride</p>
-            <div>
-              <p>Enter pickup location</p>
-            </div>
-            <div>
-              <p>Enter destination</p>
-            </div>
+        {children}
+        {
+          <div className="flex justify-between mt-4 hidden">
+            <button onClick={handleBack} disabled={currentStage === 1}>
+              Back
+            </button>
+            <button
+              onClick={handleNext}
+              disabled={currentStage === stages.length}>
+              Next
+            </button>
           </div>
-          <div>
-            <div>
-              <p>Home</p>
-            </div>
-            <div>
-              <p>Office</p>
-            </div>
-            <div>
-              <p>New</p>
-            </div>
-          </div>
-        </div>
-        <div className="w-2/3"></div>
+        }
       </div>
     </section>
   );
