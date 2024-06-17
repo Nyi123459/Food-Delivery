@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { RiArrowDropDownLine, RiSearchLine } from "react-icons/ri";
 import BackgroundPhoto from "../../../assets/bg-photo.jpg";
 import NavbarLogin from "../NavbarLogin";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 
 const OwnerRegister: React.FC = () => {
+  const [value, setValue] = useState(null);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -38,6 +40,11 @@ const OwnerRegister: React.FC = () => {
   ) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files ? e.target.files[0] : null;
+    setFormData({ ...formData, menuUpload: file });
   };
 
   const handleToggleDropdown = () => {
@@ -205,29 +212,7 @@ const OwnerRegister: React.FC = () => {
                   </p>
                 )}
               </div>
-              <div className="relative mb-4">
-                <label
-                  className="block text-black text-sm font-normal mb-2"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="name@mail.com"
-                  className={`shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:border-amber-400 focus:shadow-outline ${
-                    formErrors.email ? "border-red-500" : ""
-                  }`}
-                />
-                {formErrors.email && (
-                  <p className="text-red-500 text-xs italic">
-                    Please enter a valid email address.
-                  </p>
-                )}
-              </div>
+
               <div className="relative mb-4">
                 <label
                   className="block text-black text-sm font-normal mb-2"
@@ -238,7 +223,7 @@ const OwnerRegister: React.FC = () => {
                 <input
                   id="menuUpload"
                   type="file"
-                  onChange={handleChange}
+                  onChange={handleFileChange}
                   className={`shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:border-amber-400 focus:shadow-outline ${
                     formErrors.menuUpload ? "border-red-500" : ""
                   }`}
@@ -262,25 +247,24 @@ const OwnerRegister: React.FC = () => {
                   Restaurant Address
                 </label>
                 <div className="relative">
-                  <input
-                    id="restaurantAddress"
-                    type="text"
-                    value={formData.restaurantAddress}
-                    onChange={handleChange}
-                    placeholder="Search here..."
-                    className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-amber-400 focus:shadow-outline ${
-                      formErrors.restaurantAddress ? "border-red-500" : ""
-                    }`}
+                  <GooglePlacesAutocomplete
+                    apiKey="c8672677998187153"
+                    selectProps={{
+                      value,
+                      onChange: (val) => {
+                        setValue(val);
+                        setFormData({
+                          ...formData,
+                          restaurantAddress: val?.label || "",
+                        });
+                      },
+                    }}
                   />
                   {formErrors.restaurantAddress && (
                     <p className="text-red-500 text-xs italic">
                       Please enter the restaurant address.
                     </p>
                   )}
-                  <RiSearchLine
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                    size={12}
-                  />
                 </div>
               </div>
               <div>
