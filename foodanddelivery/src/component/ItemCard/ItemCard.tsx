@@ -1,12 +1,24 @@
+// src/components/ItemCard.tsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { SampleMenuItem } from "./Items";
-import { FaClock } from "react-icons/fa6";
-import { FaBicycle } from "react-icons/fa";
+import { FaClock } from "react-icons/fa";
+import { FaBicycle } from "react-icons/fa6";
+
 interface ProductProps extends SampleMenuItem {}
 
 const ItemCard: React.FC<ProductProps> = (props) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate("/details", { state: props });
+  };
+
   return (
-    <div className="w-full max-w-xs h-72 mx-auto bg-white rounded-lg shadow-md shadow-amber-100 overflow-hidden group border-slate-400">
+    <div
+      className="w-full max-w-xs h-72 mx-auto bg-white rounded-lg shadow-md shadow-amber-100 overflow-hidden group border-slate-400 cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div className="relative overflow-hidden ">
         <div className="h-48 w-full overflow-hidden">
           <img

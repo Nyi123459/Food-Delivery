@@ -1,4 +1,4 @@
-import { Images } from "../../../assets";
+import { Details, Images } from "../../../assets";
 
 export interface SampleMenuItem {
   _id: string;
@@ -24,7 +24,7 @@ export const SampleMenuData: SampleMenuItem[] = [
   {
     _id: "201",
     image: Images.BeefBurger,
-    shopTitle: "Co Co Food",
+    shopTitle: "Ko Ko Fu",
     menuTitle: "Beef Burger",
     price: "3500",
     color: "",
@@ -101,8 +101,30 @@ export const SampleMenuData: SampleMenuItem[] = [
   // Add other items here
 ];
 
+export const ItemCardList: SampleMenuItem[] = [
+  {
+    _id: "1",
+    shopTitle: "Ko Ko Fu (Junction Square)",
+    category: "Chinese . Asian . Seafood . Noodles",
+    rating: "4.9",
+    review: "(500+)",
+    time: "25 mins",
+    deliveryCharges: "500",
+    image: Details.Detail1,
+    badge: true,
+    menuTitle: "",
+    menuType: "",
+    toppings: "",
+    menuSize: "",
+    price: "",
+    color: "",
+    description: "",
+    deliveryType: false,
+  },
+  // Add more items as needed
+];
 
-export const PopularItem : SampleMenuItem[] = [
+export const PopularItem: SampleMenuItem[] = [
   {
     _id: "301",
     image: Images.Steak,
@@ -200,11 +222,10 @@ export const PopularItem : SampleMenuItem[] = [
     menuSize: "",
   },
 
-
   // Add other items here
 ];
 
-export const FeaturedRestaurantsMenu : SampleMenuItem[] = [
+export const FeaturedRestaurantsMenu: SampleMenuItem[] = [
   {
     _id: "401",
     image: Images.Image1,
@@ -361,12 +382,10 @@ export const FeaturedRestaurantsMenu : SampleMenuItem[] = [
     menuSize: "",
   },
 
-
   // Add other items here
 ];
 
-
-export const FoodHighlightsMenu : SampleMenuItem[] = [
+export const FoodHighlightsMenu: SampleMenuItem[] = [
   {
     _id: "501",
     image: Images.bakery,
@@ -483,7 +502,4 @@ export const FoodHighlightsMenu : SampleMenuItem[] = [
     toppings: "",
     menuSize: "",
   },
-  
 ];
-
-

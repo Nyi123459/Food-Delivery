@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { RiArrowDropDownLine, RiSearchLine } from "react-icons/ri";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import BackgroundPhoto from "../../../assets/bg-photo.jpg";
 import NavbarLogin from "../NavbarLogin";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";

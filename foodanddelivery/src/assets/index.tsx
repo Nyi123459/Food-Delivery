@@ -195,6 +195,14 @@ export const Food = [
   },
 ];
 
+/* Images for Food Detail of Food page  */
+import Detail1 from "./Food/CardDetail/Detail1.jpeg";
+interface Details {
+  Detail1: string;
+}
+
+export const Details: Details = { Detail1 };
+
 /* Images for BestDeals of Food page  */
 import Sandwiches from "./Food/Image/Sandwiches.png";
 import FriedChicken from "./Food/Image/FriedChicken.png";
