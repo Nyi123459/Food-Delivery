@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import BackgroundPhoto from "../../../assets/bg-photo.jpg";
 import NavbarLogin from "../NavbarLogin";
+import AddressInput from "../../../component/Common/AddressInput";
 
 const RiderRegister: React.FC = () => {
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,9 +38,9 @@ const RiderRegister: React.FC = () => {
     referralCode: false,
   });
 
-  const handleLoginNavigation = () => {
-    navigate("/login/rider");
-  };
+  const [address, setAddress] = useState(localStorage.getItem("address") || "");
+  const [city, setCity] = useState("");
+  const [additionalAddress, setAdditionalAddress] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -89,8 +87,7 @@ const RiderRegister: React.FC = () => {
           backgroundImage: `url(${BackgroundPhoto})`,
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
-        }}
-      >
+        }}>
         <div className="flex justify-end px-8">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
             <h2 className="text-center text-l font-bold mb-8 w-full text-amber-600">
@@ -101,8 +98,7 @@ const RiderRegister: React.FC = () => {
               <div className="relative mb-4">
                 <label
                   className="block text-black text-sm font-normal mb-2"
-                  htmlFor="name"
-                >
+                  htmlFor="name">
                   Name
                 </label>
                 <input
@@ -125,8 +121,7 @@ const RiderRegister: React.FC = () => {
               <div className="relative mb-4">
                 <label
                   className="block text-black text-sm font-normal mb-2"
-                  htmlFor="email"
-                >
+                  htmlFor="email">
                   Email
                 </label>
                 <input
@@ -149,8 +144,7 @@ const RiderRegister: React.FC = () => {
               <div className="relative mb-4">
                 <label
                   className="block text-black text-sm font-normal mb-2"
-                  htmlFor="phoneNumber"
-                >
+                  htmlFor="phoneNumber">
                   Phone Number
                 </label>
                 <input
@@ -173,8 +167,7 @@ const RiderRegister: React.FC = () => {
               <div className="relative mb-4">
                 <label
                   className="block text-black text-sm font-normal mb-2"
-                  htmlFor="dateOfBirth"
-                >
+                  htmlFor="dateOfBirth">
                   Date of Birth
                 </label>
                 <input
@@ -194,35 +187,26 @@ const RiderRegister: React.FC = () => {
                 )}
               </div>
 
-              <div className="relative mb-4">
+              <div className="mb-6">
                 <label
                   className="block text-black text-sm font-normal mb-2"
-                  htmlFor="address"
-                >
-                  Address
+                  htmlFor="restaurantAddress">
+                  Restaurant Address
                 </label>
-                <input
-                  id="address"
-                  type="text"
-                  value={formData.address}
-                  onChange={handleChange}
-                  placeholder="Enter your address"
-                  className={`shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:border-amber-400 focus:shadow-outline ${
-                    formErrors.address ? "border-red-500" : ""
-                  }`}
+                <AddressInput
+                  address={address}
+                  setAddress={setAddress}
+                  city={city}
+                  setCity={setCity}
+                  additionalAddress={additionalAddress}
+                  setAdditionalAddress={setAdditionalAddress}
                 />
-                {formErrors.address && (
-                  <p className="text-red-500 text-xs italic">
-                    Please enter your address.
-                  </p>
-                )}
               </div>
 
               <div className="relative mb-4">
                 <label
                   className="block text-black text-sm font-normal mb-2"
-                  htmlFor="referralCode"
-                >
+                  htmlFor="referralCode">
                   Referral Code
                 </label>
                 <input
@@ -245,19 +229,9 @@ const RiderRegister: React.FC = () => {
               <div>
                 <button
                   type="submit"
-                  className="bg-amber-500 hover:bg-amber-600 text-white font-normal w-full py-2 px-3 rounded focus:outline-none focus:shadow-outline"
-                >
+                  className="bg-amber-500 hover:bg-amber-600 text-white font-normal w-full py-2 px-3 rounded focus:outline-none focus:shadow-outline">
                   SUBMIT
                 </button>
-              </div>
-              <div className="flex items-center justify-center pt-8">
-                Already registered?{" "}
-                <span
-                  onClick={handleLoginNavigation}
-                  className="text-amber-500 cursor-pointer px-3"
-                >
-                  Login
-                </span>
               </div>
             </form>
           </div>

@@ -4,6 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
 import BasicRegister from "../../component/Common/Registration";
+import toast from "react-hot-toast";
 
 const Login: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +35,12 @@ const Login: React.FC = () => {
     handleNext();
   };
 
-  const handlePasswordSubmit = () => {
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email === "" || password === "") {
+      toast.error("Please fill in your credentials");
+      return;
+    }
     const user = { email, password };
     setCurrentUser(user);
     setShowModal(false);

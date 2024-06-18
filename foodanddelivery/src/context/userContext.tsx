@@ -2,7 +2,6 @@ import {
   ReactNode,
   createContext,
   useContext,
-  useEffect,
   useState,
 } from "react";
 
@@ -28,7 +27,19 @@ type UserProviderProps = {
 };
 
 export const UserProvider = ({ children }: UserProviderProps) => {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [currentUser, setCurrentUserState] = useState<User | null>(() => {
+    const user = localStorage.getItem("currentUser");
+    return user ? JSON.parse(user) : null;
+  });
+
+  const setCurrentUser = (newUser: User | null) => {
+    setCurrentUserState(newUser);
+    if (newUser) {
+      localStorage.setItem("currentUser", JSON.stringify(newUser));
+    } else {
+      localStorage.removeItem("currentUser");
+    }
+  };
 
   const isAuthenticated = () => {
     return currentUser !== null;
@@ -40,7 +51,6 @@ export const UserProvider = ({ children }: UserProviderProps) => {
     isAuthenticated,
   };
 
-  console.log("Value", value);
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 

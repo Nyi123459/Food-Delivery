@@ -13,6 +13,7 @@ import Login from "../../../pages/Account/Login";
 import { FaLocationDot } from "react-icons/fa6";
 import { UserContext } from "../../../context/userContext";
 import { useNavigate } from "react-router-dom";
+import useLogout from "../../../hooks/useLogout";
 
 interface BarProps {
   home?: boolean;
@@ -24,6 +25,7 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { logout } = useLogout();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
@@ -144,7 +146,7 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
                     <button
                       onClick={() => handleNavigation("order_&_reordering")}
                       className="block px-4 py-2 text-left text-gray-800 hover:underline underline-offset-8 decoration-amber-500 w-full">
-                      Orders & reording
+                      Orders & reordering
                     </button>
                     <button
                       onClick={() => handleNavigation("Vouchers")}
@@ -152,7 +154,7 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
                       Vouchers
                     </button>
                     <button
-                      onClick={() => handleNavigation("logout")}
+                      onClick={logout}
                       className="block px-4 py-2 text-left text-gray-800 hover:underline underline-offset-8 decoration-amber-500 w-full">
                       Log out
                     </button>

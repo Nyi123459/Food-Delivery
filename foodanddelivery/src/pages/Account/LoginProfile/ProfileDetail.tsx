@@ -1,12 +1,16 @@
-// src/components/ProfileForm.tsx
 import React, { useState, ChangeEvent } from "react";
-import { RiSearchLine } from "react-icons/ri";
+import { useGoogleMaps } from "../../../context/GoogleMapsProvider";
+import AddressInput from "../../../component/Common/AddressInput";
 
 const ProfileDetail: React.FC = () => {
+  const { isLoaded } = useGoogleMaps();
   const [profilePic, setProfilePic] = useState<string>(
     "https://via.placeholder.com/100"
   );
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [address, setAddress] = useState(localStorage.getItem("address") || "");
+  const [city, setCity] = useState("");
+  const [additionalAddress, setAdditionalAddress] = useState("");
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const file = event.target.files?.[0];
@@ -27,6 +31,18 @@ const ProfileDetail: React.FC = () => {
     fileInput.click();
   };
 
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    // Handle form submission logic here, e.g., save data to server
+    console.log("Form submitted with address:", address);
+    console.log("City:", city);
+    console.log("Additional Address:", additionalAddress);
+  };
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
@@ -42,9 +58,8 @@ const ProfileDetail: React.FC = () => {
             />
             <button
               type="button"
-              className="absolute bottom-0 right-0 bg-yellow-500 text-white p-2 rounded-full"
-              onClick={handleButtonClick}
-            >
+              className="absolute bottom-0 right-0 bg-yellow-500 text-white p-1 rounded-full"
+              onClick={handleButtonClick}>
               ✏️
             </button>
             <input
@@ -56,7 +71,7 @@ const ProfileDetail: React.FC = () => {
             />
           </div>
         </div>
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="mb-4">
             <input
               type="text"
@@ -89,37 +104,27 @@ const ProfileDetail: React.FC = () => {
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
           </div>
-
           <div className="mb-4">
             <select
               id="gender"
               aria-placeholder="Gender"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-            >
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>
             </select>
           </div>
-
-          <div className="mb-6">
-            <div className="relative">
-              <input
-                type="text"
-                id="address"
-                placeholder="Address"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              />
-              <RiSearchLine
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
-                size={12}
-              />
-            </div>
-          </div>
+          <AddressInput
+            address={address}
+            setAddress={setAddress}
+            city={city}
+            setCity={setCity}
+            additionalAddress={additionalAddress}
+            setAdditionalAddress={setAdditionalAddress}
+          />
           <button
             type="submit"
-            className="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition duration-200"
-          >
+            className="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition duration-200">
             Save
           </button>
         </form>

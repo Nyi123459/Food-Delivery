@@ -3,6 +3,7 @@ import { IoPerson } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import BasicRegister from "../../component/Common/Registration";
+import toast from "react-hot-toast";
 
 const DefaultFormFields = {
   email: "",
@@ -33,9 +34,14 @@ const SignUp: React.FC = () => {
     e.preventDefault();
   };
 
-  const handlePasswordSubmit = () => {
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email === "" || password === "" || confirmPassword === "") {
+      toast.error("Please fill in your credentials first");
+      return;
+    }
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
     resetFormFields();

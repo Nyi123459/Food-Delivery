@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { UserContext } from "../../../context/userContext";
+import toast from "react-hot-toast";
 
 const BeOurPartner: React.FC = () => {
   const navigate = useNavigate();
@@ -30,17 +31,23 @@ const BeOurPartner: React.FC = () => {
     };
   }, []);
 
+  const handleClick = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!currentUser) {
+      toast.error("Please Login First!");
+      setDropdownOpen(dropdownOpen);
+    } else {
+      setDropdownOpen(!dropdownOpen);
+    }
+  };
+
   return (
     <div>
       <div className="relative">
         <button
           className="select-none rounded-lg border border-black py-3 px-6 text-center align-middle font-sans text-m uppercase text-black transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none hover:bg-amber-50 hover:border-[#FFA500] flex items-center justify-between"
           type="button"
-          onClick={(event) =>
-            !currentUser
-              ? event.preventDefault()
-              : setDropdownOpen(!dropdownOpen)
-          }>
+          onClick={handleClick}>
           Be Our Partner <RiArrowDropDownLine className="ml-2" size={24} />
         </button>
         {dropdownOpen && (

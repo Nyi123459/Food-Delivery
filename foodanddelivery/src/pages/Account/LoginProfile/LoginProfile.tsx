@@ -10,8 +10,7 @@ const LoginProfile: React.FC = () => {
         <button
           className="select-none rounded-lg border border-black py-3 px-6 text-center align-middle font-sans text-m uppercase text-black transition-all disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none hover:bg-amber-50 hover:border-[#FFA500] flex items-center justify-between"
           type="button"
-          onClick={() => setDropdownOpen(!dropdownOpen)}
-        >
+          onClick={() => setDropdownOpen(!dropdownOpen)}>
           Be Our Partner <RiArrowDropDownLine className="ml-2" size={24} />
         </button>
         {dropdownOpen && (

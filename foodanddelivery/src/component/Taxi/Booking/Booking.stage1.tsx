@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { IoIosAddCircle } from "react-icons/io";
 import { FaSuitcase } from "react-icons/fa6";
@@ -76,6 +76,7 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     setDirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance?.text || "");
     setDuration(results.routes[0].legs[0].duration?.text || "");
+    console.log("Calculate Route re-render");
   };
 
   const clearRoute = () => {
@@ -92,6 +93,7 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     }
     localStorage.removeItem("pickupLocation");
     localStorage.removeItem("destination");
+    console.log("Clear Route re-render");
   };
 
   const handleNextClick = () => {
@@ -100,18 +102,24 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     } else {
       alert("Please enter both pickup location and destination");
     }
+    console.log("Handle Next Click re-render");
   };
 
-  const handlePickupChange = () => {
+  const handlePickupChange = useCallback(() => {
+    console.log("handlePickupChange function created");
     const place = pickupLocationRef.current?.value || "";
     setPickupLocation(place);
     localStorage.setItem("pickupLocation", place);
-  };
+    console.log("Handle pick up change re-render");
+  }, []);
+
+  console.log("Handle pickup change called");
 
   const handleDestinationChange = () => {
     const place = destinationRef.current?.value || "";
     setDestination(place);
     localStorage.setItem("destination", place);
+    console.log("Handle destination change re-render");
   };
 
   if (!isLoaded) {
@@ -167,6 +175,11 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
                 onClick={handleNextClick}
                 className="mt-[5%] ml-[10%] w-16 h-8 bg-navcolor rounded-md">
                 Book
+              </button>
+              <button
+                onClick={clearRoute}
+                className="mt-[5%] ml-[10%] w-16 h-8 bg-navcolor rounded-md">
+                Clear
               </button>
             </div>
           </div>
