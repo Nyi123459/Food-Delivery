@@ -6,13 +6,10 @@ import { Images } from "../../assets";
 
 interface BasicRegisterProps {
   email: string;
-  setEmail: React.Dispatch<React.SetStateAction<string>>;
   password: string;
-  setPassword: React.Dispatch<React.SetStateAction<string>>;
   confirmPassword?: string;
-  setConfirmPassword?: React.Dispatch<React.SetStateAction<string>>;
-  handleEmailSubmit: (e: React.FormEvent) => void;
-  handlePasswordSubmit: (e: React.FormEvent) => void;
+  handleSubmit: (e: React.FormEvent) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   loginForm?: boolean;
   signUpForm?: boolean;
   text: string;
@@ -20,13 +17,10 @@ interface BasicRegisterProps {
 
 const BasicRegister: React.FC<BasicRegisterProps> = ({
   email,
-  setEmail,
   password,
-  setPassword,
   confirmPassword,
-  setConfirmPassword,
-  handleEmailSubmit,
-  handlePasswordSubmit,
+  handleSubmit,
+  handleChange,
   loginForm = false,
   signUpForm = false,
   text,
@@ -41,14 +35,6 @@ const BasicRegister: React.FC<BasicRegisterProps> = ({
     if (currentForm > 1) {
       setCurrentForm(currentForm - 1);
     }
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    if (name === "email") setEmail(value);
-    if (name === "password") setPassword(value);
-    if (name === "confirmPassword" && setConfirmPassword)
-      setConfirmPassword(value);
   };
 
   return (
@@ -95,27 +81,23 @@ const BasicRegister: React.FC<BasicRegisterProps> = ({
       )}
       {currentForm === 2 && (
         <div>
-          <div>
-            <div className="flex justify-center mb-6">
-              <Lottie
-                animationData={EmailAnimation}
-                style={{ width: 100, height: 100 }}
-              />
-            </div>
-            <form className="space-y-4" onSubmit={handleEmailSubmit}>
-              <label className="block">
-                Email:
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-amber-400 focus:shadow-outline"
-                />
-              </label>
-            </form>
+          <div className="flex justify-center mb-6">
+            <Lottie
+              animationData={EmailAnimation}
+              style={{ width: 100, height: 100 }}
+            />
           </div>
-          <form className="space-y-4" onSubmit={handlePasswordSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <label className="block">
+              Email:
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-amber-400 focus:shadow-outline"
+              />
+            </label>
             <label className="block">
               Password:
               <input

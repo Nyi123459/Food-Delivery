@@ -11,7 +11,7 @@ import BeOurPartner from "../../Home/PartnerShip/BeOurPartner";
 import SignUp from "../../../pages/Account/SignUp";
 import Login from "../../../pages/Account/Login";
 import { FaLocationDot } from "react-icons/fa6";
-import { UserContext } from "../../../context/userContext";
+import { UserContext, useAuth } from "../../../context/userContext";
 import { useNavigate } from "react-router-dom";
 import useLogout from "../../../hooks/useLogout";
 
@@ -24,7 +24,7 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser, isAuthenticated, setCurrentUser } = useAuth();
   const { logout } = useLogout();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -35,6 +35,10 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
   const handleNavigation = (role: string) => {
     navigate(`/userProfile/${role}`);
     setDropdownOpen(false);
+  };
+
+  const navigateToMainPage = () => {
+    navigate("/");
   };
 
   useEffect(() => {
@@ -86,7 +90,12 @@ const Navbar: React.FC<BarProps> = ({ home = false, notHome = false }) => {
             <IoPerson />
           </div>
           <div className="mr-auto flex xs:ml-[30%] sm:ml-[30%] md:ml-[30%] mdl:ml-0 lg:ml-0">
-            <img src={Images.logo} alt="Logo" className="w-50 h-6" />
+            <img
+              src={Images.logo}
+              alt="Logo"
+              className="w-50 h-6 cursor-pointer"
+              onClick={navigateToMainPage}
+            />
           </div>
 
           <div className=" flex gap-4 mdl:flex">

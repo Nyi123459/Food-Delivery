@@ -25,7 +25,7 @@ const BookingCommon: React.FC<BookingProps> = ({
       <div className="bg-white text-xl font-extrabold flex justify-center items-center h-[80px]">
         Booking
       </div>
-      <div className="ml-[10%] mr-[10%] pt-[5%] flex justify-evenly">
+      <div className=" pt-[5%] flex justify-evenly">
         {stages.map((stage) => (
           <div
             key={stage.id}

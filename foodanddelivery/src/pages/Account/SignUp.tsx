@@ -4,6 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import BasicRegister from "../../component/Common/Registration";
 import toast from "react-hot-toast";
+import useSignup from "../../hooks/useSignup";
 
 const DefaultFormFields = {
   email: "",
@@ -13,40 +14,30 @@ const DefaultFormFields = {
 
 const SignUp: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [formFields, setFormFields] = useState(DefaultFormFields);
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
   const navigate = useNavigate();
-
-  const resetFormFields = () => {
-    setFormFields(DefaultFormFields);
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-  };
+  const { loading, signup } = useSignup();
 
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      [name]: value,
+    }));
   };
 
-  const handlePasswordSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email === "" || password === "" || confirmPassword === "") {
-      toast.error("Please fill in your credentials first");
-      return;
-    }
-    if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
-      return;
-    }
-    resetFormFields();
-    setShowModal(false);
-    navigate("/");
+    await signup(inputs);
+    navigate("/login");
   };
 
   return (
@@ -69,15 +60,12 @@ const SignUp: React.FC = () => {
             </button>
             <div className="space-y-6">
               <BasicRegister
-                email={email}
-                setEmail={setEmail}
-                password={password}
-                setPassword={setPassword}
-                confirmPassword={confirmPassword}
-                setConfirmPassword={setConfirmPassword}
-                handleEmailSubmit={handleEmailSubmit}
-                handlePasswordSubmit={handlePasswordSubmit}
+                email={inputs.email}
+                password={inputs.password}
+                confirmPassword={inputs.confirmPassword}
+                handleSubmit={handleSubmit}
                 signUpForm={true}
+                handleChange={handleChange}
                 text={"Sign Up"}
               />
             </div>

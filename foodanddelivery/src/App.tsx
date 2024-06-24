@@ -1,10 +1,10 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Outlet,
 } from "react-router-dom";
-
 import HomeRoute from "./pages/Home/HomeRoute";
 import Footer from "./component/Common/Footer/Footer";
 import "./index.css";
@@ -32,53 +32,39 @@ const Layout: React.FC = () => {
   );
 };
 
-const AccountRoutes: React.FC = () => {
-  return (
-    <Routes>
-      <Route
-        path="/register/food-merchant-owner"
-        element={<ProtectedRoute element={<OwnerRegister />} />}
-      />
-      <Route
-        path="/register/rider"
-        element={<ProtectedRoute element={<RiderRegister />} />}
-      />
-      <Route
-        path="/register/driver"
-        element={<ProtectedRoute element={<DriverRegister />} />}
-      />
-      <Route
-        path="/userProfile/profile"
-        element={<ProtectedRoute element={<ProfileDetail />} />}
-      />
-      <Route path="/login/:role" element={<PartnerLogin />} />
-      <Route path="/login/" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-    </Routes>
-  );
-};
-
-const MainRoutes: React.FC = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomeRoute />} />
-        <Route path="/food" element={<FoodRoute />} />
-        <Route path="/mall" element={<MallRoute />} />
-      </Route>
-      <Route path="/taxi" element={<Taxi />} />
-    </Routes>
-  );
-};
-
 function App() {
   return (
     <div className="font-bodyFont" style={{ margin: 0 }}>
       <UserProvider>
         <GoogleMapsProvider>
           <Router>
-            <MainRoutes />
-            <AccountRoutes />
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<HomeRoute />} />
+                <Route path="food" element={<FoodRoute />} />
+                <Route path="mall" element={<MallRoute />} />
+              </Route>
+              <Route path="taxi" element={<Taxi />} />
+              <Route
+                path="register/food-merchant-owner"
+                element={<ProtectedRoute element={<OwnerRegister />} />}
+              />
+              <Route
+                path="register/rider"
+                element={<ProtectedRoute element={<RiderRegister />} />}
+              />
+              <Route
+                path="register/driver"
+                element={<ProtectedRoute element={<DriverRegister />} />}
+              />
+              <Route
+                path="userProfile/profile"
+                element={<ProtectedRoute element={<ProfileDetail />} />}
+              />
+              <Route path="login/:role" element={<PartnerLogin />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
+            </Routes>
             <Toaster />
           </Router>
         </GoogleMapsProvider>

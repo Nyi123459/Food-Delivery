@@ -1,9 +1,4 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 type User = {
   email: string;
@@ -54,4 +49,6 @@ export const UserProvider = ({ children }: UserProviderProps) => {
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
-export const useAuth = () => useContext(UserContext);
+export const useAuth = () => {
+  return useContext(UserContext);
+};

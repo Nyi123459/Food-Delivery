@@ -5,8 +5,9 @@ import { FaSuitcase } from "react-icons/fa6";
 import { MdOutlineFavorite } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaHome } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
+import { CSSTransition } from "react-transition-group";
 
-import BookingCommon from "../../Common/Booking.common";
 import {
   useJsApiLoader,
   GoogleMap,
@@ -14,7 +15,10 @@ import {
   Autocomplete,
   DirectionsRenderer,
 } from "@react-google-maps/api";
-import { Button } from "@material-tailwind/react";
+
+import BookingCommon from "../../Common/Booking.common";
+import toast from "react-hot-toast";
+import DriverInfo from "./DriverInfo";
 
 const center = { lat: 16.8256, lng: 96.1307 };
 
@@ -23,6 +27,19 @@ export interface BookingStageProps {
   handleNext: () => void;
   handleBack: () => void;
 }
+
+const generateTimeOptions = () => {
+  const times = [];
+  for (let h = 0; h < 24; h++) {
+    for (let m = 0; m < 60; m += 30) {
+      const hour = h < 10 ? `0${h}` : h;
+      const min = m < 10 ? `0${m}` : m;
+      const time = h < 12 ? "am" : "pm";
+      times.push(`${hour}:${min}.${time}`);
+    }
+  }
+  return times;
+};
 
 const BookingStageOne: React.FC<BookingStageProps> = ({
   currentStage,
@@ -53,14 +70,20 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     localStorage.getItem("destination") || ""
   );
 
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const [time, setTime] = useState<string>("");
+  const timeOptions = generateTimeOptions();
+
+  const [taximodal, setTaximodal] = useState(false);
+
   const pickupLocationRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (isLoaded && pickupLocation && destination) {
+    if (isLoaded && pickupLocation && destination && time) {
       calculateRoute();
     }
-  }, [pickupLocation, destination, isLoaded]);
+  }, [pickupLocation, destination, time, isLoaded]);
 
   const calculateRoute = async () => {
     if (!pickupLocation || !destination) {
@@ -85,6 +108,8 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     setDuration("");
     setPickupLocation("");
     setDestination("");
+    setTime("");
+    setTaximodal(false);
     if (pickupLocationRef.current) {
       pickupLocationRef.current.value = "";
     }
@@ -97,10 +122,10 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
   };
 
   const handleNextClick = () => {
-    if (pickupLocation && destination) {
-      handleNext();
+    if (pickupLocation && destination && time) {
+      setTaximodal(true);
     } else {
-      alert("Please enter both pickup location and destination");
+      toast.error("Please enter both pickup location and destination");
     }
     console.log("Handle Next Click re-render");
   };
@@ -122,17 +147,13 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     console.log("Handle destination change re-render");
   };
 
+  const handleTimeChanges = (selectedTime: string) => {
+    setTime(selectedTime);
+    setShowDropdown(false);
+  };
+
   if (!isLoaded) {
-    return (
-      <Button
-        className="rounded-full"
-        loading={true}
-        placeholder={undefined}
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}>
-        Loading
-      </Button>
-    );
+    return <div className="loading loading-spinner"></div>;
   }
 
   return (
@@ -140,9 +161,9 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
       currentStage={currentStage}
       handleNext={handleNext}
       handleBack={handleBack}>
-      <div className="flex ml-[10%] mr-[10%] mt-[5%]">
-        <div className="w-1/3">
-          <div className="w-full rounded-md shadow-md shadow-blue-gray-500 h-[250px] bg-gradient-to-r from-[#FFC740] to-yellow-200 ">
+      <div className="flex ml-[2%] mr-[2%] mt-[5%] ">
+        <div className="w-1/3 relative">
+          <div className="w-full rounded-md shadow-md shadow-blue-gray-500 h-[300px] bg-gradient-to-r from-[#FFC740] to-yellow-200 ">
             <p className="p-4 font-bold ml-[7%]">Get a ride</p>
             <Autocomplete onPlaceChanged={handlePickupChange}>
               <div className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2">
@@ -150,14 +171,14 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
                   type="text"
                   name="pickup location"
                   placeholder="Enter pickup location"
-                  className="outline-none"
+                  className="focus:outline-none pr-2 pl-2 "
                   ref={pickupLocationRef}
                   defaultValue={pickupLocation}
                 />
                 <IoLocationOutline />
               </div>
             </Autocomplete>
-            <div className="relative lex pt-5">
+            <div className="relative pt-5">
               <Autocomplete onPlaceChanged={handleDestinationChange}>
                 <div className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2">
                   <input
@@ -171,18 +192,50 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
                 </div>
               </Autocomplete>
               <CiCirclePlus className="absolute right-3 top-8 size-5" />
-              <button
-                onClick={handleNextClick}
-                className="mt-[5%] ml-[10%] w-16 h-8 bg-navcolor rounded-md">
-                Book
-              </button>
-              <button
-                onClick={clearRoute}
-                className="mt-[5%] ml-[10%] w-16 h-8 bg-navcolor rounded-md">
-                Clear
-              </button>
             </div>
+            <div className="pt-5 w-full dropdown">
+              <div className="flex justify-between items-center border rounded-md bg-white ml-[10%] mr-[10%] p-2">
+                <input
+                  type="text"
+                  name="time"
+                  value={time}
+                  placeholder="Pick up now"
+                  readOnly
+                  className="outline-none flex justify-between  bg-white w-full cursor-pointer"
+                />
+                <FaAngleDown
+                  className="cursor-pointer"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => setShowDropdown(!showDropdown)}
+                />
+              </div>
+
+              <div
+                tabIndex={0}
+                className="dropdown-content absolute bg-white border rounded-md mt-2 w-[80%] ml-[10%] max-h-60 overflow-y-auto z-10">
+                {timeOptions.map((option, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleTimeChanges(option)}
+                    className="p-2 hover:bg-gray-200 cursor-pointer">
+                    {option}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <button
+              onClick={handleNextClick}
+              className="mt-[5%] ml-[10%] w-16 h-8 bg-navcolor rounded-md">
+              Search
+            </button>
+            <button
+              onClick={clearRoute}
+              className="mt-[5%] ml-[10%] w-16 h-8 bg-navcolor rounded-md">
+              Clear
+            </button>
           </div>
+
           <p className="text-center pt-8 font-bold">Ride to Saved Places</p>
           <div className="flex justify-around mt-[5%]">
             <div className="relative flex flex-col cursor-pointer">
@@ -207,6 +260,9 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
               <p>New</p>
             </div>
           </div>
+          {taximodal && (
+            <DriverInfo driverName={"Tint Wai"} rating={4.5} price={2500} />
+          )}
         </div>
         <div className="w-2/3">
           <div className="relative h-[400px] ml-[5%] shadow-md shadow-gray-400 ">
