@@ -37,19 +37,19 @@ export const signup = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
-    const driver = await User.findOne({ email });
+    const user = await User.findOne({ email });
     const isPasswordCorrect = await bcrypt.compare(
       password,
-      driver?.password || ""
+      user?.password || ""
     );
-    if (!driver || !isPasswordCorrect) {
+    if (!user || !isPasswordCorrect) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
-    generateTokenAndCookie(driver._id.toString(), res);
+    generateTokenAndCookie(user._id.toString(), res);
     res.status(200).json({
-      _id: driver._id,
-      email: driver.email,
-      role: driver.role,
+      _id: user._id,
+      email: user.email,
+      role: user.role,
     });
   } catch (error) {
     console.log("Error in login controller", error);

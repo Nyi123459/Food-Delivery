@@ -4,6 +4,7 @@ import { useSocketContext } from "../../../context/socketContext";
 import Modal from "react-modal";
 import { useAuth } from "../../../context/userContext";
 import { Bid, useBidStore } from "../../../zustand/useConversation";
+import toast from "react-hot-toast";
 
 interface DriverBiddingProps {
   isOpen: boolean;
@@ -13,9 +14,23 @@ interface DriverBiddingProps {
 const DriverBidding: React.FC<DriverBiddingProps> = ({ isOpen, onClose }) => {
   const { socket } = useSocketContext();
   const [bids, setBids] = useState<Bid[]>([]);
+  const [newBooking, setNewBooking] = useState<any>(null);
   const [bidAmount, setBidAmount] = useState<number>(0);
   const { currentUser } = useAuth();
   const addBid = useBidStore((state) => state.addBid);
+
+  useEffect(() => {
+    if (socket) {
+      socket.on("newBooking", (bookingDetails) => {
+        setNewBooking(bookingDetails);
+        toast.success("New Booking request received!");
+      });
+
+      return () => {
+        socket.off("newBooking");
+      };
+    }
+  }, [socket]);
 
   useEffect(() => {
     if (socket) {
@@ -37,16 +52,17 @@ const DriverBidding: React.FC<DriverBiddingProps> = ({ isOpen, onClose }) => {
   };
 
   const handlePlaceBid = () => {
-    if (bidAmount > 0 && currentUser) {
+    if (bidAmount > 0 && currentUser && newBooking) {
       const bidDetails: Bid = {
+        userId: newBooking.userId,
         driverId: currentUser._id,
-        driverName: currentUser.email, // Adjust as per your data structure
-        rating: 4.5, // Example rating
+        driverName: currentUser.email,
+        rating: 4.5,
         amount: bidAmount,
       };
+      console.log("Bid Details", bidDetails);
 
       socket?.emit("bid", bidDetails);
-      setBidAmount(0); // Reset bid amount after placing bid
     } else {
       alert("Please enter a valid bid amount.");
     }

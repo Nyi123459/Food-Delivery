@@ -86,6 +86,11 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
   const pickupLocationRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
 
+  const userId = currentUser?._id;
+  const role = currentUser?.role;
+
+  socket?.emit("identify", { userId, role });
+
   useEffect(() => {
     if (socket) {
       socket.on("updateBids", (bidDetails) => {
@@ -147,7 +152,7 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
         pickupLocation,
         destination,
         time,
-        userId: currentUser?._id,
+        userId
       };
       socket?.emit("requestBid", bookingDetails);
     } else {

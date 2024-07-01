@@ -26,6 +26,7 @@ interface ConversationState {
 }
 
 export interface Bid {
+  userId?: string;
   driverId: string;
   driverName: string;
   rating: number;
