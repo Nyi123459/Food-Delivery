@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { IoPerson } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/userContext";
 import BasicRegister from "../../component/Common/Registration";
+import useLogin from "../../hooks/useLogin";
 import toast from "react-hot-toast";
 
 const Login: React.FC = () => {
@@ -11,40 +11,30 @@ const Login: React.FC = () => {
   const [currentForm, setCurrentForm] = useState(1);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useLogin();
   const navigate = useNavigate();
-  const { setCurrentUser } = useContext(UserContext);
 
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
-  const handleNext = () => {
-    setCurrentForm(currentForm + 1);
-  };
-
-  const handleBack = () => {
-    if (currentForm > 1) {
-      setCurrentForm(currentForm - 1);
-    } else {
-      setShowModal(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const response = await login(email, password);
+    if (response?.success) {
+      navigate("/");
+    } else if (response?.error) {
+      toast.error(response.error);
     }
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleNext();
-  };
-
-  const handlePasswordSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email === "" || password === "") {
-      toast.error("Please fill in your credentials");
-      return;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
     }
-    const user = { email, password };
-    setCurrentUser(user);
-    setShowModal(false);
-    navigate("/");
   };
 
   return (
@@ -68,13 +58,11 @@ const Login: React.FC = () => {
             <div className="space-y-6">
               <BasicRegister
                 email={email}
-                setEmail={setEmail}
                 password={password}
-                setPassword={setPassword}
-                handleEmailSubmit={handleEmailSubmit}
-                handlePasswordSubmit={handlePasswordSubmit}
                 loginForm={true}
                 text={"Log in"}
+                handleSubmit={handleSubmit}
+                handleChange={handleChange}
               />
             </div>
           </div>

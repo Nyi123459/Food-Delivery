@@ -25,7 +25,7 @@ const BookingCommon: React.FC<BookingProps> = ({
       <div className="bg-white text-xl font-extrabold flex justify-center items-center h-[80px]">
         Booking
       </div>
-      <div className=" pt-[5%] flex justify-evenly">
+      <div className="pt-[5%] flex justify-evenly">
         {stages.map((stage) => (
           <div
             key={stage.id}
@@ -41,18 +41,16 @@ const BookingCommon: React.FC<BookingProps> = ({
       </div>
       <div>
         {children}
-        {
-          <div className="flex justify-between mt-4 hidden">
-            <button onClick={handleBack} disabled={currentStage === 1}>
-              Back
-            </button>
-            <button
-              onClick={handleNext}
-              disabled={currentStage === stages.length}>
-              Next
-            </button>
-          </div>
-        }
+        <div className=" justify-between mt-4 hidden">
+          <button onClick={handleBack} disabled={currentStage === 1}>
+            Back
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={currentStage === stages.length}>
+            Next
+          </button>
+        </div>
       </div>
     </section>
   );

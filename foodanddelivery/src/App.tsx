@@ -22,6 +22,8 @@ import Taxi from "./pages/Taxi/Taxi";
 import ProfileDetail from "./pages/Account/LoginProfile/ProfileDetail";
 import { GoogleMapsProvider } from "./context/GoogleMapsProvider";
 import { Toaster } from "react-hot-toast";
+import DriverBidding from "./component/Taxi/Booking/DriverBidding";
+import RoleSwitch from "./pages/Account/RoleSwitch";
 
 const Layout: React.FC = () => {
   return (
@@ -62,8 +64,21 @@ function App() {
                 element={<ProtectedRoute element={<ProfileDetail />} />}
               />
               <Route path="login/:role" element={<PartnerLogin />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="login" element={<Login />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route
+                path="/driver/bidding"
+                element={
+                  <ProtectedRoute element={<DriverBidding isOpen={false} onClose={function (): void {
+                    throw new Error("Function not implemented.");
+                  } } />} role="driver" />
+                }
+              />
+              <Route
+                path="/roleSwitch"
+                element={<ProtectedRoute element={<RoleSwitch />} />}
+              />{" "}
+              {/* Add the RoleSwitch route */}
             </Routes>
             <Toaster />
           </Router>

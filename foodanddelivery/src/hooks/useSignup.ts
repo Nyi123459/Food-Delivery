@@ -33,16 +33,23 @@ const useSignup = () => {
         }),
       });
       const data = await res.json();
+      if (!res.ok) {
+        //Handle HTTP error
+        throw new Error(data.error || "An unknown error occured");
+      }
       setCurrentUser(data);
       if (data.error) {
         throw new Error(data.error);
       }
       localStorage.setItem("currentUser", JSON.stringify(data));
+      return { success: true };
     } catch (error) {
       if (error instanceof Error) {
-        console.log("Error in Signing up:", error.message);
+        console.error("Error in Signing up:", error.message);
+        return { error: error.message };
       } else {
-        console.log("Error connecting to MongoDB", error);
+        console.error("Error connecting to MongoDB", error);
+        return { error: "Error connecting to the server" };
       }
     } finally {
       setLoading(false);

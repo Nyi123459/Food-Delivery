@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { IoIosAddCircle } from "react-icons/io";
-import { FaSuitcase } from "react-icons/fa6";
+import { FaSuitcase } from "react-icons/fa";
 import { MdOutlineFavorite } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { FaHome } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
-import { CSSTransition } from "react-transition-group";
 
 import {
   useJsApiLoader,
@@ -19,6 +18,9 @@ import {
 import BookingCommon from "../../Common/Booking.common";
 import toast from "react-hot-toast";
 import DriverInfo from "./DriverInfo";
+import { useAuth } from "../../../context/userContext";
+import { useSocketContext } from "../../../context/socketContext";
+import { useBidStore } from "../../../zustand/useConversation";
 
 const center = { lat: 16.8256, lng: 96.1307 };
 
@@ -57,6 +59,10 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     libraries: ["places"],
   });
 
+  const { currentUser } = useAuth();
+  const { socket } = useSocketContext();
+  const { addBid, clearBids } = useBidStore();
+
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [directionsResponse, setDirectionsResponse] =
     useState<google.maps.DirectionsResult | null>(null);
@@ -75,9 +81,25 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
   const timeOptions = generateTimeOptions();
 
   const [taximodal, setTaximodal] = useState(false);
+  const [driverDetails, setDriverDetails] = useState<any>(null); // State to hold driver bidding details
 
   const pickupLocationRef = useRef<HTMLInputElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (socket) {
+      socket.on("updateBids", (bidDetails) => {
+        console.log("Received bid details:", bidDetails);
+        addBid(bidDetails);
+        setDriverDetails(bidDetails);
+        setTaximodal(true);
+      });
+
+      return () => {
+        socket.off("updateBids");
+      };
+    }
+  }, [socket, addBid]);
 
   useEffect(() => {
     if (isLoaded && pickupLocation && destination && time) {
@@ -99,7 +121,6 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     setDirectionsResponse(results);
     setDistance(results.routes[0].legs[0].distance?.text || "");
     setDuration(results.routes[0].legs[0].duration?.text || "");
-    console.log("Calculate Route re-render");
   };
 
   const clearRoute = () => {
@@ -118,33 +139,32 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
     }
     localStorage.removeItem("pickupLocation");
     localStorage.removeItem("destination");
-    console.log("Clear Route re-render");
   };
 
   const handleNextClick = () => {
     if (pickupLocation && destination && time) {
-      setTaximodal(true);
+      const bookingDetails = {
+        pickupLocation,
+        destination,
+        time,
+        userId: currentUser?._id,
+      };
+      socket?.emit("requestBid", bookingDetails);
     } else {
       toast.error("Please enter both pickup location and destination");
     }
-    console.log("Handle Next Click re-render");
   };
 
   const handlePickupChange = useCallback(() => {
-    console.log("handlePickupChange function created");
     const place = pickupLocationRef.current?.value || "";
     setPickupLocation(place);
     localStorage.setItem("pickupLocation", place);
-    console.log("Handle pick up change re-render");
   }, []);
-
-  console.log("Handle pickup change called");
 
   const handleDestinationChange = () => {
     const place = destinationRef.current?.value || "";
     setDestination(place);
     localStorage.setItem("destination", place);
-    console.log("Handle destination change re-render");
   };
 
   const handleTimeChanges = (selectedTime: string) => {
@@ -260,8 +280,12 @@ const BookingStageOne: React.FC<BookingStageProps> = ({
               <p>New</p>
             </div>
           </div>
-          {taximodal && (
-            <DriverInfo driverName={"Tint Wai"} rating={4.5} price={2500} />
+          {taximodal && driverDetails && (
+            <DriverInfo
+              driverName={driverDetails.driverName}
+              rating={driverDetails.rating}
+              price={driverDetails.price}
+            />
           )}
         </div>
         <div className="w-2/3">

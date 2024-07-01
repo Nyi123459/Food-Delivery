@@ -6,12 +6,6 @@ import BasicRegister from "../../component/Common/Registration";
 import toast from "react-hot-toast";
 import useSignup from "../../hooks/useSignup";
 
-const DefaultFormFields = {
-  email: "",
-  password: "",
-  confirmPassword: "",
-};
-
 const SignUp: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [inputs, setInputs] = useState({
@@ -36,8 +30,12 @@ const SignUp: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await signup(inputs);
-    navigate("/login");
+    const response = await signup(inputs);
+    if (response?.success) {
+      navigate("/");
+    } else if (response?.error) {
+      toast.error(response.error);
+    }
   };
 
   return (

@@ -1,14 +1,15 @@
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import store from "./utils/store";
+// import { Provider } from "react-redux";
+// import store from "./utils/store";
 import App from "./App";
 import "./index.css";
 import { UserProvider } from "./context/userContext";
+import { SocketProvider } from "./context/socketContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <Provider store={store}>
-    <UserProvider>
+  <UserProvider>
+    <SocketProvider>
       <App />
-    </UserProvider>
-  </Provider>
+    </SocketProvider>
+  </UserProvider>
 );
